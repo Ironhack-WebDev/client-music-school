@@ -1,70 +1,194 @@
-# Getting Started with Create React App
+#### Routes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### instrument routes
 
-## Available Scripts
+| HTTP verb | URL                              | Request body | Action                                   |
+| --------- | -------------------------------- | ------------ | ---------------------------------------- |
+| GET       | `/api/instruments`               | (empty)      | Returns all the instrument you can learn |
+| POST      | `/api/instruments`               | JSON         | Adds a new instrument                    |
+| GET       | `/api/instruments/:instrumentId` | (empty)      | Returns the specified instrument         |
+| PUT       | `/api/instruments/:instrumentId` | JSON         | Edits the specified instrument           |
+| DELETE    | `/api/instruments/:instrumentId` | (empty)      | Deletes the specified instrument         |
 
-In the project directory, you can run:
+##### lesson routes
 
-### `npm start`
+| HTTP verb | URL                      | Request body | Action                       |
+| --------- | ------------------------ | ------------ | ---------------------------- |
+| GET       | `/api/lessons`           | (empty)      | Returns all the lessons      |
+| POST      | `/api/lessons`           | JSON         | Adds a new lesson            |
+| GET       | `/api/lessons/:lessonId` | (empty)      | Returns the specified lesson |
+| PUT       | `/api/lessons/:lessonId` | JSON         | Edits the specified lesson   |
+| DELETE    | `/api/lessons/:lessonId` | (empty)      | Deletes the specified lesson |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##### group routes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| HTTP verb | URL                     | Request body | Action                      |
+| --------- | ----------------------- | ------------ | --------------------------- |
+| GET       | `/api/groups`           | (empty)      | Returns all the groups      |
+| POST      | `/api/groups`           | JSON         | Adds a new group            |
+| GET       | `/api/groups/:groupsId` | (empty)      | Returns the specified group |
+| PUT       | `/api/groups/:groupsId` | JSON         | Edits the specified group   |
+| DELETE    | `/api/groups/:groupsId` | (empty)      | Deletes the specified group |
 
-### `npm test`
+##### message routes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| HTTP verb | URL                        | Request body | Action                        |
+| --------- | -------------------------- | ------------ | ----------------------------- |
+| GET       | `/api/messages/:messageId` | (empty)      | Returns the specified message |
+| POST      | `/api/messages`            | JSON         | Adds a new message            |
+| DELETE    | `/api/messages/:messageId` | (empty)      | Deletes the specified group   |
 
-### `npm run build`
+##### User routes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| HTTP verb | URL                           | Request Headers | Action                        |
+| --------- | ----------------------------- | --------------- | ----------------------------- |
+| GET       | `/api/users/:userId`          | (empty)         | returns user details          |
+| PUT       | `/api/users/:userId`          | (empty)         | update user details           |
+| GET       | `/api/users/:userId/lessons`  | (empty)         | returns list of users lessons |
+| GET       | `/api/users/:userId/groups`   | (empty)         | returns list of users groups  |
+| GET       | `/api/users/:userId/messages` | (empty)         | returns users messages        |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### Auth routes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| HTTP verb | URL            | Request Headers                 | Request Body              |
+| --------- | -------------- | ------------------------------- | ------------------------- |
+| POST      | `/auth/signup` | --                              | { email, password, name } |
+| POST      | `/auth/login`  | --                              | { email, password }       |
+| GET       | `/auth/verify` | Authorization: Bearer \< JWT \> | --                        |
 
-### `npm run eject`
+<hr>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Pages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Landing Page (public)
+- Signup Page (anon only)
+- Log in Page (anon only)
+- Instruments
+  - Instrument List Page (public)
+  - Instrument Details Page (public)
+  - Edit Instrument Page (admin only)
+- Groups
+  - Group Timetable Page (public)
+  - Group Details Page (public)
+  - Edit Group Page (admin only)
+- Lessons
+  - Edit Lessons Page (admin only)
+- Messages
+  - Trial Lesson (public)
+  - Standard Message (public)
+- User Profile Page (user only)
+- Admin Profile Page (admin only)
+- Error Page (public)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- NavBar
+- Instruments
+  - Instrument Card
+  - Add Instrument
+  - Instrument Thumbnail Card
+- Groups
+  - Group Card
+  - Add Group
+  - Group Thumbnail Card
+- Lessons
+  - Lesson Card
+  - Add Lesson
+- IsAnon
+- IsPrivate
 
-## Learn More
+## Services
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Auth Service
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - auth.login(user)
+  - auth.signup(user)
+  - auth.logout()
 
-### Code Splitting
+- Instrument Service
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  - createInstrument(requestBody)
+  - getAllInstruments()
+  - getInstrument(id)
+  - updateInstrument(id, requestBody)
+  - deleteInstrument(id)
 
-### Analyzing the Bundle Size
+- Group Service
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  - createGroup(requestBody)
+  - getAllGroups()
+  - getGroup(id)
+  - updateGroup(id, requestBody)
+  - deleteGroup(id)
 
-### Making a Progressive Web App
+- Lesson Service
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  - createLesson(requestBody)
+  - getLesson(id)
+  - updateLesson(id, requestBody)
+  - deleteLesson(id)
 
-### Advanced Configuration
+- Message Service
+  - createMessage(requestBody)
+  - getMessage (userId)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Models
 
-### Deployment
+##### instrument Model
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```js
+{
+instrument: String,
+teacher: String,
+description: String,
+location: String,
+imageURL: String, 
+lessons:
+    user: Schema.Types.ObjectId, ref: "user",
+    time: Time,
+}
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+
+##### group Model
+
+```js
+{
+  title: String,
+  startTime: String,
+  endTime: String,
+  location: String,
+  leader: String,
+  imageURL: String,
+  members: [{ type: Schema.Types.ObjectId, ref: 'user' }]
+}
+```
+
+##### User Model
+
+```js
+{
+  email: String, unique, required,
+  password: String, required,
+  name:  String, required,
+  isAdmin:  Boolean,
+  address:  String,
+  phone:   String,
+  imageURL: String 
+}
+```
+
+##### Message Model
+
+```js
+{
+  title: String,
+  message: String,
+  sender: Schema.Types.ObjectId, ref: "user",
+  senderName: String,
+  senderEmail: String,
+  recipient: Schema.Types.ObjectId, ref: "user",
+  timeStamp: Date, 
+}
+```
