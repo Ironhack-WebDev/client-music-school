@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../services/auth.service";
-import { Card, CardBody, CardTitle, CardText, FormGroup, Input, Button } from "reactstrap";
 
 function SignupPage(props) {
   const [email, setEmail] = useState("");
@@ -31,42 +30,38 @@ function SignupPage(props) {
   };
 
   return (
-    <Card className="text-center">
     <div className="SignupPage">
-
-     <CardBody>
-            <CardTitle>
-              <h3>Sign Up</h3>
-            </CardTitle>
-            <CardText>
-     
+      <h3>Sign Up</h3>
 
       <form onSubmit={handleSignupSubmit}>
-      <FormGroup>
-        <label>Email:</label>
-        <Input type="email" name="email" value={email} onChange={handleEmail} />
+        <div>
+          <label>Email:</label>
+          <input type="email" name="email" value={email} onChange={handleEmail} />
+        </div>
 
-        <label>Password:</label>
-        <Input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
-        
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePassword}
+          />
+        </div>
 
-        <label>Name:</label>
-        <Input type="text" name="name" value={name} onChange={handleName} />
-</FormGroup>
-        <Button className="btn-round" color="info" type="submit">Sign Up</Button>
+        <div>
+          <label>Name:</label>
+          <input type="text" name="name" value={name} onChange={handleName} />
+        </div>
+
+        <button type="submit">Sign Up</button>
       </form>
-</CardText>
+
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have an account?</p>  <Link to={"/login"}> Login</Link>
-      </CardBody>
+      <p>Already have an account?</p>
+      <Link to={"/login"}> Login</Link>
     </div>
-    </Card>
   );
 }
 

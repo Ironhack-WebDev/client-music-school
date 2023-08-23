@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import authService from "../services/auth.service";
-import { Card, CardBody, CardTitle, CardText, FormGroup, Input, Button } from "reactstrap";
 
 function LoginPage(props) {
   const [email, setEmail] = useState("");
@@ -20,8 +19,6 @@ function LoginPage(props) {
     e.preventDefault();
     const requestBody = { email, password };
 
-    // axios.post(`${API_URL}/auth/login`, requestBody
-
     authService
       .login(requestBody)
       .then((response) => {
@@ -37,43 +34,34 @@ function LoginPage(props) {
       });
   };
 
-
-  
   return (
-    <Card className="text-center">
     <div className="LoginPage">
-
-    <CardBody>
-            <CardTitle>
-              <h3>Login</h3>
-            </CardTitle>
-            <CardText>
-
-      
+      <h3>Login</h3>
 
       <form onSubmit={handleLoginSubmit}>
-      <FormGroup>
-        <label>Email:</label>
-        <Input type="email" name="email" value={email} onChange={handleEmail} />
+        <div>
+          <label>Email:</label>
+          <input type="email" name="email" value={email} onChange={handleEmail} />
+        </div>
 
-        <label>Password:</label>
-        <Input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
-        </FormGroup>
-        <Button className="btn-round" color="info" type="submit">Login</Button>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePassword}
+          />
+        </div>
+        
+        <button type="submit">Login</button>
       </form>
-      </CardText>
+      
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Don't have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
-      </CardBody>
     </div>
-    </Card>
   );
 }
 
