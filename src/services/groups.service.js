@@ -46,6 +46,6 @@ class GroupsService {
 }
 
 // Create one instance (object) of the service
-const grouosService = new GroupsService();
+const groupsService = new GroupsService();
 
 export default groupsService;
