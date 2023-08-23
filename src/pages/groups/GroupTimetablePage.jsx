@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import GroupThumbnail from "../../components/Groups/GroupThumbnail";
+import AddGroup from "../../components/Groups/AddGroup";
 import groupsService from "../../services/groups.service";
 
 function GroupTimetablePage() {
@@ -18,9 +19,12 @@ function GroupTimetablePage() {
 
   return (
     <div>
+      <p> Groups </p>
+      <AddGroup refreshGroups={getAllGroups} />
       {groups.map((group) => (
-        <GroupThumbnail key={group._id} group={group} />
+        <GroupThumbnail key={group._id} {...group} />
       ))}
+
     </div>
   );
 }

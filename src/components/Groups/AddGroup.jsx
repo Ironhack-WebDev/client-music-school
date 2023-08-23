@@ -2,7 +2,7 @@ import groupsService from "../../services/groups.service";
 import { useState } from "react";
 
 
-function AddGroup() {
+function AddGroup(props) {
   const [title, setTitle] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
@@ -31,6 +31,7 @@ function AddGroup() {
         setLocation("");
         setLeader("");
         setImageURL("");
+        PaymentResponse.refreshGroups();
       })
       .catch((error) => console.log(error));
   };
