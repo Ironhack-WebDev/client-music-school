@@ -142,7 +142,7 @@ instrument: String,
 teacher: String,
 description: String,
 location: String,
-imageURL: String, 
+imageURL: String,
 lessons:
     user: Schema.Types.ObjectId, ref: "user",
     time: Time,
@@ -175,7 +175,7 @@ lessons:
   isAdmin:  Boolean,
   address:  String,
   phone:   String,
-  imageURL: String 
+  imageURL: String
 }
 ```
 
@@ -189,6 +189,6 @@ lessons:
   senderName: String,
   senderEmail: String,
   recipient: Schema.Types.ObjectId, ref: "user",
-  timeStamp: Date, 
+  timeStamp: Date,
 }
 ```
