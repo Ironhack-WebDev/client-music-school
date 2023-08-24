@@ -4,7 +4,7 @@ import AddGroup from "../components/Groups/AddGroup";
 import groupsService from "../services/groups.service";
 import messagesService from "../services/messages.service";
 import StandardMessage from "../components/messages/StandardMessage";
-import MessageCard from "../components/messages/MessageCard";
+import MessagePreview from "../components/messages/MessagePreview";
 
 function AdminProfilePage() {
   const [groups, setGroups] = useState([]);
@@ -28,19 +28,14 @@ function AdminProfilePage() {
       .catch((error) => console.log(error));
   };
 
-
   useEffect(() => {
     getUserMessages();
-  }, [])
-  
+  }, []);
 
   return (
     <div>
       <h3> Add Group </h3>
       <AddGroup refreshGroups={getAllGroups} />
-
-      <h3> Send Message</h3>
-      <StandardMessage />
 
       <h3> Groups </h3>
       {groups.map((group) => (
@@ -49,7 +44,7 @@ function AdminProfilePage() {
 
       <h3> Messages </h3>
       {messages.map((message) => (
-        <MessageCard key={message._id} {...message} />
+        <MessagePreview key={message._id} {...message} />
       ))}
     </div>
   );
