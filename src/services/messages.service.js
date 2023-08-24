@@ -23,6 +23,11 @@ class MessagesService {
     return this.api.post("/api/messages", requestBody);
   };
 
+  // GET /api/messages
+  getUserMessages = () => {
+    return this.api.get("/api/messages");
+  };
+
   // GET /api/messages/:id
   getMessage = (id) => {
     return this.api.get(`/api/messages/${id}`);
