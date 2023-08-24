@@ -46,6 +46,7 @@
 | PUT       | `/api/users/:userId`          | (empty)         | update user details           |
 | GET       | `/api/users/:userId/lessons`  | (empty)         | returns list of users lessons |
 | GET       | `/api/users/:userId/groups`   | (empty)         | returns list of users groups  |
+| POST       | `/api/users/:userId/groups`   | (empty)         | add user to a group         |
 | GET       | `/api/users/:userId/messages` | (empty)         | returns users messages        |
 
 ##### Auth routes

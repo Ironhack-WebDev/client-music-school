@@ -18,28 +18,28 @@ class UsersService {
   }
 
   // GET /api/users/:userId
-  getUser = (id) => {
-    return this.api.get(`/api/users/${id}`);
+  getUser = (userId) => {
+    return this.api.get(`/api/users/${userId}`);
   };
 
-  // PUT /api/users/:id
-  updateUser = (id, requestBody) => {
-    return this.api.put(`/api/users/${id}`, requestBody);
-  };
-
-  // GET /api/users/:userId/lessons
-  getUserLessons = (userId) => {
-    return this.api.get("/api/users/:userId/lessons");
+  // PUT /api/users/:userid
+  updateUser = (userid, requestBody) => {
+    return this.api.put(`/api/users/${userid}`, requestBody);
   };
 
   // GET /api/users/:userId/groups
   getUserGroups = (userId) => {
-    return this.api.get("/api/users/:userId/groups");
+    return this.api.get(`/api/users/${userId}/groups`);
   };
+
+  // POST /api/groups/:groupId
+  addUserToGroup = (groupId) => {
+    return this.api.post(`/api/groups/${groupId}`)
+  }
 
   // GET /api/users/:userId/messages
   getUserMessages = (userId) => {
-    return this.api.get("/api/users/:userId/messages");
+    return this.api.get(`/api/users/${userId}/messages`);
   };
 }
 

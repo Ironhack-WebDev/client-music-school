@@ -25,7 +25,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/user" element={<UserProfilePage />} />
+        <Route path="/userProfile" element={<UserProfilePage />} />
         <Route path="/admin" element={<AdminProfilePage />} />
 
         <Route path="/timetable" element={<GroupTimetablePage />} />
