@@ -1,8 +1,8 @@
 function MessageCard({ title, message }) {
     return (
       <div>
-        <h3>Title: {title}</h3>
-        <p>Message: {message}</p>
+        <h3>{title}</h3>
+        <p>{message}</p>
       </div>
     );
   }

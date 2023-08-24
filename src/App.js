@@ -15,6 +15,9 @@ import UserProfilePage from "./pages/UserProfilePage";
 import GroupTimetablePage from "./pages/groups/GroupTimetablePage";
 import GroupDetailsPage from "./pages/groups/GroupDetailsPage";
 import EditGroupPage from "./pages/groups/EditGroupPage";
+//message pages
+import MessageDetailsPage from "./pages/messages/MessageDetailsPage";
+
 
 function App() {
   return (
@@ -28,6 +31,8 @@ function App() {
         <Route path="/timetable" element={<GroupTimetablePage />} />
         <Route path="/groups/:groupId" element={<GroupDetailsPage />} />
         <Route path="/groups/edit/:groupId" element={<EditGroupPage />} />
+
+        <Route path="/messages/:messageId" element={<MessageDetailsPage />} />
 
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
