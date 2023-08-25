@@ -25,8 +25,8 @@ class GroupsService {
   };
 
   // GET /api/groups
-  getAllGroups = () => {
-    return this.api.get("/api/groups");
+  getAllGroups = (day) => {
+    return this.api.get(`/api/groups?day=${day}`);
   };
 
   // GET /api/groups/:id
