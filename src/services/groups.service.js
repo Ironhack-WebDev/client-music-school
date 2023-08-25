@@ -31,7 +31,7 @@ class GroupsService {
 
   // GET /api/groups
   getGroupsByDay = (day) => {
-    return this.api.get(`/api/groups?day=${day}`);
+    return this.api.get(`/api/timetable?day=${day}`);
   };
 
 

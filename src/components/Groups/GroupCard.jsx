@@ -1,31 +1,34 @@
 import React from "react";
 
-function GroupCard({ title, startTime, endTime, location, leader, day }) {
-  const cardStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "10px",
-    border: "1px solid black",
-    backgroundColor: "rgba(0, 0, 0, 0.7)", 
-    //backgroundImage: `url(${imageURL})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    
-    width: "300px", 
-    margin: "10px",
-  };
+const groupCardStyles = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "10px",
+  border: "1px solid #ccc",
+  marginBottom: "10px",
+};
 
+const GroupCard = ({ title, startTime, endTime, location, leader, imageURL }) => {
   return (
-    <div style={cardStyle}>
-      <h3>{title}</h3>
-      <p>Day: {day}</p>
-      <p>Start Time: {startTime}</p>
-      <p>End Time: {endTime}</p>
-      <p>Location: {location}</p>
-      <p>Group Leader: {leader}</p>
+    <div>
+    <h3>{title}</h3>
+    <div style={groupCardStyles}>
+      <div>
+        <img src={imageURL} alt="Group Image" style={{ width: "200px" }}/>
+        </div>
+      <div>
+        <p>Start Time: {startTime}</p>
+        <p>End Time: {endTime}</p>
+      </div>
+      <div>
+        <p>Location: {location}</p>
+        <p>Group Leader: {leader}</p>
+      </div>
+    </div>
     </div>
   );
-}
+};
 
 export default GroupCard;

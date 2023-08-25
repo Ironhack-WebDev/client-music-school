@@ -1,41 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import GroupCard from "../../components/Groups/GroupCard";
+import Monday from "../../components/Groups/Tabs/Monday";
+import Tuesday from "../../components/Groups/Tabs/Tuesday";
+import Wednesday from "../../components/Groups/Tabs/Wednesday";
+import Thursday from "../../components/Groups/Tabs/Thursday";
+import Friday from "../../components/Groups/Tabs/Friday";
+
 import groupsService from "../../services/groups.service";
 
-const TabContainer = () => {
+const TabContainer = ({ day, setDay }) => {
   const [groups, setGroups] = useState([]);
-  const [filter, setFilter] = useState("");
 
-  const handleChange = (selectedDay) => {
-    setFilter(selectedDay);
-    
+  const getAllGroups = () => {
     groupsService
-      .getGroupsByDay(selectedDay)
+      .getAllGroups()
       .then((response) => setGroups(response.data))
       .catch((error) => console.log(error));
   };
+
+  useEffect(() => {
+    getAllGroups();
+  }, []);
+
 
   return (
     <div className="App">
       <Tabs className="Tabs">
         <TabList>
-          <Tab onClick={() => handleChange("Monday")}>Monday</Tab>
-          <Tab onClick={() => handleChange("Tuesday")}>Tuesday</Tab>
-          <Tab onClick={() => handleChange("Wednesday")}>Wednesday</Tab>
-          <Tab onClick={() => handleChange("Thursday")}>Thursday</Tab>
-          <Tab onClick={() => handleChange("Friday")}>Friday</Tab>
+          <Tab>Monday</Tab>
+          <Tab>Tuesday</Tab>
+          <Tab>Wednesday</Tab>
+          <Tab>Thursday</Tab>
+          <Tab>Friday</Tab>
         </TabList>
-        {filter === (
-          <TabPanel>
-            {groups.map((group) => (
-              <GroupCard key={group._id} {...group} />
-            ))}
-          </TabPanel>
-        )}
-    
-
-
+        <TabPanel>
+          <Monday />
+        </TabPanel>
+        <TabPanel>
+          <Tuesday />
+        </TabPanel>
+        <TabPanel>
+          <Wednesday />
+        </TabPanel>
+        <TabPanel>
+          <Thursday />
+        </TabPanel>
+        <TabPanel>
+          <Friday />
+        </TabPanel>
       </Tabs>
     </div>
   );
