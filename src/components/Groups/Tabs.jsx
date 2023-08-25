@@ -1,37 +1,41 @@
+import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Monday from "./Tabs/Monday";
-import Tuesday from "./Tabs/Tuesday";
-import Wednesday from "./Tabs/Wednesday";
-import Thursday from "./Tabs/Thursday";
-import Friday from "./Tabs/Friday";
-
+import GroupCard from "../../components/Groups/GroupCard";
+import groupsService from "../../services/groups.service";
 
 const TabContainer = () => {
+  const [groups, setGroups] = useState([]);
+  const [filter, setFilter] = useState("");
+
+  const handleChange = (selectedDay) => {
+    setFilter(selectedDay);
+    
+    groupsService
+      .getGroupsByDay(selectedDay)
+      .then((response) => setGroups(response.data))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="App">
       <Tabs className="Tabs">
         <TabList>
-          <Tab>Monday</Tab>
-          <Tab>Tuesday</Tab>
-          <Tab>Wednesday</Tab>
-          <Tab>Thursday</Tab>
-          <Tab>Friday</Tab>
+          <Tab onClick={() => handleChange("Monday")}>Monday</Tab>
+          <Tab onClick={() => handleChange("Tuesday")}>Tuesday</Tab>
+          <Tab onClick={() => handleChange("Wednesday")}>Wednesday</Tab>
+          <Tab onClick={() => handleChange("Thursday")}>Thursday</Tab>
+          <Tab onClick={() => handleChange("Friday")}>Friday</Tab>
         </TabList>
-        <TabPanel>
-          <Monday />
-        </TabPanel>
-        <TabPanel>
-          <Tuesday />
-        </TabPanel>
-        <TabPanel>
-          <Wednesday />
-        </TabPanel>
-        <TabPanel>
-          <Thursday />
-        </TabPanel>
-        <TabPanel>
-          <Friday />
-        </TabPanel>
+        {filter === (
+          <TabPanel>
+            {groups.map((group) => (
+              <GroupCard key={group._id} {...group} />
+            ))}
+          </TabPanel>
+        )}
+    
+
+
       </Tabs>
     </div>
   );

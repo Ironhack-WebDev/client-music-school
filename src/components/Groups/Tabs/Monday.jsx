@@ -4,21 +4,25 @@ import groupsService from "../../../services/groups.service";
 
 function Monday() {
   const [groups, setGroups] = useState([]);
+  
+  const requestBody = {
+    date: "Monday" 
+  };
 
-  const getAllGroups = (day) => {
+  const getAllGroups = () => {
     groupsService
-      .getGroupsByDay(day)
+      .getAllGroups(requestBody)
       .then((response) => setGroups(response.data))
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    getAllGroups("Monday"); 
+    getAllGroups(requestBody); 
   }, []);
 
   return (
     <div>
-      <p> Groups </p>
+     <p> Groups </p>
       {groups.map((group) => (
         <GroupCard key={group._id} {...group} />
       ))}
