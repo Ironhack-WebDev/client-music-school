@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function GroupThumbnail({title, imageURL, _id}) {
+function GroupThumbnail({title, _id}) {
     return (
       <div >
       <Link to={`/groups/${_id}`}>
