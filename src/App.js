@@ -24,6 +24,8 @@ import MessageDetailsPage from "./pages/messages/MessageDetailsPage";
 import StandardMessage from "./components/messages/AdminMessage";
 //instrument pages
 import InstrumentListPage from "./pages/instruments/InstrumentListPage"
+import InstrumentDetailsPage from "./pages/instruments/InstrumentDetailsPage"
+import EditInstrumentPage from "./pages/instruments/EditInstrumentPage";
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
         <Route path="/groups/edit/:groupId" element={<EditGroupPage />} />
 
         <Route path="/tuition" element={<InstrumentListPage />} />
+        <Route path="/instruments/:instrumentId" element={<InstrumentDetailsPage />} />
+        <Route path="/instruments/edit/:instrumentId" element={<EditInstrumentPage />} />
 
         <Route path="/messages" element={<StandardMessage />} />
         <Route path="/messages/:messageId" element={<MessageDetailsPage />} />

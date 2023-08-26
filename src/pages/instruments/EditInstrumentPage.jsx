@@ -1,4 +1,4 @@
-import instrumentsService from "../../services/instrumentsService.service";
+import instrumentsService from "../../services/instruments.service";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 

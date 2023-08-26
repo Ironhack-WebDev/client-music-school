@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-function InstrumentThumbnail(instrumentName, _id) {
+function InstrumentThumbnail({instrumentName, _id}) {
     return (
       <div >
         <Link to={`/instruments/${_id}`}>
