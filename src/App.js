@@ -22,6 +22,8 @@ import EditGroupPage from "./pages/groups/EditGroupPage";
 //message pages
 import MessageDetailsPage from "./pages/messages/MessageDetailsPage";
 import StandardMessage from "./components/messages/AdminMessage";
+//instrument pages
+import InstrumentListPage from "./pages/instruments/InstrumentListPage"
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
         <Route path="/groups" element={<GroupListPage />} />
         <Route path="/groups/:groupId" element={<GroupDetailsPage />} />
         <Route path="/groups/edit/:groupId" element={<EditGroupPage />} />
+
+        <Route path="/tuition" element={<InstrumentListPage />} />
 
         <Route path="/messages" element={<StandardMessage />} />
         <Route path="/messages/:messageId" element={<MessageDetailsPage />} />

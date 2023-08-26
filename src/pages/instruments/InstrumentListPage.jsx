@@ -19,7 +19,7 @@ function InstrumentListPage() {
   }, []);
 
   const filteredInstruments = (instruments || []).filter((instrument) => {
-    return instrument.title.toLowerCase().includes(inputText.toLowerCase());
+    return instrument.instrumentName.toLowerCase().includes(inputText.toLowerCase());
   });
 
     return (

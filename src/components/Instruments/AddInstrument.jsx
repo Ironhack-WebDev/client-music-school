@@ -1,4 +1,4 @@
-import instrumentsService from "../../services/instrumentsService.service";
+import instrumentsService from "../../services/instruments.service";
 import { useState } from "react";
 
 function AddInstrument(props) {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import GroupThumbnail from "../components/Groups/GroupThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
+import AddInstrument from "../components/Instruments/AddInstrument";
 import groupsService from "../services/groups.service";
 import usersService from "../services/users.service";
 import useUser from "../components/useUser";
@@ -39,6 +40,9 @@ function AdminProfilePage() {
 
       <h3> Add Group </h3>
       <AddGroup refreshGroups={getAllGroups} />
+
+      <h3> Add Instrument </h3>
+      <AddInstrument />
 
       <h3> Groups </h3>
       {groups.map((group) => (
