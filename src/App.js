@@ -26,6 +26,10 @@ import StandardMessage from "./components/messages/AdminMessage";
 import InstrumentListPage from "./pages/instruments/InstrumentListPage"
 import InstrumentDetailsPage from "./pages/instruments/InstrumentDetailsPage"
 import EditInstrumentPage from "./pages/instruments/EditInstrumentPage";
+//lesson pages
+import LessonListPage from "./pages/lessons/LessonListPage"
+import LessonDetailsPage from "./pages/lessons/LessonDetailsPage"
+import EditLessonPage from "./pages/lessons/EditLessonPage";
 
 function App() {
   return (
@@ -44,6 +48,10 @@ function App() {
         <Route path="/tuition" element={<InstrumentListPage />} />
         <Route path="/instruments/:instrumentId" element={<InstrumentDetailsPage />} />
         <Route path="/instruments/edit/:instrumentId" element={<EditInstrumentPage />} />
+
+        <Route path="/lessons" element={<LessonListPage />} />
+        <Route path="/lessons/:lessonId" element={<LessonDetailsPage />} />
+        <Route path="/lessons/edit/:lessonId" element={<EditLessonPage />} />
 
         <Route path="/messages" element={<StandardMessage />} />
         <Route path="/messages/:messageId" element={<MessageDetailsPage />} />

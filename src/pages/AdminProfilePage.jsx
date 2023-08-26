@@ -3,6 +3,7 @@ import GroupThumbnail from "../components/Groups/GroupThumbnail";
 import InstrumentThumbnail from "../components/Instruments/InstrumentThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
 import AddInstrument from "../components/Instruments/AddInstrument";
+
 import groupsService from "../services/groups.service";
 import instrumentsService from "../services/instruments.service";
 import usersService from "../services/users.service";
@@ -47,6 +48,8 @@ function AdminProfilePage() {
 
       <h3> Add Instrument </h3>
       <AddInstrument />
+
+
 
       <h3> Groups </h3>
       {groups.map((group) => (

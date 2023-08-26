@@ -3,7 +3,7 @@ function InstrumentCard({
   teacher,
   description,
   location,
-  imageURL
+  imageURL,
 }) {
   return (
     <div>
