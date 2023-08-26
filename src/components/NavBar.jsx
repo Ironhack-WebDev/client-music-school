@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <nav>
       <div>
-        <Link to="/userProfile">User Profile</Link>
+        <Link to="/user-profile">User Profile</Link>
         {isLoggedIn ? (
           <>
             <button onClick={logOutUser}>Log Out</button>
