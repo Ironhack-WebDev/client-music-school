@@ -7,10 +7,8 @@ function MessagePreview({ title, message, _id, sender }) {
       <Link to={`/messages/${_id}`}>
         <h3>Title: {title}</h3>
         </Link>
-        <p>Message: {message}</p>
-        <p>Sender: {sender}</p>
-        
-       
+        <p>Message: {message}</p>    
+
       </div>
     );
   }

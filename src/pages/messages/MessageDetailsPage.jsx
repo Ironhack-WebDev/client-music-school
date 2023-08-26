@@ -35,7 +35,7 @@ function GroupDetailsPage(props) {
     <div>
     {message ? (
       <div>
-        <MessageCard title={message.title} message={message.message} />
+        <MessageCard title={message.title} message={message.message} sender={message.sender.name} />
         <Reply from={message.sender} />
       </div>
     ) : (

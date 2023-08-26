@@ -21,7 +21,6 @@ import GroupDetailsPage from "./pages/groups/GroupDetailsPage";
 import EditGroupPage from "./pages/groups/EditGroupPage";
 //message pages
 import MessageDetailsPage from "./pages/messages/MessageDetailsPage";
-import Inbox from "./pages/messages/inbox";
 import StandardMessage from "./components/messages/AdminMessage";
 
 function App() {
@@ -40,7 +39,6 @@ function App() {
 
         <Route path="/messages" element={<StandardMessage />} />
         <Route path="/messages/:messageId" element={<MessageDetailsPage />} />
-        <Route path="/inbox" element={<Inbox />} />
 
         <Route path="/contact" element={<ContactPage />} />
         

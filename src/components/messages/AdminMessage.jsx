@@ -1,15 +1,14 @@
 
 
 import messagesService from "../../services/messages.service";
-import { useState, useContext } from "react";
-import { AuthContext } from "../../context/auth.context";
+import { useState } from "react";
+import useUser from "../../components/useUser";
 
 function AdminMessage() {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
 
-  const context = useContext(AuthContext);
-  const userId = context.user._id;
+  const user = useUser();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +16,7 @@ function AdminMessage() {
     const requestBody = {
       title,
       message,
-      sender: userId,
+      sender: user._id, 
       recipient: "64e6f95077d9c7530374f1a7"
     };
 

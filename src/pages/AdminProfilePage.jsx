@@ -3,11 +3,13 @@ import GroupThumbnail from "../components/Groups/GroupThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
 import groupsService from "../services/groups.service";
 import usersService from "../services/users.service";
-import MessagePreview from "../components/messages/MessagePreview";
+import useUser from "../components/useUser";
+import Inbox from "./messages/inbox";
 
 function AdminProfilePage() {
   const [groups, setGroups] = useState([]);
   const [messages, setMessages] = useState([]);
+  const user = useUser();
 
   const getAllGroups = () => {
     groupsService
@@ -33,6 +35,8 @@ function AdminProfilePage() {
 
   return (
     <div>
+      {user ? <h1>Welcome, {user.name}!</h1> : <p>Please log in.</p>}
+
       <h3> Add Group </h3>
       <AddGroup refreshGroups={getAllGroups} />
 
@@ -41,10 +45,7 @@ function AdminProfilePage() {
         <GroupThumbnail key={group._id} {...group} />
       ))}
 
-      <h3> Messages </h3>
-      {messages.map((message) => (
-        <MessagePreview key={message._id} {...message} />
-      ))}
+      <Inbox />
     </div>
   );
 }
