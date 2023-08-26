@@ -12,7 +12,7 @@ const testUser = {
   address: '123 Test Street, Test City',
 };
 
-const UserProfilePage = () => {
+const UserPage = () => {
   //const { user, setUser, isLoggedIn } = useContext(AuthContext);
   const { setUser, isLoggedIn } = useContext(AuthContext);
   const user = testUser;
@@ -43,12 +43,11 @@ const UserProfilePage = () => {
     <div className="profileContainer">
       <div className="userInformation">
         <img src={user.imageURL} alt="Profile" className="profile-image" />
-       <h2>{user.name}</h2>
-       <p>Name: {user.name}</p>
-       <p>Email: {user.email}</p>
-       <p>Phone: {user.phone}</p>
-       <p>Address: {user.address}</p>
-       <Link to={`/user-profile/edit`}>
+       <p>{user.name}</p>
+       <p>{user.email}</p>
+       <p>{user.phone}</p>
+       <p>{user.address}</p>
+       <Link to={`/user/edit/:userId`}>
         <button>Edit Profile</button>
       </Link>
      </div>
@@ -56,4 +55,4 @@ const UserProfilePage = () => {
   );
 };
 
-  export default UserProfilePage;
+  export default UserPage;
