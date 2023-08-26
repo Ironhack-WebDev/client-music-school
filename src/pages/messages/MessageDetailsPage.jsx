@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import messagesService from "../../services/messages.service";
 import MessageCard from "../../components/messages/MessageCard";
-import StandardMessage from "../../components/messages/StandardMessage";
+import Reply from "../../components/messages/Reply";
 
 function GroupDetailsPage(props) {
   const [message, setMessage] = useState(null);
@@ -33,13 +33,16 @@ function GroupDetailsPage(props) {
 
   return (
     <div>
-      {message && (
+    {message ? (
+      <div>
         <MessageCard title={message.title} message={message.message} />
-      )}
-      <p>Reply</p>
-      <StandardMessage />
-      <button onClick={deleteMessage}>Delete Message</button>
-    </div>
+        <Reply from={message.sender} />
+      </div>
+    ) : (
+      <p>Loading...</p>
+    )}
+    <button onClick={deleteMessage}>Delete Message</button>
+  </div>
   );
 }
 

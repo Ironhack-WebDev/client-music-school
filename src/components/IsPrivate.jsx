@@ -1,6 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function IsPrivate({ children }) {
   const { isLoggedIn, isLoading } = useContext(AuthContext);

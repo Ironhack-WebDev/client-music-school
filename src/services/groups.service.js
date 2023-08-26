@@ -25,11 +25,11 @@ class GroupsService {
   };
 
   // GET /api/groups
-  getAllGroups = (requestBody) => {
+  getAllGroups = () => {
     return this.api.get(`/api/groups`);
   };
 
-  // GET /api/groups
+  // GET /api/groups/timetable
   getGroupsByDay = (day) => {
     return this.api.get(`/api/timetable?day=${day}`);
   };

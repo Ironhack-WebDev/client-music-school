@@ -3,7 +3,6 @@ import GroupThumbnail from "../components/Groups/GroupThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
 import groupsService from "../services/groups.service";
 import usersService from "../services/users.service";
-import StandardMessage from "../components/messages/StandardMessage";
 import MessagePreview from "../components/messages/MessagePreview";
 
 function AdminProfilePage() {
