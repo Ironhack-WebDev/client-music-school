@@ -27,7 +27,6 @@ import InstrumentListPage from "./pages/instruments/InstrumentListPage"
 import InstrumentDetailsPage from "./pages/instruments/InstrumentDetailsPage"
 import EditInstrumentPage from "./pages/instruments/EditInstrumentPage";
 //lesson pages
-import LessonListPage from "./pages/lessons/LessonListPage"
 import LessonDetailsPage from "./pages/lessons/LessonDetailsPage"
 import EditLessonPage from "./pages/lessons/EditLessonPage";
 
@@ -49,7 +48,6 @@ function App() {
         <Route path="/instruments/:instrumentId" element={<InstrumentDetailsPage />} />
         <Route path="/instruments/edit/:instrumentId" element={<EditInstrumentPage />} />
 
-        <Route path="/lessons" element={<LessonListPage />} />
         <Route path="/lessons/:lessonId" element={<LessonDetailsPage />} />
         <Route path="/lessons/edit/:lessonId" element={<EditLessonPage />} />
 

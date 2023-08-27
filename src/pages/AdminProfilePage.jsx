@@ -6,7 +6,6 @@ import AddInstrument from "../components/Instruments/AddInstrument";
 
 import groupsService from "../services/groups.service";
 import instrumentsService from "../services/instruments.service";
-import usersService from "../services/users.service";
 import useUser from "../components/useUser";
 import Inbox from "./messages/inbox";
 
@@ -56,7 +55,7 @@ function AdminProfilePage() {
         <GroupThumbnail key={group._id} {...group} />
       ))}
 
-      <h3> Instuments </h3>
+      <h3> Instruments </h3>
       {instruments.map((instrument) => (
         <InstrumentThumbnail key={instrument._id} {...instrument} />
       ))}

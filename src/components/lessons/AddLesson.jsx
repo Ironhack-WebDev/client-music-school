@@ -1,23 +1,23 @@
+import React, { useState, useEffect } from "react";
 import lessonsService from "../../services/lessons.service";
-import { useState } from "react";
 
-function AddLesson(props) {
+function AddLesson({ instrumentId, allUsers }) {
   const [user, setUser] = useState("");
   const [time, setTime] = useState("");
   const [length, setLength] = useState("");
-
+  const [loading, setLoading] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { instrumentId } = props
- 
     const requestBody = {
-      user,
+      userId: user,
       time,
       length,
-      instrumentId
+      instrumentId,
     };
+
+    console.log(requestBody);
 
     lessonsService
       .createLesson(requestBody)
@@ -25,37 +25,54 @@ function AddLesson(props) {
         setUser("");
         setTime("");
         setLength("");
-        PaymentResponse.refreshLessons();
       })
       .catch((error) => console.log(error));
   };
 
-  return <div>
-    <form onSubmit={handleSubmit}>
-      <label>Student</label>
-      <input
-        type="text"
-        name="user"
-        value={user}
-        onChange={(e) => setUser(e.target.value)}
-      />
-      <label>Time</label>
-      <input
-        type="text"
-        name="time"
-        value={time}
-        onChange={(e) => setTime(e.target.value)}
-      />
-      <label>Length</label>
-      <input
-        type="text"
-        name="length"
-        value={length}
-        onChange={(e) => setLength(e.target.value)}
-      />
-      <button type="submit">Submit</button>
-    </form>
-  </div>;
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  return (
+    <div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <label>Student</label>
+          <select
+            name="user"
+            value={user} // Use the user state directly as the value
+            onChange={(e) => setUser(e.target.value)}
+          >
+            <option value="">Select a student</option>
+            {allUsers.map((userOption) => (
+              <option key={userOption._id} value={userOption._id}>
+                {userOption.name}
+              </option>
+            ))}
+          </select>
+          <label>Time</label>
+          <input
+            type="text"
+            name="time"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+          />
+          <label>Length</label>
+          <input
+            type="text"
+            name="length"
+            value={length}
+            onChange={(e) => setLength(e.target.value)}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      )}
+    </div>
+  );
 }
 
 export default AddLesson;

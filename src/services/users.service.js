@@ -17,6 +17,11 @@ class UsersService {
     });
   }
 
+   // GET /api/users/
+   getAllUsers = () => {
+    return this.api.get(`/api/users`);
+  };
+
   // GET /api/users/:userId
   getUser = (userId) => {
     return this.api.get(`/api/users/${userId}`);
