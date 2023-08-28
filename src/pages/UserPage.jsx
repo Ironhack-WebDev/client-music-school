@@ -3,19 +3,19 @@ import axios from 'axios';
 import { AuthContext } from '../context/auth.context';
 import { Link } from 'react-router-dom';
 
-const testUser = {
-  userId: 'your-static-user-id',
-  name: 'Test User',
-  email: 'test@example.com',
-  imageURL: 'path/to/image',
-  phone: '123-456-7890',
-  address: '123 Test Street, Test City',
-};
+// const testUser = {
+//   userId: 'your-static-user-id',
+//   name: 'Test User',
+//   email: 'test@example.com',
+//   imageURL: 'path/to/image',
+//   phone: '123-456-7890',
+//   address: '123 Test Street, Test City',
+// };
 
 const UserPage = () => {
-  //const { user, setUser, isLoggedIn } = useContext(AuthContext);
-  const { setUser, isLoggedIn } = useContext(AuthContext);
-  const user = testUser;
+  const { user, setUser, isLoggedIn } = useContext(AuthContext);
+  // const { setUser, isLoggedIn } = useContext(AuthContext);
+  // const user = testUser;
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -47,7 +47,7 @@ const UserPage = () => {
        <p>{user.email}</p>
        <p>{user.phone}</p>
        <p>{user.address}</p>
-       <Link to={`/user/edit/:userId`}>
+       <Link to={`/user/edit/${user.userId}`}>
         <button>Edit Profile</button>
       </Link>
      </div>
