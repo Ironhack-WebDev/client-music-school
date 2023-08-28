@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import GroupThumbnail from "../components/Groups/GroupThumbnail";
-import InstrumentThumbnail from "../components/Instruments/InstrumentThumbnail";
+import TeacherThumbnail from "../components/Instruments/TeacherThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
 import AddInstrument from "../components/Instruments/AddInstrument";
 
@@ -45,7 +45,7 @@ function AdminProfilePage() {
       <h3> Add Group </h3>
       <AddGroup refreshGroups={getAllGroups} />
 
-      <h3> Add Instrument </h3>
+      <h3> Add Teacher </h3>
       <AddInstrument />
 
 
@@ -57,7 +57,7 @@ function AdminProfilePage() {
 
       <h3> Instruments </h3>
       {instruments.map((instrument) => (
-        <InstrumentThumbnail key={instrument._id} {...instrument} />
+        <TeacherThumbnail key={instrument._id} {...instrument} />
       ))}
 
       <Inbox />

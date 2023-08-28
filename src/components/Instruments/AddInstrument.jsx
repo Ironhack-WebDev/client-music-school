@@ -34,21 +34,21 @@ function AddInstrument(props) {
 
   return <div>
     <form onSubmit={handleSubmit}>
-      <label>Title</label>
-      <input
-        type="text"
-        name="instrumentName"
-        value={instrumentName}
-        onChange={(e) => setInstrumentName(e.target.value)}
-      />
-      <label>Teacher</label>
+    <label>Teacher</label>
       <input
         type="text"
         name="teacher"
         value={teacher}
         onChange={(e) => setTeacher(e.target.value)}
       />
-      <label>Description</label>
+      <label>Instrument</label>
+      <input
+        type="text"
+        name="instrumentName"
+        value={instrumentName}
+        onChange={(e) => setInstrumentName(e.target.value)}
+      />
+    <label>Notes</label>
       <input
         type="text"
         name="description"
@@ -62,7 +62,7 @@ function AddInstrument(props) {
         value={location}
         onChange={(e) => setLocation(e.target.value)}
       />
-      <label>Image</label>
+      <label>Instrument Image URL</label>
       <input
         type="text"
         name="imageURL"

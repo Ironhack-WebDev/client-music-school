@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import usersService from "../../services/users.service";
+import { Link } from "react-router-dom";
 
-function LessonCard({ user, time, length }) {
+function LessonCard({ user, time, length, _id }) {
   const [userDetails, setUserDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   console.log(user)
@@ -29,12 +30,14 @@ function LessonCard({ user, time, length }) {
 
   return (
     <div>
-    {userDetails === null ? ( // Check if userDetails is still null
+    {userDetails === null ? ( 
       <p>Loading lesson details...</p>
     ) : (
       <div>
-        <h3>{userDetails.name}</h3> {/* Use userDetails instead of oneUser */}
-        <div>
+      <Link to={`/lessons/${_id}`}>
+      <h3>{userDetails.name}</h3> 
+      </Link>
+       <div>
           <p>Time: {time}</p>
           <p>Length: {length} minutes</p>
         </div>

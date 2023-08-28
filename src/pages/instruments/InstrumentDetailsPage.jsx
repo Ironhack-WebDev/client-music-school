@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import instrumentsService from "../../services/instruments.service";
-import InstrumentCard from "../../components/Instruments/InstrumentCard";
+import TeacherCard from "../../components/Instruments/TeacherCard";
 import usersService from "../../services/users.service";
 import { Link } from "react-router-dom";
 import AddLesson from "../../components/lessons/AddLesson";
@@ -40,7 +40,7 @@ function InstrumentDetailsPage(props) {
   return (
     <div>
       {instrument && (
-        <InstrumentCard
+        <TeacherCard
           instrumentName={instrument.instrumentName}
           teacher={instrument.teacher}
           description={instrument.description}
