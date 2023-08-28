@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import MessagePreview from "../../components/messages/MessagePreview";
 import messagesService from "../../services/messages.service";
 //import usersService from "../../services/users.service";
-//import useUser from "../../components/useUser";
+import useUser from "../../components/useUser";
 
 function Inbox() {
   const [messages, setMessages] = useState([]);
-  const userId = "64e6f95077d9c7530374f1a7"
+  const user = useUser()
+  const userId = user._id
 
 
   const getUserMessages = () => {
