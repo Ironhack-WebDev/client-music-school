@@ -44,7 +44,7 @@ function AddLesson({ instrumentId, allUsers }) {
           <label>Student</label>
           <select
             name="user"
-            value={user} // Use the user state directly as the value
+            value={user}
             onChange={(e) => setUser(e.target.value)}
           >
             <option value="">Select a student</option>

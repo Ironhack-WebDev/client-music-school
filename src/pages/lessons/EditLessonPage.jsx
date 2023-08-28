@@ -1,11 +1,14 @@
 import lessonsService from "../../services/lessons.service";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import usersService from "../../services/users.service";
 
-function EditLessonPage(props) {
+function EditLessonPage() {
     const [user, setUser] = useState("");
     const [time, setTime] = useState("");
     const [length, setLength] = useState("");
+    const [allUsers, setAllUsers] = useState("");
+    const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
   const { lessonId } = useParams();
@@ -38,6 +41,23 @@ function EditLessonPage(props) {
       });
   };
 
+  const getAllUsers = () => {
+    usersService
+      .getAllUsers()
+      .then((response) => setAllUsers(response.data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   const deleteLesson = () => {
     lessonsService
       .deleteLesson(lessonId)
@@ -47,14 +67,23 @@ function EditLessonPage(props) {
 
   return (
     <div>
+    {loading ? (
+        <p>Loading...</p>
+      ) : (
     <form onSubmit={handleSubmit}>
       <label>Student</label>
-      <input
-        type="text"
-        name="user"
-        value={user}
-        onChange={(e) => setUser(e.target.value)}
-      />
+          <select
+            name="user"
+            value={user} 
+            onChange={(e) => setUser(e.target.value)}
+          >
+            <option value="">Select a student</option>
+            {allUsers.map((userOption) => (
+              <option key={userOption._id} value={userOption._id}>
+                {userOption.name}
+              </option>
+            ))}
+          </select>
       <label>Time</label>
       <input
         type="text"
@@ -72,6 +101,7 @@ function EditLessonPage(props) {
         <button type="submit">Submit</button>
         <button onClick={deleteLesson}>Delete Lesson</button>
       </form>
+      )}
     </div>
   );
 }

@@ -55,7 +55,7 @@ function AdminProfilePage() {
         <GroupThumbnail key={group._id} {...group} />
       ))}
 
-      <h3> Instruments </h3>
+      <h3> Teachers </h3>
       {instruments.map((instrument) => (
         <TeacherThumbnail key={instrument._id} {...instrument} />
       ))}
