@@ -47,6 +47,8 @@ function App() {
         <Route path="/tuition" element={<InstrumentListPage />} />
         <Route path="/instruments/:instrumentId" element={<InstrumentDetailsPage />} />
         <Route path="/instruments/edit/:instrumentId" element={<EditInstrumentPage />} />
+        <Route path="/teacher/:instrumentId" element={<InstrumentDetailsPage />} />
+
 
         <Route path="/lessons/:lessonId" element={<LessonDetailsPage />} />
         <Route path="/lessons/edit/:lessonId" element={<EditLessonPage />} />
