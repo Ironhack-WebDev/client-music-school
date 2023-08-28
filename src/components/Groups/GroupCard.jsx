@@ -16,7 +16,7 @@ const GroupCard = ({ title, startTime, endTime, location, leader, imageURL }) =>
     <h3>{title}</h3>
     <div style={groupCardStyles}>
       <div>
-        <img src={imageURL} alt="Group Image" style={{ width: "200px" }}/>
+        <img src={imageURL} alt="Group" style={{ width: "200px" }}/>
         </div>
       <div>
         <p>Start Time: {startTime}</p>

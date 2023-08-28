@@ -85,7 +85,7 @@ function AddGroup(props) {
         value={leader}
         onChange={(e) => setLeader(e.target.value)}
       />
-      <label>Image</label>
+      <label>Group Image URL</label>
       <input
         type="text"
         name="imageURL"

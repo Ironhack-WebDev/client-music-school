@@ -11,6 +11,8 @@ function NavBar() {
         <Link to="/userProfile">User Profile</Link>
         {isLoggedIn ? (
           <>
+          <Link to="/timetable">Timetable</Link>
+          <Link to="/tuition">Tuition</Link>
             <button onClick={logOutUser}>Log Out</button>
           </>
         ) : (
