@@ -18,6 +18,11 @@ class MessagesService {
     });
   }
 
+  // GET /api/messages
+  getAllMessages = () => {
+    return this.api.get(`/api/messages`);
+  };
+
   // POST /api/messages
   createMessage = (requestBody) => {
     return this.api.post("/api/messages", requestBody);

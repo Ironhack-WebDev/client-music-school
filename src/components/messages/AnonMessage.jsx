@@ -1,15 +1,11 @@
-
-
 import messagesService from "../../services/messages.service";
-import { useState, useContext } from "react";
-import { AuthContext } from "../../context/auth.context";
+import { useState } from "react";
 
-function StandardMessage() {
+function AdminMessage() {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
-
-  const context = useContext(AuthContext);
-  const userId = context.user._id;
+  const [senderName, setSenderName] = useState("");
+  const [senderEmail, setSenderEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,16 +13,20 @@ function StandardMessage() {
     const requestBody = {
       title,
       message,
-      sender: userId 
+      senderName,
+      senderEmail,
+      recipient: "64e6f95077d9c7530374f1a7",
     };
 
-    console.log (requestBody)
+    console.log(requestBody);
 
     messagesService
       .createMessage(requestBody)
       .then((response) => {
         setTitle("");
         setMessage("");
+        setSenderName("");
+        setSenderEmail("");
       })
       .catch((error) => console.log(error));
   };
@@ -34,6 +34,20 @@ function StandardMessage() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input
+          type="text"
+          name="senderName"
+          value={senderName}
+          onChange={(e) => setSenderName(e.target.value)}
+        />
+        <label>Email Address</label>
+        <input
+          type="text"
+          name="senderEmail"
+          value={senderEmail}
+          onChange={(e) => setSenderEmail(e.target.value)}
+        />
         <label>Title</label>
         <input
           type="text"
@@ -54,4 +68,4 @@ function StandardMessage() {
   );
 }
 
-export default StandardMessage;
+export default AdminMessage;

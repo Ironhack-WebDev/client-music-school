@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import GroupThumbnail from "../components/Groups/GroupThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
 import groupsService from "../services/groups.service";
-import messagesService from "../services/messages.service";
-import StandardMessage from "../components/messages/StandardMessage";
+import usersService from "../services/users.service";
 import MessagePreview from "../components/messages/MessagePreview";
 
 function AdminProfilePage() {
@@ -22,7 +21,7 @@ function AdminProfilePage() {
   }, []);
 
   const getUserMessages = () => {
-    messagesService
+    usersService
       .getUserMessages()
       .then((response) => setMessages(response.data))
       .catch((error) => console.log(error));

@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import MessagePreview from "../../components/messages/MessagePreview";
-import usersService from "../../services/users.service";
+import messagesService from "../../services/messages.service";
 
 function Inbox() {
   const [messages, setMessages] = useState([]);
 
-  const getUserMessages = () => {
-    usersService
-      .getUserMessages()
+  const getAllMessages = () => {
+    messagesService
+      .getAllMessages()
       .then((response) => setMessages(response.data))
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    getUserMessages();
+    getAllMessages();
   }, []);
 
   return (

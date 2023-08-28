@@ -8,6 +8,7 @@ function AddGroup(props) {
   const [endTime, setEndTime] = useState("");
   const [location, setLocation] = useState("");
   const [leader, setLeader] = useState("");
+  const [day, setDay] = useState("");
   const [imageURL, setImageURL] = useState("");
 
   const handleSubmit = (e) => {
@@ -19,6 +20,7 @@ function AddGroup(props) {
       endTime,
       location,
       leader,
+      day,
       imageURL,
     };
 
@@ -30,6 +32,7 @@ function AddGroup(props) {
         setEndTime("");
         setLocation("");
         setLeader("");
+        setDay("");
         setImageURL("");
         PaymentResponse.refreshGroups();
       })
@@ -46,6 +49,13 @@ function AddGroup(props) {
         name="title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+      />
+      <label>Day</label>
+      <input
+        type="text"
+        name="day"
+        value={day}
+        onChange={(e) => setDay(e.target.value)}
       />
       <label>Start Time</label>
       <input
