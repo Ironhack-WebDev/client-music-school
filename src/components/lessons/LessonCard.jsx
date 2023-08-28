@@ -1,8 +1,24 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import usersService from "../../services/users.service";
 
 function LessonCard({ user, time, length }) {
+  const [userDetails, setUserDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   console.log(user)
+
+  const getUser = () => {
+    usersService
+      .getUser(user)
+      .then((response) => {
+        const oneUser = response.data;
+        setUserDetails(oneUser);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getUser();
+  }, [user]);
 
 
   useEffect(() => {
@@ -13,18 +29,18 @@ function LessonCard({ user, time, length }) {
 
   return (
     <div>
-      {loading ? (
-        <p>Loading lesson details...</p>
-      ) : (
+    {userDetails === null ? ( // Check if userDetails is still null
+      <p>Loading lesson details...</p>
+    ) : (
+      <div>
+        <h3>{userDetails.name}</h3> {/* Use userDetails instead of oneUser */}
         <div>
-          <h3>{user}</h3>
-          <div>
-            <p>Time: {time}</p>
-            <p>Length: {length}</p>
-          </div>
+          <p>Time: {time}</p>
+          <p>Length: {length} minutes</p>
         </div>
-      )}
-    </div>
+      </div>
+    )}
+  </div>
   );
 }
 
