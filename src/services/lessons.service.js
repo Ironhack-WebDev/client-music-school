@@ -22,9 +22,9 @@ class LessonsService {
     return this.api.post("/api/lessons", requestBody);
   };
 
-  // GET /api/lessons
-  getAllLessons = () => {
-    return this.api.get("/api/lessons");
+  // GET /api/lessons based on instrument
+  getAllLessons = (instrument) => {
+    return this.api.get(`/api/lessons?instrument=${instrument}`);
   };
 
   // GET /api/lessons/:id

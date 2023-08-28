@@ -51,7 +51,9 @@ function InstrumentDetailsPage(props) {
 
       <h3> Add Lesson </h3>
       <AddLesson instrumentId={instrumentId} allUsers={allUsers} />
-      <LessonList />
+
+
+      <LessonList instrument={instrumentId} />
 
       <Link to={`/instruments/edit/${instrumentId}`}>
         <button>Edit Teacher Details</button>
