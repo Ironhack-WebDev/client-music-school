@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import instrumentsService from "../../services/instruments.service";
-import TeacherCard from "../../components/Instruments/TeacherCard";
-import usersService from "../../services/users.service";
-import { Link } from "react-router-dom";
-import AddLesson from "../../components/lessons/AddLesson";
-import LessonList from "../../components/lessons/LessonList";
+import InstrumentCard from "../../components/Instruments/InstrumentCard";
+import AdminMessage from "../../components/messages/AdminMessage";
 
 function InstrumentDetailsPage(props) {
-  const [allUsers, setAllUsers] = useState("");
   const [instrument, setInstrument] = useState(null);
   const { instrumentId } = useParams();
 
@@ -26,21 +22,11 @@ function InstrumentDetailsPage(props) {
     getInstrument();
   }, []);
 
-  const getAllUsers = () => {
-    usersService
-      .getAllUsers()
-      .then((response) => setAllUsers(response.data))
-      .catch((error) => console.log(error));
-  };
-
-  useEffect(() => {
-    getAllUsers();
-  }, []);
 
   return (
     <div>
       {instrument && (
-        <TeacherCard
+        <InstrumentCard
           instrumentName={instrument.instrumentName}
           teacher={instrument.teacher}
           description={instrument.description}
@@ -48,20 +34,11 @@ function InstrumentDetailsPage(props) {
           imageURL={instrument.imageURL}
         />
       )}
+<p>
+      Contact us for more details or to book a trial lesson </p>
+      <AdminMessage />
 
-      <h3> Add Lesson </h3>
-      <AddLesson instrumentId={instrumentId} allUsers={allUsers} />
 
-
-      <LessonList instrument={instrumentId} />
-
-      <Link to={`/instruments/edit/${instrumentId}`}>
-        <button>Edit Teacher Details</button>
-      </Link>
-
-      <Link to={`/admin`}>
-        <button>Return to admin profile</button>
-      </Link>
     </div>
   );
 }
