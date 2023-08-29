@@ -29,15 +29,20 @@ useEffect(()=> {
         <GroupCard
           title={group.title}
           startTime={group.startTime}
-          endTime={group.endTime} // Make sure to provide endTime, location, leader, and imageURL if available
+          endTime={group.endTime} 
           location={group.location}
           leader={group.leader}
+          day={group.day}
           imageURL={group.imageURL}
         />
       )}
 
       <Link to={`/groups/edit/${groupId}`}>
         <button>Edit Group</button>
+      </Link>
+
+      <Link to={`/admin`}>
+        <button>Return to admin profile</button>
       </Link>
       
 

@@ -3,7 +3,7 @@ import axios from "axios";
 class UsersService {
   constructor() {
     this.api = axios.create({
-      baseURL: "http://localhost:5005",
+      baseURL: "http://localhost:5005", 
     });
 
     this.api.interceptors.request.use((config) => {
@@ -16,6 +16,11 @@ class UsersService {
       return config;
     });
   }
+
+   // GET /api/users/
+   getAllUsers = () => {
+    return this.api.get(`/api/users`);
+  };
 
   // GET /api/users/:userId
   getUser = (userId) => {

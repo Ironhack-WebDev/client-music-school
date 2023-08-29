@@ -8,6 +8,7 @@ function EditGroupPage(props) {
   const [endTime, setEndTime] = useState("");
   const [location, setLocation] = useState("");
   const [leader, setLeader] = useState("");
+  const [day, setDay] = useState("");
   const [imageURL, setImageURL] = useState("");
 
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ function EditGroupPage(props) {
         setEndTime(oneGroup.endTime);
         setLocation(oneGroup.location);
         setLeader(oneGroup.leader);
+        setDay(oneGroup.day);
         setImageURL(oneGroup.imageURL);
       })
       .catch((error) => console.log(error));
@@ -37,6 +39,7 @@ function EditGroupPage(props) {
       endTime,
       location,
       leader,
+      day,
       imageURL,
     };
 
@@ -62,6 +65,13 @@ function EditGroupPage(props) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+         <label>Day</label>
+      <input
+        type="text"
+        name="day"
+        value={day}
+        onChange={(e) => setDay(e.target.value)}
+      />
         <label>Start Time</label>
         <input
           type="text"
