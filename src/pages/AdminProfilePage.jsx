@@ -37,11 +37,6 @@ function AdminProfilePage() {
     getAllInstruments();
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
 
   return (
     <div>
@@ -63,7 +58,7 @@ function AdminProfilePage() {
         <TeacherThumbnail key={instrument._id} {...instrument} />
       ))}
 
-      {loading ? <p>Loading...</p> : <Inbox />}
+<Inbox user = { user} />
     </div>
   );
 }

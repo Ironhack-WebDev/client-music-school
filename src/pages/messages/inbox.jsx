@@ -7,19 +7,19 @@ import useUser from "../../components/useUser";
 function Inbox() {
   const [messages, setMessages] = useState([]);
   const user = useUser()
-  const userId = user._id
 
 
   const getUserMessages = () => {
     messagesService
-      .getUserMessages(userId)
+      .getUserMessages(user._id)
       .then((response) => setMessages(response.data))
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
+    if (user && user._id)
     getUserMessages();
-  }, []);
+  }, [user]);
 
   return (
     <div>
