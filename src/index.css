@@ -1,13 +1,202 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Signika', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Nav Bar */
+.navbar {
+  background-color: #E4CBCB;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 10px 50px;
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 180px; 
+  height: auto; 
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  font-weight: lighter;
+}
+
+.navbar-link {
+  margin-right: 40px;
+  text-decoration: none;
+  color: #694736;
+  position: relative;
+  padding: 15px 0; 
+  border-bottom: 1px solid transparent; 
+}
+
+.navbar-link:hover {
+  border-bottom-color: #694736; 
+}
+
+.navbar-signup {
+  padding: 8px 30px; 
+  background-color: #FAF3EB;
+  text-decoration: none;
+  color: #694736;
+}
+
+.navbar-signup:hover {
+  background-color: #E4CBCB;
+  outline: 1px solid #694736;
+}
+
+/* Hero Section */
+.hero-content {
+  background-image: url('./assets/landing-page2.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  color: #FAF3EB;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-family: 'Merienda', cursive;
+  font-size: 90px;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+/* Section 1 */
+.section1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  text-align: center;
+  background-color: #D6AB95;
+  color: #FAF3EB;
+}
+
+/* Left Column (Image) */
+.section1 .left-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/landing-page3.jpeg');
+  background-size: cover;
+  height: 600px;
+}
+
+/* Right Column (Text) */
+.section1 .right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;   
+  margin: 0 auto;
+  text-align: left;
+}
+
+.section1 .right-column h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: 'Merienda', cursive;
+}
+
+.section1 .right-column p {
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  line-height: 1.5;
+}
+
+.section1 .right-column .subscribe-link {
+  padding: 8px 30px;
+  background-color: #FAF3EB;
+  text-decoration: none;
+  color: #694736;
+}
+
+.section1 .right-column .subscribe-link:hover {
+  background-color: #D6AB95;
+  outline: 1px solid #694736;
+}
+
+/* Section2  */
+.section2-container {
+  background-color: #7B7C5E;
+  padding: 20px; 
+}
+
+.section2-container h2{
+  color: #FAF3EB;
+  font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+.tiles-container {
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  max-width: 1200px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.tile {
+  width: calc(33.33% - 40px);
+  padding: 20px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #7B7C5E; 
+}
+
+.tile img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.tile p {
+  color: #FAF3EB;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* form pages */
+.formPage {
+  background-color: #FAF3EB;
+  color: #694736;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
