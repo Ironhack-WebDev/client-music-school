@@ -5,9 +5,7 @@ import tile3 from '../assets/tile3.jpeg';
 function LandingPage() {
     return (
       <div>
-        <div className="hero-content">
-          <h1>Learn, create and explore!</h1>
-        </div>
+        <div className="hero-content"></div>
         <div className="section1">
           <div className="left-column"></div>
           <div className="right-column">
