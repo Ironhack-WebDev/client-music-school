@@ -15,7 +15,6 @@ function AdminProfilePage() {
   const [loading, setLoading] = useState(true);
   const user = useUser();
 
-
   const getAllGroups = () => {
     groupsService
       .getAllGroups()
@@ -54,8 +53,6 @@ function AdminProfilePage() {
       <h3> Add Teacher </h3>
       <AddInstrument />
 
-
-
       <h3> Groups </h3>
       {groups.map((group) => (
         <GroupThumbnail key={group._id} {...group} />
@@ -66,9 +63,7 @@ function AdminProfilePage() {
         <TeacherThumbnail key={instrument._id} {...instrument} />
       ))}
 
-      {loading ? (
-        <p>Loading...</p>
-      ) : ( <Inbox /> )}
+      {loading ? <p>Loading...</p> : <Inbox />}
     </div>
   );
 }
