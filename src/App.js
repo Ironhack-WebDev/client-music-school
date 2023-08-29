@@ -10,8 +10,8 @@ import Error from "./pages/Error";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import UserProfilePage from "./pages/UserProfilePage";
-//general pages
+import UserPage from "./pages/UserPage";
+import EditUserPage from  "./pages/EditUserPage"
 import ContactPage from "./pages/general/ContactPage";
 
 //group pages
@@ -36,7 +36,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/userProfile" element={<UserProfilePage />} />
+        <Route path="/user/:userId" element={<UserPage />} />
+        <Route path="/user/edit/:userId" element={<EditUserPage />} />
         <Route path="/admin" element={<AdminProfilePage />} />
 
         <Route path="/timetable" element={<GroupTimetablePage />} />

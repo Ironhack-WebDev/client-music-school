@@ -28,8 +28,8 @@ class UsersService {
   };
 
   // PUT /api/users/:userid
-  updateUser = (userid, requestBody) => {
-    return this.api.put(`/api/users/${userid}`, requestBody);
+  updateUser = (userId, requestBody) => {
+    return this.api.put(`/api/users/${userId}`, requestBody);
   };
 
   // GET /api/users/:userId/groups

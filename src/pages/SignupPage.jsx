@@ -30,7 +30,7 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="SignupPage">
+    <div className="formPage">
       <h3>Sign Up</h3>
 
       <form onSubmit={handleSignupSubmit}>
