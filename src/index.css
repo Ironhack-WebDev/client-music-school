@@ -62,7 +62,7 @@ body {
   background-image: url('./assets/landing-page2.png');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 600px;
   color: #FAF3EB;
   display: flex;
   align-items: center;
