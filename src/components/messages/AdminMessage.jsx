@@ -32,8 +32,9 @@ function AdminMessage() {
   };
 
   return (
-    <div>
+    <div className="formPage">
       <form onSubmit={handleSubmit}>
+      <div>
         <label>Title</label>
         <input
           type="text"
@@ -41,6 +42,8 @@ function AdminMessage() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+        </div>
+      <div>
         <label>Message</label>
         <input
           type="text"
@@ -49,6 +52,7 @@ function AdminMessage() {
           onChange={(e) => setMessage(e.target.value)}
         />
         <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );

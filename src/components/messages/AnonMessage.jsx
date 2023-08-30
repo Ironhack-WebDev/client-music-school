@@ -32,37 +32,45 @@ function AdminMessage() {
   };
 
   return (
-    <div>
+    <div className="formPage">
       <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input
-          type="text"
-          name="senderName"
-          value={senderName}
-          onChange={(e) => setSenderName(e.target.value)}
-        />
-        <label>Email Address</label>
-        <input
-          type="text"
-          name="senderEmail"
-          value={senderEmail}
-          onChange={(e) => setSenderEmail(e.target.value)}
-        />
-        <label>Title</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <label>Message</label>
-        <input
-          type="text"
-          name="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button type="submit">Submit</button>
+        <div>
+          <label>Name</label>
+          <input
+            type="text"
+            name="senderName"
+            value={senderName}
+            onChange={(e) => setSenderName(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Email Address</label>
+          <input
+            type="text"
+            name="senderEmail"
+            value={senderEmail}
+            onChange={(e) => setSenderEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Title</label>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Message</label>
+          <input
+            type="text"
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );

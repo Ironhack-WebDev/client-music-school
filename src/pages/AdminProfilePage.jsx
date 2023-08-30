@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import GroupThumbnail from "../components/Groups/GroupThumbnail";
 import TeacherThumbnail from "../components/Instruments/TeacherThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
-import AddInstrument from "../components/Instruments/AddInstrument";
+import AddTeacher from "../components/Instruments/AddTeacher";
 
 import groupsService from "../services/groups.service";
 import instrumentsService from "../services/instruments.service";
@@ -42,11 +42,9 @@ function AdminProfilePage() {
     <div>
       {user ? <h1>Welcome, {user.name}!</h1> : <p>Please log in.</p>}
 
-      <h3> Add Group </h3>
       <AddGroup refreshGroups={getAllGroups} />
 
-      <h3> Add Teacher </h3>
-      <AddInstrument />
+      <AddTeacher />
 
       <h3> Groups </h3>
       {groups.map((group) => (

@@ -52,8 +52,9 @@ function EditInstrumentPage(props) {
   };
 
   return (
-    <div>
+    <div className="formPage">
       <form onSubmit={handleSubmit}>
+      <div>
         <label>Title</label>
         <input
           type="text"
@@ -61,6 +62,8 @@ function EditInstrumentPage(props) {
           value={instrumentName}
           onChange={(e) => setInstrumentName(e.target.value)}
         />
+         </div>
+      <div>
         <label>Teacher</label>
         <input
           type="text"
@@ -68,6 +71,8 @@ function EditInstrumentPage(props) {
           value={teacher}
           onChange={(e) => setTeacher(e.target.value)}
         />
+         </div>
+      <div>
         <label>Description</label>
         <input
           type="text"
@@ -75,6 +80,8 @@ function EditInstrumentPage(props) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
+         </div>
+      <div>
         <label>Location</label>
         <input
           type="text"
@@ -82,6 +89,8 @@ function EditInstrumentPage(props) {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
+         </div>
+      <div>
         <label>Image</label>
         <input
           type="text"
@@ -89,8 +98,13 @@ function EditInstrumentPage(props) {
           value={imageURL}
           onChange={(e) => setImageURL(e.target.value)}
         />
+         </div>
+      <div>
         <button type="submit">Submit</button>
+        </div>
+      <div>
         <button onClick={deleteInstrument}>Delete Instrument</button>
+        </div>
       </form>
     </div>
   );

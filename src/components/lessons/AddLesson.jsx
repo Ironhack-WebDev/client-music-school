@@ -36,11 +36,12 @@ function AddLesson({ instrumentId, allUsers }) {
   }, []);
 
   return (
-    <div>
+    <div className="formPage">
       {loading ? (
         <p>Loading...</p>
       ) : (
         <form onSubmit={handleSubmit}>
+      <div>
           <label>Student</label>
           <select
             name="user"
@@ -54,6 +55,8 @@ function AddLesson({ instrumentId, allUsers }) {
               </option>
             ))}
           </select>
+          </div>
+      <div>
           <label>Time</label>
           <input
             type="text"
@@ -61,6 +64,8 @@ function AddLesson({ instrumentId, allUsers }) {
             value={time}
             onChange={(e) => setTime(e.target.value)}
           />
+          </div>
+      <div>
           <label>Length</label>
           <input
             type="text"
@@ -68,7 +73,10 @@ function AddLesson({ instrumentId, allUsers }) {
             value={length}
             onChange={(e) => setLength(e.target.value)}
           />
+          </div>
+      <div>
           <button type="submit">Submit</button>
+          </div>
         </form>
       )}
     </div>
