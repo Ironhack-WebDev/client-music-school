@@ -46,6 +46,12 @@ class UsersService {
   getUserMessages = (userId) => {
     return this.api.get(`/api/users/${userId}/messages`);
   };
+
+  // GET /api/admin
+
+  getAdminUser = (userId) => {
+    return this.api.get(`/api/admin?userId=${userId}`)
+  };
 }
 
 const usersService = new UsersService();
