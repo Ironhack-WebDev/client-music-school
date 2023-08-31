@@ -25,6 +25,7 @@ import StandardMessage from "./components/messages/AdminMessage";
 //instrument pages
 import InstrumentListPage from "./pages/instruments/InstrumentListPage"
 import InstrumentDetailsPage from "./pages/instruments/InstrumentDetailsPage"
+import TeacherDetailsPage from "./pages/instruments/TeacherDetailsPage"
 import EditInstrumentPage from "./pages/instruments/EditInstrumentPage";
 //lesson pages
 import LessonDetailsPage from "./pages/lessons/LessonDetailsPage"
@@ -36,7 +37,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/user/:userId" element={<UserPage />} />
+        <Route path="/user" element={<UserPage />} />
         <Route path="/user/edit/:userId" element={<EditUserPage />} />
         <Route path="/admin" element={<AdminProfilePage />} />
 
@@ -48,7 +49,7 @@ function App() {
         <Route path="/tuition" element={<InstrumentListPage />} />
         <Route path="/instruments/:instrumentId" element={<InstrumentDetailsPage />} />
         <Route path="/instruments/edit/:instrumentId" element={<EditInstrumentPage />} />
-        <Route path="/teacher/:instrumentId" element={<InstrumentDetailsPage />} />
+        <Route path="/teacher/:instrumentId" element={<TeacherDetailsPage />} />
 
 
         <Route path="/lessons/:lessonId" element={<LessonDetailsPage />} />

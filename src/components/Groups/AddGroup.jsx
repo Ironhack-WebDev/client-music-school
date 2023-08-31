@@ -41,8 +41,10 @@ function AddGroup(props) {
 
 
   return (
-    <div>
+    <div className="formPage">
+    <h3>Add Group</h3>
     <form onSubmit={handleSubmit}>
+    <div>
       <label>Title</label>
       <input
         type="text"
@@ -50,6 +52,8 @@ function AddGroup(props) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+      </div>
+      <div>
       <label>Day</label>
       <input
         type="text"
@@ -57,6 +61,8 @@ function AddGroup(props) {
         value={day}
         onChange={(e) => setDay(e.target.value)}
       />
+       </div>
+      <div>
       <label>Start Time</label>
       <input
         type="text"
@@ -64,6 +70,8 @@ function AddGroup(props) {
         value={startTime}
         onChange={(e) => setStartTime(e.target.value)}
       />
+       </div>
+      <div>
       <label>End Time</label>
       <input
         type="text"
@@ -71,6 +79,8 @@ function AddGroup(props) {
         value={endTime}
         onChange={(e) => setEndTime(e.target.value)}
       />
+       </div>
+      <div>
       <label>Location</label>
       <input
         type="text"
@@ -78,6 +88,8 @@ function AddGroup(props) {
         value={location}
         onChange={(e) => setLocation(e.target.value)}
       />
+       </div>
+      <div>
       <label>Leader</label>
       <input
         type="text"
@@ -85,6 +97,8 @@ function AddGroup(props) {
         value={leader}
         onChange={(e) => setLeader(e.target.value)}
       />
+       </div>
+      <div>
       <label>Group Image URL</label>
       <input
         type="text"
@@ -92,6 +106,7 @@ function AddGroup(props) {
         value={imageURL}
         onChange={(e) => setImageURL(e.target.value)}
       />
+      </div>
       <button type="submit">Submit</button>
     </form>
   </div>
