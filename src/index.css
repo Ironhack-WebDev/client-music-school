@@ -181,8 +181,8 @@ body {
 
 
 .section3 img {
-  width: 100%; /* Make the image span the full width */
-  height: auto; /* Maintain the aspect ratio */
+  width: 100%; 
+  height: auto; 
 }
 
 
