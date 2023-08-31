@@ -7,21 +7,24 @@ import usersService from "../services/users.service";
 
 function IsAdmin({ children }) {
   const { isLoggedIn, isLoading } = useContext(AuthContext);
+  const user = "64e6f95077d9c7530374f1a7"
   const navigate = useNavigate();
-  const user = useUser();
+
   const [adminUser, setAdminUser] = useState([]);
+
 
   const getAdminUser = () => {
     usersService
-    .getAdminUser(user._id)
+    .getAdminUser(user)
     .then((response) => setAdminUser(response.data))
     .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    if (user && user._id)
-    getAdminUser();
-  }, [user]);
+       getAdminUser();
+  }, []);
+
+  console.log ("AdminUser",adminUser)
 
   console.log(isLoggedIn, "is logged in");
 
@@ -31,7 +34,7 @@ function IsAdmin({ children }) {
   if (!isLoggedIn) {
     // If the user is not logged in ❌
     return navigate("/login");
-  } else if (isLoggedIn) {
+  } else if (isLoggedIn && adminUser.isAdmin) {
     // If the user is logged in and an Admin, allow to see the page ✅
     return children;
   }

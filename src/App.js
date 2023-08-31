@@ -8,6 +8,8 @@ import NavBar from "./components/NavBar";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import IsAdmin from "./components/IsAdmin";
+import IsPrivate from "./components/IsPrivate";
+import IsAnon from "./components/IsAnon";
 
 //pages
 import AdminProfilePage from "./pages/AdminProfilePage";
@@ -40,31 +42,31 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/user" element={<UserPage />} />
-        <Route path="/user/edit/:userId" element={<EditUserPage />} />
+        <Route path="/user" element={<IsPrivate><UserPage /></IsPrivate>} />
+        <Route path="/user/edit/:userId" element={<IsPrivate><EditUserPage /></IsPrivate>} />
         <Route path="/admin" element={<IsAdmin> <AdminProfilePage /> </IsAdmin>} />
 
         <Route path="/timetable" element={<GroupTimetablePage />} />
         <Route path="/groups" element={<GroupListPage />} />
         <Route path="/groups/:groupId" element={<GroupDetailsPage />} />
-        <Route path="/groups/edit/:groupId" element={<EditGroupPage />} />
+        <Route path="/groups/edit/:groupId" element={<IsAdmin><EditGroupPage /></IsAdmin>} />
 
         <Route path="/tuition" element={<InstrumentListPage />} />
         <Route path="/instruments/:instrumentId" element={<InstrumentDetailsPage />} />
-        <Route path="/instruments/edit/:instrumentId" element={<EditInstrumentPage />} />
-        <Route path="/teacher/:instrumentId" element={<TeacherDetailsPage />} />
+        <Route path="/instruments/edit/:instrumentId" element={<IsAdmin><EditInstrumentPage /></IsAdmin>} />
+        <Route path="/teacher/:instrumentId" element={<IsAdmin><TeacherDetailsPage /></IsAdmin>} />
 
 
-        <Route path="/lessons/:lessonId" element={<LessonDetailsPage />} />
-        <Route path="/lessons/edit/:lessonId" element={<EditLessonPage />} />
+        <Route path="/lessons/:lessonId" element={<IsAdmin><LessonDetailsPage /></IsAdmin>} />
+        <Route path="/lessons/edit/:lessonId" element={<IsAdmin><EditLessonPage /></IsAdmin>} />
 
         <Route path="/messages" element={<StandardMessage />} />
         <Route path="/messages/:messageId" element={<MessageDetailsPage />} />
 
         <Route path="/contact" element={<ContactPage />} />
         
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<isAnon><SignupPage /></isAnon>} />
+        <Route path="/login" element={<isAnon><LoginPage /></isAnon>} />
 
         <Route path="/error" element={<Error />} />
       </Routes>
