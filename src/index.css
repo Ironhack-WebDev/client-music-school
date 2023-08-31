@@ -1,17 +1,17 @@
 body {
   margin: 0;
-  font-family: 'Signika', sans-serif;
+  font-family: "Signika", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Nav Bar */
 .navbar {
-  background-color: #E4CBCB;
+  background-color: #e4cbcb;
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   padding: 10px 50px;
   /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
 }
@@ -22,8 +22,8 @@ body {
 }
 
 .logo-image {
-  width: 180px; 
-  height: auto; 
+  width: 180px;
+  height: auto;
 }
 
 .navbar-links {
@@ -37,23 +37,23 @@ body {
   text-decoration: none;
   color: #694736;
   position: relative;
-  padding: 15px 0; 
-  border-bottom: 1px solid transparent; 
+  padding: 15px 0;
+  border-bottom: 1px solid transparent;
 }
 
 .navbar-link:hover {
-  border-bottom-color: #694736; 
+  border-bottom-color: #694736;
 }
 
-.navbar-signup {
-  padding: 8px 30px; 
-  background-color: #FAF3EB;
+.navbar-signup, form button, button {
+  padding: 8px 30px;
+  background-color: #faf3eb;
   text-decoration: none;
   color: #694736;
 }
 
 .navbar-signup:hover {
-  background-color: #E4CBCB;
+  background-color: #e4cbcb;
   outline: 1px solid #694736;
 }
 
@@ -66,17 +66,17 @@ body {
   color: #FAF3EB;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   text-align: center;
 }
 
 /* Section 1 */
 .section1 {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
   text-align: center;
-  background-color: #D6AB95;
-  color: #FAF3EB;
+  background-color: #d6ab95;
+  color: #faf3eb;
 }
 
 /* Left Column (Image) */
@@ -84,7 +84,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('./assets/landing-page3.jpeg');
+  background-image: url("./assets/landing-page3.jpeg");
   background-size: cover;
   height: 600px;
 }
@@ -99,7 +99,6 @@ body {
   margin: 0 auto;
   text-align: left;
 }
-
 
 .section1 .right-column p {
   font-size: 25px;
@@ -119,7 +118,7 @@ body {
 }
 
 .section1 .right-column .subscribe-link:hover {
-  background-color: #D6AB95;
+  background-color: #d6ab95;
   outline: 1px solid #694736;
 }
 
@@ -146,8 +145,8 @@ body {
 
 .tiles-container {
   display: flex;
-  justify-content: center; 
-  align-items: flex-start; 
+  justify-content: center;
+  align-items: flex-start;
   max-width: 1200px;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -173,28 +172,20 @@ body {
 }
 
 .tile p {
-  color: #FAF3EB;
+  color: #faf3eb;
   font-size: 18px;
   line-height: 1.5;
   font-weight: lighter;
 }
-
 
 .section3 img {
   width: 100%; 
   height: auto; 
 }
 
-
-
-
-
-
-
-
 /* form pages */
 .formPage {
-  background-color: #FAF3EB;
+  background-color: #faf3eb;
   color: #694736;
   display: flex;
   flex-direction: column;

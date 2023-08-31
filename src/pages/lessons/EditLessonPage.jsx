@@ -66,11 +66,12 @@ function EditLessonPage() {
   };
 
   return (
-    <div>
+    <div className="formPage">
     {loading ? (
         <p>Loading...</p>
       ) : (
     <form onSubmit={handleSubmit}>
+    <div>
       <label>Student</label>
           <select
             name="user"
@@ -84,6 +85,8 @@ function EditLessonPage() {
               </option>
             ))}
           </select>
+          </div>
+      <div>
       <label>Time</label>
       <input
         type="text"
@@ -91,6 +94,8 @@ function EditLessonPage() {
         value={time}
         onChange={(e) => setTime(e.target.value)}
       />
+      </div>
+      <div>
       <label>Length</label>
       <input
         type="text"
@@ -98,8 +103,13 @@ function EditLessonPage() {
         value={length}
         onChange={(e) => setLength(e.target.value)}
       />
+      </div>
+      <div>
         <button type="submit">Submit</button>
+        </div>
+      <div>
         <button onClick={deleteLesson}>Delete Lesson</button>
+        </div>
       </form>
       )}
     </div>

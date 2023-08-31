@@ -13,11 +13,11 @@ function Reply(props) {
     const requestBody = {
       title,
       message,
-      sender: user._id, 
-      recipient: props.from
+      sender: user._id,
+      recipient: props.from,
     };
 
-    console.log (requestBody)
+    console.log(requestBody);
 
     messagesService
       .createMessage(requestBody)
@@ -29,23 +29,27 @@ function Reply(props) {
   };
 
   return (
-    <div>
+    <div className="formPage">
       <form onSubmit={handleSubmit}>
-        <label>Title</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <label>Message</label>
-        <input
-          type="text"
-          name="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button type="submit">Submit</button>
+        <div>
+          <label>Title</label>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Message</label>
+          <input
+            type="text"
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );

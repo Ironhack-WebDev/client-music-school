@@ -32,8 +32,11 @@ function AddInstrument(props) {
       .catch((error) => console.log(error));
   };
 
-  return <div>
+  return (
+    <div className="formPage">
+    <h3>Add Teacher</h3>
     <form onSubmit={handleSubmit}>
+    <div>
     <label>Teacher</label>
       <input
         type="text"
@@ -41,6 +44,8 @@ function AddInstrument(props) {
         value={teacher}
         onChange={(e) => setTeacher(e.target.value)}
       />
+       </div>
+      <div>
       <label>Instrument</label>
       <input
         type="text"
@@ -48,6 +53,8 @@ function AddInstrument(props) {
         value={instrumentName}
         onChange={(e) => setInstrumentName(e.target.value)}
       />
+      </div>
+      <div>
     <label>Notes</label>
       <input
         type="text"
@@ -55,6 +62,8 @@ function AddInstrument(props) {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
+      </div>
+      <div>
       <label>Location</label>
       <input
         type="text"
@@ -62,6 +71,8 @@ function AddInstrument(props) {
         value={location}
         onChange={(e) => setLocation(e.target.value)}
       />
+      </div>
+      <div>
       <label>Instrument Image URL</label>
       <input
         type="text"
@@ -69,9 +80,13 @@ function AddInstrument(props) {
         value={imageURL}
         onChange={(e) => setImageURL(e.target.value)}
       />
+      </div>
+      <div>
       <button type="submit">Submit</button>
+      </div>
     </form>
-  </div>;
+  </div>
+  );
 }
 
 export default AddInstrument;
