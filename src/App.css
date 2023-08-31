@@ -19,11 +19,11 @@
   width: 80%;
   height: auto;
   min-height: 400px;
-  background: #053742;
+  background: #694736;
   margin: 3.5rem auto 1.5rem;
   padding: 2rem 1rem;
   color: #E8F0F2;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
  
 .react-tabs {
@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #39A2DB;
+  border: 1px solid #e4cbcb;
   border-radius: 2rem;
   padding-left: 0px;
 }
@@ -51,7 +51,7 @@
 }
  
 .react-tabs__tab--selected {
-  background: #39A2DB;
+  background: #896b5c;
 }
  
 .react-tabs__tab--disabled {
