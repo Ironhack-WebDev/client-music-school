@@ -12,7 +12,6 @@ import Inbox from "./messages/inbox";
 function AdminProfilePage() {
   const [groups, setGroups] = useState([]);
   const [instruments, setInstruments] = useState([]);
-  const [loading, setLoading] = useState(true);
   const user = useUser();
 
   const getAllGroups = () => {
@@ -56,7 +55,7 @@ function AdminProfilePage() {
         <TeacherThumbnail key={instrument._id} {...instrument} />
       ))}
 
-<Inbox user = { user} />
+<Inbox />
     </div>
   );
 }

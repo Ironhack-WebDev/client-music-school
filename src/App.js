@@ -37,6 +37,7 @@ import LessonDetailsPage from "./pages/lessons/LessonDetailsPage"
 import EditLessonPage from "./pages/lessons/EditLessonPage";
 
 function App() {
+
   return (
     <div>
       <NavBar />
@@ -65,8 +66,8 @@ function App() {
 
         <Route path="/contact" element={<ContactPage />} />
         
-        <Route path="/signup" element={<isAnon><SignupPage /></isAnon>} />
-        <Route path="/login" element={<isAnon><LoginPage /></isAnon>} />
+        <Route path="/signup" element={<IsAnon><SignupPage /></IsAnon>} />
+        <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
 
         <Route path="/error" element={<Error />} />
       </Routes>
