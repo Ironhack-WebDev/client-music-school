@@ -5,6 +5,7 @@ import Tuesday from "../../components/Groups/Tabs/Tuesday";
 import Wednesday from "../../components/Groups/Tabs/Wednesday";
 import Thursday from "../../components/Groups/Tabs/Thursday";
 import Friday from "../../components/Groups/Tabs/Friday";
+import header from "../../assets/timetable-header.jpeg";
 
 import groupsService from "../../services/groups.service";
 
@@ -25,13 +26,17 @@ const TabContainer = ({ day, setDay }) => {
 
   return (
     <div className="App">
+      <div className="timetableHeader">
+          <img src={header} alt="Timetable Header" className="header-image" />
+          <p>Welcome to our music school's weekly timetable! Explore the schedule below to find your favorite music groups and classes for each day of the week.</p>
+      </div>
       <Tabs className="Tabs">
         <TabList>
-          <Tab>Monday</Tab>
-          <Tab>Tuesday</Tab>
-          <Tab>Wednesday</Tab>
-          <Tab>Thursday</Tab>
-          <Tab>Friday</Tab>
+          <Tab>MONDAY</Tab>
+          <Tab>TUESDAY</Tab>
+          <Tab>WEDNESDAY</Tab>
+          <Tab>THURSDAY</Tab>
+          <Tab>FRIDAY</Tab>
         </TabList>
         <TabPanel>
           <Monday />
@@ -49,7 +54,7 @@ const TabContainer = ({ day, setDay }) => {
           <Friday />
         </TabPanel>
       </Tabs>
-    </div>
+      </div>
   );
 };
 

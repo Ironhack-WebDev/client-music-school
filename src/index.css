@@ -59,22 +59,15 @@ body {
 
 /* Hero Section */
 .hero-content {
-  background-image: url("./assets/landing-page2.jpeg");
+  background-image: url('./assets/landing-page2.png');
   background-size: cover;
   background-position: center;
-  height: 500px;
-  color: #faf3eb;
+  height: 600px;
+  color: #FAF3EB;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.hero-content h1 {
-  font-family: "Merienda", cursive;
-  font-size: 90px;
-  margin-bottom: 20px;
-  max-width: 600px;
 }
 
 /* Section 1 */
@@ -102,15 +95,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 500px;
+  max-width: 400px;   
   margin: 0 auto;
   text-align: left;
-}
-
-.section1 .right-column h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-  font-family: "Merienda", cursive;
 }
 
 .section1 .right-column p {
@@ -121,10 +108,13 @@ body {
 }
 
 .section1 .right-column .subscribe-link {
+  font-size: 18px;
   padding: 8px 30px;
-  background-color: #faf3eb;
+  margin-top: 40px;
+  background-color: #FAF3EB;
   text-decoration: none;
   color: #694736;
+  font-weight: lighter;
 }
 
 .section1 .right-column .subscribe-link:hover {
@@ -134,16 +124,23 @@ body {
 
 /* Section2  */
 .section2-container {
-  background-color: #7b7c5e;
-  padding: 20px;
+  background-color: #807C5E;
+  padding: 20px 10px;
+  text-align: center;
 }
 
-.section2-container h2 {
-  color: #faf3eb;
-  font-size: 40px;
-  font-weight: lighter;
+.section2-container img {
+  height: 100px; 
+}
+
+.section2-container h2{
+  color: #FAF3EB;
+  font-size: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  text-align: center;
+  font-weight: lighter;
+  text-align: left; 
+  font-weight: lighter;
 }
 
 .tiles-container {
@@ -157,13 +154,13 @@ body {
 
 .tile {
   width: calc(33.33% - 40px);
-  padding: 20px;
-  text-align: center;
+  margin: 20px;
+  text-align: left;
   background-size: cover;
   background-position: center;
   position: relative;
   margin-bottom: 20px;
-  background-color: #7b7c5e;
+  background-color: #807C5E; 
 }
 
 .tile img {
@@ -179,6 +176,11 @@ body {
   font-size: 18px;
   line-height: 1.5;
   font-weight: lighter;
+}
+
+.section3 img {
+  width: 100%; 
+  height: auto; 
 }
 
 /* form pages */
