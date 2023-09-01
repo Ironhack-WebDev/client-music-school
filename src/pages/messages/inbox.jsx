@@ -19,6 +19,7 @@ function Inbox() {
   useEffect(() => {
     if (user && user._id)
     getUserMessages();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return (

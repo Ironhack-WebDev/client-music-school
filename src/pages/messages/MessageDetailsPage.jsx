@@ -22,6 +22,7 @@ function GroupDetailsPage(props) {
 
   useEffect(() => {
     getMessage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const deleteMessage = () => {
@@ -33,21 +34,29 @@ function GroupDetailsPage(props) {
 
   return (
     <div>
-    {message ? (
-      <div>
-  <MessageCard
-    title={message.title}
-    message={message.message}
-    sender={message.sender ? message.sender.name : message.senderName || "Unknown Sender"}
-    email={message.sender ? message.sender.email : message.senderEmail || "No Email"}
-  />
-  <Reply from={message.sender} />
-</div>
-    ) : (
-      <p>Loading...</p>
-    )}
-    <button onClick={deleteMessage}>Delete Message</button>
-  </div>
+      {message ? (
+        <div>
+          <MessageCard
+            title={message.title}
+            message={message.message}
+            sender={
+              message.sender
+                ? message.sender.name
+                : message.senderName || "Unknown Sender"
+            }
+            email={
+              message.sender
+                ? message.sender.email
+                : message.senderEmail || "No Email"
+            }
+          />
+          <Reply from={message.sender} />
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
+      <button onClick={deleteMessage}>Delete Message</button>
+    </div>
   );
 }
 
