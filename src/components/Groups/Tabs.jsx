@@ -10,7 +10,7 @@ import header from "../../assets/timetable-header.jpeg";
 import groupsService from "../../services/groups.service";
 
 const TabContainer = ({ day, setDay }) => {
-  const [groups, setGroups] = useState([]);
+  const [setGroups] = useState([]);
 
   const getAllGroups = () => {
     groupsService
@@ -21,6 +21,7 @@ const TabContainer = ({ day, setDay }) => {
 
   useEffect(() => {
     getAllGroups();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 

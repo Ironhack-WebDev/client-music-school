@@ -24,6 +24,7 @@ function TeacherDetailsPage(props) {
 
   useEffect(() => {
     getInstrument();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getAllUsers = () => {
@@ -35,6 +36,7 @@ function TeacherDetailsPage(props) {
 
   useEffect(() => {
     getAllUsers();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

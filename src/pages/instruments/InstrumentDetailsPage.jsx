@@ -20,6 +20,7 @@ function InstrumentDetailsPage(props) {
 
   useEffect(() => {
     getInstrument();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 

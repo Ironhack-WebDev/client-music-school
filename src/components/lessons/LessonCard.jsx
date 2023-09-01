@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function LessonCard({ user, time, length, _id }) {
   const [userDetails, setUserDetails] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [setLoading] = useState(true);
   console.log(user)
 
   const getUser = () => {
@@ -19,6 +19,7 @@ function LessonCard({ user, time, length, _id }) {
 
   useEffect(() => {
     getUser();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
 
@@ -26,7 +27,7 @@ function LessonCard({ user, time, length, _id }) {
     setTimeout(() => {
       setLoading(false); 
     }, 2000);
-  }, []); 
+  }); 
 
   return (
     <div>

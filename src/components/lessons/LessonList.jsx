@@ -15,6 +15,7 @@ function LessonListPage({instrument}) {
 
   useEffect(() => {
     getAllLessons();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log("Lessons:", lessons)
