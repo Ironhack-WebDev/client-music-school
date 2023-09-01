@@ -2,12 +2,13 @@ import groupsService from "../../services/groups.service";
 import { useState } from "react";
 
 
-function AddGroup() {
+function AddGroup(props) {
   const [title, setTitle] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [location, setLocation] = useState("");
   const [leader, setLeader] = useState("");
+  const [day, setDay] = useState("");
   const [imageURL, setImageURL] = useState("");
 
   const handleSubmit = (e) => {
@@ -19,6 +20,7 @@ function AddGroup() {
       endTime,
       location,
       leader,
+      day,
       imageURL,
     };
 
@@ -30,15 +32,19 @@ function AddGroup() {
         setEndTime("");
         setLocation("");
         setLeader("");
+        setDay("");
         setImageURL("");
+        PaymentResponse.refreshGroups();
       })
       .catch((error) => console.log(error));
   };
 
 
   return (
-    <div>
+    <div className="formPage">
+    <h3>Add Group</h3>
     <form onSubmit={handleSubmit}>
+    <div>
       <label>Title</label>
       <input
         type="text"
@@ -46,6 +52,17 @@ function AddGroup() {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+      </div>
+      <div>
+      <label>Day</label>
+      <input
+        type="text"
+        name="day"
+        value={day}
+        onChange={(e) => setDay(e.target.value)}
+      />
+       </div>
+      <div>
       <label>Start Time</label>
       <input
         type="text"
@@ -53,6 +70,8 @@ function AddGroup() {
         value={startTime}
         onChange={(e) => setStartTime(e.target.value)}
       />
+       </div>
+      <div>
       <label>End Time</label>
       <input
         type="text"
@@ -60,6 +79,8 @@ function AddGroup() {
         value={endTime}
         onChange={(e) => setEndTime(e.target.value)}
       />
+       </div>
+      <div>
       <label>Location</label>
       <input
         type="text"
@@ -67,6 +88,8 @@ function AddGroup() {
         value={location}
         onChange={(e) => setLocation(e.target.value)}
       />
+       </div>
+      <div>
       <label>Leader</label>
       <input
         type="text"
@@ -74,13 +97,16 @@ function AddGroup() {
         value={leader}
         onChange={(e) => setLeader(e.target.value)}
       />
-      <label>Image</label>
+       </div>
+      <div>
+      <label>Group Image URL</label>
       <input
         type="text"
         name="imageURL"
         value={imageURL}
         onChange={(e) => setImageURL(e.target.value)}
       />
+      </div>
       <button type="submit">Submit</button>
     </form>
   </div>

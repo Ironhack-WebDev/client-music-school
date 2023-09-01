@@ -8,6 +8,7 @@ function EditGroupPage(props) {
   const [endTime, setEndTime] = useState("");
   const [location, setLocation] = useState("");
   const [leader, setLeader] = useState("");
+  const [day, setDay] = useState("");
   const [imageURL, setImageURL] = useState("");
 
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ function EditGroupPage(props) {
         setEndTime(oneGroup.endTime);
         setLocation(oneGroup.location);
         setLeader(oneGroup.leader);
+        setDay(oneGroup.day);
         setImageURL(oneGroup.imageURL);
       })
       .catch((error) => console.log(error));
@@ -37,6 +39,7 @@ function EditGroupPage(props) {
       endTime,
       location,
       leader,
+      day,
       imageURL,
     };
 
@@ -53,52 +56,77 @@ function EditGroupPage(props) {
   };
 
   return (
-    <div>
+    <div className="formPage">
       <form onSubmit={handleSubmit}>
-        <label>Title</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <label>Start Time</label>
-        <input
-          type="text"
-          name="startTime"
-          value={startTime}
-          onChange={(e) => setStartTime(e.target.value)}
-        />
-        <label>End Time</label>
-        <input
-          type="text"
-          name="endTime"
-          value={endTime}
-          onChange={(e) => setEndTime(e.target.value)}
-        />
-        <label>Location</label>
-        <input
-          type="text"
-          name="location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-        />
-        <label>Leader</label>
-        <input
-          type="text"
-          name="leader"
-          value={leader}
-          onChange={(e) => setLeader(e.target.value)}
-        />
-        <label>Image</label>
-        <input
-          type="text"
-          name="imageURL"
-          value={imageURL}
-          onChange={(e) => setImageURL(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-        <button onClick={deleteGroup}>Delete Group</button>
+        <div>
+          <label>Title</label>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Day</label>
+          <input
+            type="text"
+            name="day"
+            value={day}
+            onChange={(e) => setDay(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Start Time</label>
+          <input
+            type="text"
+            name="startTime"
+            value={startTime}
+            onChange={(e) => setStartTime(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>End Time</label>
+          <input
+            type="text"
+            name="endTime"
+            value={endTime}
+            onChange={(e) => setEndTime(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Location</label>
+          <input
+            type="text"
+            name="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Leader</label>
+          <input
+            type="text"
+            name="leader"
+            value={leader}
+            onChange={(e) => setLeader(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Image</label>
+          <input
+            type="text"
+            name="imageURL"
+            value={imageURL}
+            onChange={(e) => setImageURL(e.target.value)}
+          />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+        <div>
+          <button onClick={deleteGroup}>Delete Group</button>
+        </div>
       </form>
     </div>
   );

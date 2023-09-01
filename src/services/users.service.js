@@ -3,7 +3,7 @@ import axios from "axios";
 class UsersService {
   constructor() {
     this.api = axios.create({
-      baseURL: "http://localhost:5005",
+      baseURL: "http://localhost:5005", 
     });
 
     this.api.interceptors.request.use((config) => {
@@ -17,29 +17,40 @@ class UsersService {
     });
   }
 
+   // GET /api/users/
+   getAllUsers = () => {
+    return this.api.get(`/api/users`);
+  };
+
   // GET /api/users/:userId
-  getUser = (id) => {
-    return this.api.get(`/api/users/${id}`);
+  getUser = (userId) => {
+    return this.api.get(`/api/users/${userId}`);
   };
 
-  // PUT /api/users/:id
-  updateUser = (id, requestBody) => {
-    return this.api.put(`/api/users/${id}`, requestBody);
-  };
-
-  // GET /api/users/:userId/lessons
-  getUserLessons = (userId) => {
-    return this.api.get("/api/users/:userId/lessons");
+  // PUT /api/users/:userid
+  updateUser = (userId, requestBody) => {
+    return this.api.put(`/api/users/${userId}`, requestBody);
   };
 
   // GET /api/users/:userId/groups
   getUserGroups = (userId) => {
-    return this.api.get("/api/users/:userId/groups");
+    return this.api.get(`/api/users/${userId}/groups`);
   };
+
+  // POST /api/groups/:groupId
+  addUserToGroup = (groupId) => {
+    return this.api.post(`/api/groups/${groupId}`)
+  }
 
   // GET /api/users/:userId/messages
   getUserMessages = (userId) => {
-    return this.api.get("/api/users/:userId/messages");
+    return this.api.get(`/api/users/${userId}/messages`);
+  };
+
+  // GET /api/admin
+
+  getAdminUser = (userId) => {
+    return this.api.get(`/api/admin?userId=${userId}`)
   };
 }
 

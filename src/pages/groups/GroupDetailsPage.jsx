@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import groupsService from "../../services/groups.service";
+import GroupCard from "../../components/Groups/GroupCard";
+import { Link } from "react-router-dom";
 
 
 function GroupDetailsPage(props) {
@@ -23,12 +25,27 @@ useEffect(()=> {
 
     return (
       <div >
-        {group && (
-        <>
-          <h1>{group.title}</h1>
-          <p>{group.startTime}</p>
-        </>
+              {group && (
+        <GroupCard
+          title={group.title}
+          startTime={group.startTime}
+          endTime={group.endTime} 
+          location={group.location}
+          leader={group.leader}
+          day={group.day}
+          imageURL={group.imageURL}
+        />
       )}
+
+      <Link to={`/groups/edit/${groupId}`}>
+        <button>Edit Group</button>
+      </Link>
+
+      <Link to={`/admin`}>
+        <button>Return to admin profile</button>
+      </Link>
+      
+
       </div>
     );
   }

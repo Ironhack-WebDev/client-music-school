@@ -18,6 +18,11 @@ class MessagesService {
     });
   }
 
+  // GET /api/messages
+  getAllMessages = () => {
+    return this.api.get(`/api/messages`);
+  };
+
   // POST /api/messages
   createMessage = (requestBody) => {
     return this.api.post("/api/messages", requestBody);
@@ -31,6 +36,11 @@ class MessagesService {
   // DELETE /api/messages/:id
   deleteMessage = (id) => {
     return this.api.delete(`/api/messages/${id}`);
+  };
+
+   // GET /api/users/messages
+   getUserMessages = (userId) => {
+    return this.api.get(`/api/users/messages?userId=${userId}`);
   };
 }
 
