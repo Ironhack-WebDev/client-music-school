@@ -18,6 +18,7 @@ import LandingPage from "./pages/LandingPage";
 import UserPage from "./pages/UserPage";
 import EditUserPage from  "./pages/EditUserPage"
 import ContactPage from "./pages/general/ContactPage";
+import ClassesList from "./pages/Classes";
 
 //group pages
 import GroupTimetablePage from "./pages/groups/GroupTimetablePage";
@@ -46,6 +47,8 @@ function App() {
         <Route path="/user" element={<IsPrivate><UserPage /></IsPrivate>} />
         <Route path="/user/edit/:userId" element={<IsPrivate><EditUserPage /></IsPrivate>} />
         <Route path="/admin" element={<IsAdmin> <AdminProfilePage /> </IsAdmin>} />
+
+        <Route path="/classes" element={<ClassesList />} />
 
         <Route path="/timetable" element={<GroupTimetablePage />} />
         <Route path="/groups" element={<GroupListPage />} />

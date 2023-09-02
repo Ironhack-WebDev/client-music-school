@@ -21,7 +21,7 @@ function GroupDetailsPage(props) {
 
 useEffect(()=> {
   getGroup();
-},  );
+}, [] );
 
     return (
       <div >

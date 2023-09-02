@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import usersService from "../services/users.service";
 
 function IsAdmin({ children }) {
@@ -13,9 +14,8 @@ function IsAdmin({ children }) {
   useEffect(() => {
     
     if (isLoggedIn && user && user._id) {
-      usersService.getUser(user._id)
+      axios.get(`http://localhost:5005/api/users/${user._id}`)
         .then(response => {
-          console.log(response)
           setAdminUser(response.data);
                   })
         .catch(error => {
@@ -24,7 +24,6 @@ function IsAdmin({ children }) {
     }
   }, [isLoggedIn, setAdminUser, user]);
 
-  console.log (adminUser, "ADMIN")
 
   // If the authentication is still loading ⏳
   if (isLoading) return <p>Loading ...</p>;
