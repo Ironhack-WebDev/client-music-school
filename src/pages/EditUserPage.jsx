@@ -38,7 +38,7 @@ function EditUserPage(props) {
     };
 
     usersService.updateUser(userId, requestBody).then((response) => {
-      navigate(`/users/${userId}`);
+      navigate(`/user`);
     });
   };
 
@@ -67,7 +67,7 @@ function EditUserPage(props) {
           <label>Email</label>
           <input
             type="text"
-            name="Email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

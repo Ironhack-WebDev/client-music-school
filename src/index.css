@@ -3,6 +3,7 @@ body {
   font-family: "Signika", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; 
 }
 
 /* Nav Bar */
@@ -13,7 +14,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
-  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .navbar-logo {
@@ -57,6 +57,37 @@ body {
   outline: 1px solid #694736;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 10px; 
+  }
+
+  .navbar-logo {
+    margin-left: 10px; 
+  }
+
+  .navbar-link {
+    margin-right: 10px; 
+    padding: 8px 0; 
+    font-size: 12px; 
+  }
+
+  .logo-image {
+    width: 90px; 
+  }
+
+  .navbar-signup,
+  form button,
+  button {
+    padding: 8px 20px;
+    font-size: 12px; 
+  }
+}
+
+
+
+
+
 /* Hero Section */
 .hero-content {
   background-image: url('./assets/landing-page2.png');
@@ -68,6 +99,13 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+/* Mobile styling for Hero Content */
+@media (max-width: 768px) {
+  .hero-content {
+    height: 200px; 
+  }
 }
 
 /* Section 1 */
@@ -120,6 +158,21 @@ body {
 .section1 .right-column .subscribe-link:hover {
   background-color: #d6ab95;
   outline: 1px solid #694736;
+}
+
+/* Mobile styling for Section 1 */
+@media (max-width: 768px) {
+  .section1 {
+    grid-template-columns: 1fr; 
+  }
+
+  .section1 .left-column {
+    height: 200px; 
+  }
+
+  .section1 .right-column {
+    text-align: center;
+  }
 }
 
 /* Section2  */
@@ -183,6 +236,9 @@ body {
   height: auto; 
 }
 
+
+
+
 /* form pages */
 .formPage {
   background-color: #faf3eb;
@@ -192,3 +248,4 @@ body {
   align-items: center;
   justify-content: center;
 }
+
