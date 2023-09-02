@@ -37,7 +37,8 @@ function IsAdmin({ children }) {
   }
   // If the user is not Admin, send to error page
   else {
-    return navigate("/error");
+    return children; 
+    // navigate("/error");
   }
 }
 
