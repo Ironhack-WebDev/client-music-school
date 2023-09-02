@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import groupsService from "../../services/groups.service";
 import GroupCard from "../../components/Groups/GroupCard";
 import { Link } from "react-router-dom";
+import useUser from "../../components/useUser";
 
 
-function GroupDetailsPage(props) {
+function GroupInfoPage(props) {
+
   const [group, setGroup] = useState(null);
   const { groupId } = useParams();
+  const user = useUser();
+  const navigate = useNavigate();
   const getGroup = () => {
 
     groupsService.getGroup(groupId)    
@@ -24,6 +28,21 @@ useEffect(()=> {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [] );
 
+const joinGroup = () => {
+    const requestBody = {
+        userId: user._id
+    };
+
+    groupsService
+      .joinAGroup(groupId, requestBody)
+      .then((response) => {
+        navigate(`/groups`);
+      })
+      .catch((error) => {
+        console.error("Error joining group:", error);
+      });
+  };
+
     return (
       <div >
               {group && (
@@ -38,16 +57,16 @@ useEffect(()=> {
         />
       )}
 
-      <Link to={`/groups/edit/${groupId}`}>
-        <button>Edit Group</button>
-      </Link>
+      <div>
+        <button onClick={joinGroup}>Join Group</button>
+        </div>
 
-      <Link to={`/admin`}>
-        <button>Return to admin profile</button>
+      <Link to={`/messages`}>
+        <button>Send a message</button>
       </Link>
 
       </div>
     );
   }
   
-  export default GroupDetailsPage;
+  export default GroupInfoPage;

@@ -25,6 +25,7 @@ import GroupTimetablePage from "./pages/groups/GroupTimetablePage";
 import GroupListPage from "./pages/groups/GroupListPage";
 import GroupDetailsPage from "./pages/groups/GroupDetailsPage";
 import EditGroupPage from "./pages/groups/EditGroupPage";
+import GroupInfoPage from "./pages/groups/GroupInfoPage";
 //message pages
 import MessageDetailsPage from "./pages/messages/MessageDetailsPage";
 import StandardMessage from "./components/messages/AdminMessage";
@@ -53,6 +54,7 @@ function App() {
         <Route path="/timetable" element={<GroupTimetablePage />} />
         <Route path="/groups" element={<GroupListPage />} />
         <Route path="/groups/:groupId" element={<GroupDetailsPage />} />
+        <Route path="/groups/info/:groupId" element={<GroupInfoPage />} />
         <Route path="/groups/edit/:groupId" element={<IsAdmin><EditGroupPage /></IsAdmin>} />
 
         <Route path="/tuition" element={<InstrumentListPage />} />
