@@ -4,21 +4,27 @@ import { useNavigate } from "react-router-dom";
 import usersService from "../services/users.service";
 
 function IsAdmin({ children }) {
-  const { isLoggedIn, isLoading } = useContext(AuthContext);
-  const navigate = useNavigate();
-  const [adminUser, setAdminUser] = useState([]);
-  const user = "64e6f95077d9c7530374f1a7";
+  const { user, isLoggedIn, isLoading } = useContext(AuthContext);
+  const [adminUser, setAdminUser] = useState({});
 
-  const getAdminUser = () => {
-    usersService
-      .getAdminUser(user._id)
-      .then((response) => setAdminUser(response.data))
-      .catch((error) => console.log(error));
-  };
+  const navigate = useNavigate();
+
 
   useEffect(() => {
-    getAdminUser();
-  }, []);
+    
+    if (isLoggedIn && user && user._id) {
+      usersService.getUser(user._id)
+        .then(response => {
+          console.log(response)
+          setAdminUser(response.data);
+                  })
+        .catch(error => {
+          console.error('Error fetching user data:', error);
+        });
+    }
+  }, [isLoggedIn, setAdminUser, user]);
+
+  console.log (adminUser, "ADMIN")
 
   // If the authentication is still loading ⏳
   if (isLoading) return <p>Loading ...</p>;

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function LessonCard({ user, time, length, _id }) {
   const [userDetails, setUserDetails] = useState(null);
-  const [setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   console.log(user)
 
   const getUser = () => {
