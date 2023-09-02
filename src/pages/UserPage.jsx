@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/auth.context';
 import { Link } from 'react-router-dom';
@@ -13,21 +13,25 @@ const testUser = {
 };
 
 const UserPage = () => {
-  // const { user, setUser, isLoggedIn } = useContext(AuthContext);
-  const { setUser, isLoggedIn } = useContext(AuthContext);
-  const user = testUser;
+  const { user, isLoggedIn } = useContext(AuthContext);
+  const [userInfo, setUserInfo] = useState({})
+   // const { setUser, isLoggedIn } = useContext(AuthContext);
+ // const user = testUser;
 
   useEffect(() => {
-    if (isLoggedIn) {
-      axios.get(`/users/${user.userId}`)
+    
+    if (isLoggedIn && user && user._id) {
+      axios.get(`http://localhost:5005/api/users/${user._id}`)
         .then(response => {
-          setUser(response.data);
+          console.log(response)
+          setUserInfo(response.data);
+
         })
         .catch(error => {
           console.error('Error fetching user data:', error);
         });
     }
-  }, [isLoggedIn, setUser, user.userId]);
+  }, [isLoggedIn, setUserInfo, user]);
 
   if (!isLoggedIn) {
     return (
@@ -42,12 +46,12 @@ const UserPage = () => {
   return (
     <div className="profileContainer">
       <div className="userInformation">
-        <img src={user.imageURL} alt="Profile" className="profile-image" />
-       <p>{user.name}</p>
-       <p>{user.email}</p>
-       <p>{user.phone}</p>
-       <p>{user.address}</p>
-       <Link to={`/user/edit/${user.userId}`}>
+        <img src={userInfo.imageURL} alt="Profile" className="profile-image" />
+       <p>{userInfo.name}</p>
+       <p>{userInfo.email}</p>
+       <p>{userInfo.phone}</p>
+       <p>{userInfo.address}</p>
+       <Link to={`/user/edit/${user._id}`}>
         <button>Edit Profile</button>
       </Link>
      </div>
