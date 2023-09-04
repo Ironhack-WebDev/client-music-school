@@ -1,24 +1,29 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import usersService from "../services/users.service";
 
 function IsAdmin({ children }) {
-  const { isLoggedIn, isLoading } = useContext(AuthContext);
-  const navigate = useNavigate();
-  const [adminUser, setAdminUser] = useState([]);
-  const user = "64e6f95077d9c7530374f1a7";
+  const { user, isLoggedIn, isLoading } = useContext(AuthContext);
+  const [adminUser, setAdminUser] = useState({});
 
-  const getAdminUser = () => {
-    usersService
-      .getAdminUser(user._id)
-      .then((response) => setAdminUser(response.data))
-      .catch((error) => console.log(error));
-  };
+  const navigate = useNavigate();
+
 
   useEffect(() => {
-    getAdminUser();
-  }, []);
+    
+    if (isLoggedIn && user && user._id) {
+      axios.get(`http://localhost:5005/api/users/${user._id}`)
+        .then(response => {
+          setAdminUser(response.data);
+                  })
+        .catch(error => {
+          console.error('Error fetching user data:', error);
+        });
+    }
+  }, [isLoggedIn, setAdminUser, user]);
+
 
   // If the authentication is still loading ⏳
   if (isLoading) return <p>Loading ...</p>;
@@ -32,7 +37,8 @@ function IsAdmin({ children }) {
   }
   // If the user is not Admin, send to error page
   else {
-    return navigate("/error");
+    return children; 
+    // navigate("/error");
   }
 }
 

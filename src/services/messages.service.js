@@ -39,8 +39,13 @@ class MessagesService {
   };
 
    // GET /api/users/messages
-   getUserMessages = (userId) => {
-    return this.api.get(`/api/users/messages?userId=${userId}`);
+   getSentMessages = (userId) => {
+    return this.api.get(`/api/users/messages/sent?sender=${userId}`);
+  };
+
+   // GET /api/users/messages
+   getReceivedMessages = (userId) => {
+    return this.api.get(`/api/users/messages/received?recipient=${userId}`);
   };
 }
 

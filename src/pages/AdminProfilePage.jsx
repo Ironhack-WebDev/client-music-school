@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import GroupThumbnail from "../components/Groups/GroupThumbnail";
+import GroupTitle from "../components/Groups/GroupTitle";
 import TeacherThumbnail from "../components/Instruments/TeacherThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
 import AddTeacher from "../components/Instruments/AddTeacher";
@@ -47,7 +47,7 @@ function AdminProfilePage() {
 
       <h3> Groups </h3>
       {groups.map((group) => (
-        <GroupThumbnail key={group._id} {...group} />
+        <GroupTitle key={group._id} {...group} />
       ))}
 
       <h3> Teachers </h3>

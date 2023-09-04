@@ -18,12 +18,14 @@ import LandingPage from "./pages/LandingPage";
 import UserPage from "./pages/UserPage";
 import EditUserPage from  "./pages/EditUserPage"
 import ContactPage from "./pages/general/ContactPage";
+import ClassesList from "./pages/Classes";
 
 //group pages
 import GroupTimetablePage from "./pages/groups/GroupTimetablePage";
 import GroupListPage from "./pages/groups/GroupListPage";
 import GroupDetailsPage from "./pages/groups/GroupDetailsPage";
 import EditGroupPage from "./pages/groups/EditGroupPage";
+import GroupInfoPage from "./pages/groups/GroupInfoPage";
 //message pages
 import MessageDetailsPage from "./pages/messages/MessageDetailsPage";
 import StandardMessage from "./components/messages/AdminMessage";
@@ -47,9 +49,12 @@ function App() {
         <Route path="/user/edit/:userId" element={<IsPrivate><EditUserPage /></IsPrivate>} />
         <Route path="/admin" element={<IsAdmin> <AdminProfilePage /> </IsAdmin>} />
 
+        <Route path="/classes" element={<ClassesList />} />
+
         <Route path="/timetable" element={<GroupTimetablePage />} />
         <Route path="/groups" element={<GroupListPage />} />
         <Route path="/groups/:groupId" element={<GroupDetailsPage />} />
+        <Route path="/groups/info/:groupId" element={<GroupInfoPage />} />
         <Route path="/groups/edit/:groupId" element={<IsAdmin><EditGroupPage /></IsAdmin>} />
 
         <Route path="/tuition" element={<InstrumentListPage />} />

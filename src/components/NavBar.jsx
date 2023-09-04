@@ -27,7 +27,7 @@ function NavBar() {
         <Link to="/timetable" className="navbar-link">
           TIMETABLE
         </Link>
-        <Link to="/groups" className="navbar-link">
+        <Link to="/classes" className="navbar-link">
           CLASSES
         </Link>
         {isLoggedIn ? (

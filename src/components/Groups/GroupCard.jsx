@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const groupCardStyles = {
   display: "flex",
@@ -10,10 +10,12 @@ const groupCardStyles = {
   marginBottom: "10px",
 };
 
-const GroupCard = ({ title, startTime, endTime, location, leader, imageURL }) => {
+const GroupCard = ({ title, startTime, endTime, location, leader, imageURL, _id }) => {
   return (
     <div>
+    <Link to={`/groups/info/${_id}`}>
     <h3>{title}</h3>
+    </Link>
     <div style={groupCardStyles}>
       <div>
         <img src={imageURL} alt="Group" style={{ width: "200px" }}/>
@@ -27,6 +29,7 @@ const GroupCard = ({ title, startTime, endTime, location, leader, imageURL }) =>
         <p>Group Leader: {leader}</p>
       </div>
     </div>
+  
     </div>
   );
 };
