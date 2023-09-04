@@ -5,32 +5,29 @@ import GroupCard from "../../components/Groups/GroupCard";
 import { Link } from "react-router-dom";
 import useUser from "../../components/useUser";
 
-
 function GroupInfoPage(props) {
-
   const [group, setGroup] = useState(null);
   const { groupId } = useParams();
   const user = useUser();
   const navigate = useNavigate();
   const getGroup = () => {
+    groupsService
+      .getGroup(groupId)
+      .then((response) => {
+        const oneGroup = response.data;
+        setGroup(oneGroup);
+      })
+      .catch((error) => console.log(error));
+  };
 
-    groupsService.getGroup(groupId)    
-    .then((response) => {
-      const oneGroup = response.data;
-      setGroup(oneGroup);
-    })
-    .catch((error) => console.log(error));
-};
+  useEffect(() => {
+    getGroup();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-
-useEffect(()=> {
-  getGroup();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [] );
-
-const joinGroup = () => {
+  const joinGroup = () => {
     const requestBody = {
-        userId: user._id
+      userId: user._id,
     };
 
     groupsService
@@ -43,30 +40,32 @@ const joinGroup = () => {
       });
   };
 
-    return (
-      <div >
-              {group && (
+  return (
+    <div>
+      {group && (
         <GroupCard
           title={group.title}
-          startTime={group.startTime}
-          endTime={group.endTime} 
-          location={group.location}
           leader={group.leader}
+          description={group.description}
+          skillLevel={group.skillLevel}
+          instruments={group.instruments}
           day={group.day}
+          startTime={group.startTime}
+          endTime={group.endTime}
+          location={group.location}
           imageURL={group.imageURL}
         />
       )}
 
       <div>
         <button onClick={joinGroup}>Join Group</button>
-        </div>
+      </div>
 
       <Link to={`/messages`}>
         <button>Send a message</button>
       </Link>
+    </div>
+  );
+}
 
-      </div>
-    );
-  }
-  
-  export default GroupInfoPage;
+export default GroupInfoPage;

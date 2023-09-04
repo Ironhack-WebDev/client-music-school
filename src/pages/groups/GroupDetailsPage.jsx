@@ -29,11 +29,14 @@ useEffect(()=> {
               {group && (
         <GroupCard
           title={group.title}
-          startTime={group.startTime}
-          endTime={group.endTime} 
-          location={group.location}
           leader={group.leader}
+          description={group.description}
+          skillLevel={group.skillLevel}
+          instruments={group.instruments}
           day={group.day}
+          startTime={group.startTime}
+          endTime={group.endTime}
+          location={group.location}
           imageURL={group.imageURL}
         />
       )}

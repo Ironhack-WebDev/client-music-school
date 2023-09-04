@@ -126,7 +126,7 @@ function AddGroup(props) {
       />
        </div>
        <div>
-      <label>description</label>
+      <label>Description</label>
       <input
         type="text"
         name="description"
