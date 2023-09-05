@@ -2,11 +2,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  overflow-x: hidden; 
 }
 
- /* Timetable */
+/* Timetable */
 .App {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   align-items: center;
   justify-content: center;
@@ -17,21 +18,22 @@
 .header-image {
   width: 100%;
   height: auto;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
 }
 
 .App p {
   color: #FAF3EB;
-  text-align: center; 
-  font-family: 'Signika', sans-serif; 
-  font-size: 20px; 
+  text-align: center;
+  font-family: 'Signika', sans-serif;
+  font-size: 20px;
   font-weight: lighter;
   max-width: 700px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
- 
+
 .Tabs {
   width: 100%;
+  max-width: 100%; 
   height: auto;
   min-height: 400px;
   background: #807C5E;
@@ -39,15 +41,15 @@
   padding: 2rem 1rem;
   color: #FAF3EB;
   border-radius: 0.3rem;
+  overflow-x: hidden; 
 }
 
- 
 .react-tabs {
   -webkit-tap-highlight-color: transparent;
 }
- 
+
 .react-tabs__tab-list {
-  width: 60%;
+  width: 100%; 
   margin: 0 auto 2rem;
   display: flex;
   align-items: center;
@@ -55,49 +57,71 @@
   border: 1px solid #FAF3EB;
   border-radius: 0.3rem;
   padding-left: 0px;
+  overflow-x: auto; 
 }
- 
+
 .react-tabs__tab {
   width: 50%;
   padding: 1rem;
   list-style: none;
   text-align: center;
   cursor: pointer;
-  font-family: 'Signika', sans-serif; 
-  font-size: 16px; 
+  font-family: 'Signika', sans-serif;
+  font-size: 16px;
   font-weight: lighter;
 }
- 
+
 .react-tabs__tab--selected {
   background: #a3a087;
 }
- 
+
 .react-tabs__tab--disabled {
   color: #FAF3EB;
   cursor: default;
 }
- 
+
 .react-tabs__tab:hover {
   background: #FAF3EB;
   color: #807C5E;
 }
- 
+
 .react-tabs__tab:first-child {
   border-bottom-left-radius: 0.3rem;
   border-top-left-radius: 0.3rem;
 }
- 
+
 .react-tabs__tab:last-child {
   border-bottom-right-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
 }
- 
+
 .react-tabs__tab-panel {
   display: none;
 }
- 
+
 .react-tabs__tab-panel--selected {
   display: block;
   font-size: 2rem;
   text-align: center;
+}
+
+/* Mobile styling */
+@media (max-width: 768px) {
+  .App p {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  .react-tabs__tab {
+    font-size: 10px;
+  }
+
+  .Tabs {
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+
+  .react-tabs__tab-list {
+    width: 100%;
+  }
 }
