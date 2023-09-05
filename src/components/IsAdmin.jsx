@@ -2,12 +2,11 @@ import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import usersService from "../services/users.service";
 
 function IsAdmin({ children }) {
   const { user, isLoggedIn, isLoading } = useContext(AuthContext);
   const [adminUser, setAdminUser] = useState({});
-
+console.log(user)
   const navigate = useNavigate();
 
 
@@ -24,6 +23,7 @@ function IsAdmin({ children }) {
     }
   }, [isLoggedIn, setAdminUser, user]);
 
+console.log(adminUser)
 
   // If the authentication is still loading ⏳
   if (isLoading) return <p>Loading ...</p>;
@@ -37,8 +37,7 @@ function IsAdmin({ children }) {
   }
   // If the user is not Admin, send to error page
   else {
-    return children; 
-    // navigate("/error");
+   navigate("/error");
   }
 }
 
