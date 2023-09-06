@@ -1,12 +1,14 @@
 
 
 import messagesService from "../../services/messages.service";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useUser from "../../components/useUser";
+import usersService from "../../services/users.service";
 
 function AdminMessage() {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
+  const [adminUsers, setAdminUsers] = useState("");
 
   const user = useUser();
 
@@ -17,9 +19,9 @@ function AdminMessage() {
       title,
       message,
       sender: user._id, 
-      recipient: "64e6f95077d9c7530374f1a7"
+      recipient: adminUsers
     };
-
+ 
     console.log (requestBody)
 
     messagesService
@@ -30,6 +32,22 @@ function AdminMessage() {
       })
       .catch((error) => console.log(error));
   };
+
+  const getAllUsers = () => {
+    usersService
+      .getAllUsers()
+      .then((response) => {
+         const filteredUsers = response.data.filter((user) => user.isAdmin === true);
+        setAdminUsers(filteredUsers);
+      })
+      .catch((error) => console.log(error));
+  };
+  
+
+  useEffect(() => {
+    getAllUsers();
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="formPage">

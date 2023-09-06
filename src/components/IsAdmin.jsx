@@ -23,7 +23,7 @@ console.log(user)
     }
   }, [isLoggedIn, setAdminUser, user]);
 
-console.log(adminUser)
+console.log(adminUser, "ADMIN")
 
   // If the authentication is still loading ⏳
   if (isLoading) return <p>Loading ...</p>;

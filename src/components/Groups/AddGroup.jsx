@@ -63,14 +63,20 @@ function AddGroup(props) {
       />
       </div>
       <div>
-      <label>Day</label>
-      <input
-        type="text"
-        name="day"
-        value={day}
-        onChange={(e) => setDay(e.target.value)}
-      />
-       </div>
+  <label>Day</label>
+  <select
+    name="day"
+    value={day}
+    onChange={(e) => setDay(e.target.value)}
+  >
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+  </select>
+</div>
+
       <div>
       <label>Start Time</label>
       <input

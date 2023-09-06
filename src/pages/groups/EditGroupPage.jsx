@@ -29,9 +29,9 @@ function EditGroupPage(props) {
         setLeader(oneGroup.leader);
         setDay(oneGroup.day);
         setImageURL(oneGroup.imageURL);
-        setSkillLevel (oneGroup.skillLevel);
-        setInstruments (oneGroup.instruments)
-        setDescription (oneGroup.description)
+        setSkillLevel(oneGroup.skillLevel);
+        setInstruments(oneGroup.instruments);
+        setDescription(oneGroup.description);
       })
       .catch((error) => console.log(error));
   }, [groupId]);
@@ -47,9 +47,9 @@ function EditGroupPage(props) {
       leader,
       day,
       imageURL,
-      skillLevel, 
-      instruments, 
-      description
+      skillLevel,
+      instruments,
+      description,
     };
 
     groupsService.updateGroup(groupId, requestBody).then((response) => {
@@ -78,13 +78,19 @@ function EditGroupPage(props) {
         </div>
         <div>
           <label>Day</label>
-          <input
-            type="text"
+          <select
             name="day"
             value={day}
             onChange={(e) => setDay(e.target.value)}
-          />
+          >
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+          </select>
         </div>
+
         <div>
           <label>Start Time</label>
           <input
@@ -131,32 +137,32 @@ function EditGroupPage(props) {
           />
         </div>
         <div>
-      <label>Skill Level</label>
-      <input
-        type="text"
-        name="skillLevel"
-        value={skillLevel}
-        onChange={(e) => setSkillLevel(e.target.value)}
-      />
-       </div>
-       <div>
-      <label>Instruments</label>
-      <input
-        type="text"
-        name="instruments"
-        value={instruments}
-        onChange={(e) => setInstruments(e.target.value)}
-      />
-       </div>
-       <div>
-      <label>Description</label>
-      <input
-        type="text"
-        name="description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      </div>
+          <label>Skill Level</label>
+          <input
+            type="text"
+            name="skillLevel"
+            value={skillLevel}
+            onChange={(e) => setSkillLevel(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Instruments</label>
+          <input
+            type="text"
+            name="instruments"
+            value={instruments}
+            onChange={(e) => setInstruments(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Description</label>
+          <input
+            type="text"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
         <div>
           <button type="submit">Submit</button>
         </div>
