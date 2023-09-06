@@ -37,16 +37,6 @@ class MessagesService {
   deleteMessage = (id) => {
     return this.api.delete(`/api/messages/${id}`);
   };
-
-   // GET /api/users/messages
-   getSentMessages = (userId) => {
-    return this.api.get(`/api/users/messages/sent?sender=${userId}`);
-  };
-
-   // GET /api/users/messages
-   getReceivedMessages = (userId) => {
-    return this.api.get(`/api/users/messages/received?recipient=${userId}`);
-  };
 }
 
 
