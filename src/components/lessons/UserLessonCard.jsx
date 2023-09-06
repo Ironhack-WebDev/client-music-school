@@ -11,11 +11,11 @@ function UserLessonCard({ instrument, time, length, _id }) {
       .then((response) => {
         const oneInstrument = response.data;
         setLessonInstrument(oneInstrument);
-        setIsLoading(false); // Set isLoading to false when the data is ready
+        setIsLoading(false); 
       })
       .catch((error) => {
         console.log(error);
-        setIsLoading(false); // Set isLoading to false on error as well
+        setIsLoading(false);
       });
   };
 
@@ -27,11 +27,10 @@ function UserLessonCard({ instrument, time, length, _id }) {
   }, []);
 
   if (isLoading) {
-    // Render a loading indicator while waiting for data
+
     return <p>Loading...</p>;
   }
 
-  // Render the component with the received data
   return (
     <div>
       <div>
