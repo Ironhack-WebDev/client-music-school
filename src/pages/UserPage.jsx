@@ -5,23 +5,18 @@ import { Link } from 'react-router-dom';
 import Inbox from './messages/inbox';
 import AdminMessage from '../components/messages/AdminMessage';
 import SentMessages from '../components/messages/SentMessages';
+import usersService from "../services/users.service";
+import GroupTitle from "../components/Groups/GroupTitle";
+import UserLessonCard from "../components/lessons/UserLessonCard";
 
-// const testUser = {
-//   userId: 'your-static-user-id',
-//   name: 'Test User',
-//   email: 'test@example.com',
-//   imageURL: 'path/to/image',
-//   phone: '123-456-7890',
-//   address: '123 Test Street, Test City',
-// };
 
 const UserPage = () => {
   const { user, isLoggedIn } = useContext(AuthContext);
   const [userInfo, setUserInfo] = useState({});
   const [userGroups, setUserGroups] = useState([]);
+  const [userLessons, setUserLessons] = useState([]);
   const [activeTab, setActiveTab] = useState('inbox');
-   // const { setUser, isLoggedIn } = useContext(AuthContext);
- // const user = testUser;
+
 
   useEffect(() => {
     
@@ -30,14 +25,42 @@ const UserPage = () => {
         .then(response => {
           console.log(response)
           setUserInfo(response.data);
-          setUserGroups(response.data.groups);
 
         })
         .catch(error => {
           console.error('Error fetching user data:', error);
         });
     }
-  }, [isLoggedIn, setUserInfo, setUserGroups, user]);
+  }, [isLoggedIn, setUserInfo, user]);
+
+  const getUserGroups = () => {
+    usersService
+      .getUserGroups(user._id)
+      .then((response) => setUserGroups(response.data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    if (user && user._id)
+    getUserGroups();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+  const getUserLessons = () => {
+    usersService
+      .getUserLessons(user._id)
+      .then((response) => setUserLessons(response.data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    if (user && user._id)
+    getUserLessons();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+
+
 
   if (!isLoggedIn) {
     return (
@@ -64,14 +87,28 @@ const UserPage = () => {
           <button>Edit Profile</button>
         </Link>
       </div>
+
+      
+
       <div className="profilerightSide">
         <h2>Your Groups</h2>
         <ul>
-          {userGroups.map(group => (
-            <li key={group._id}>{group.name}</li>
-          ))}
+        {userGroups.map((group) => (
+        <GroupTitle key={group._id} {...group} />
+     
+     
+      ))}
+
+
+        </ul>
+        <h2>Your Lessons</h2>
+        <ul>
+        {userLessons.map((lesson) => (
+        <UserLessonCard key={lesson._id} {...lesson} />
+      ))}
         </ul>
       </div>
+
       <div className="profileMessageTabs">
         <button onClick={() => toggleTab('inbox')}>Inbox</button>
         <button onClick={() => toggleTab('sent')}>Sent</button>

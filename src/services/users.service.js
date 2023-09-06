@@ -32,9 +32,14 @@ class UsersService {
     return this.api.put(`/api/users/${userId}`, requestBody);
   };
 
-  // GET /api/users/:userId/groups
-  getUserGroups = (userId) => {
-    return this.api.get(`/api/users/${userId}/groups`);
+ // GET /api/groups/members?user=${user} 
+  getUserGroups = (user) => {
+    return this.api.get(`/api/groups/members?user=${user}`);
+  };
+
+  // GET /api/lessons?user=${user} 
+  getUserLessons = (user) => {
+    return this.api.get(`/api/lessons/student?user=${user}`);
   };
 
   // POST /api/groups/:groupId
