@@ -9,11 +9,11 @@ body {
 /* Nav Bar */
 .navbar {
   background-color: #e4cbcb;
-  color: white;
+  color: #faf3eb;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
+  padding: 10px 100px;
 }
 
 .navbar-logo {
@@ -22,7 +22,7 @@ body {
 }
 
 .logo-image {
-  width: 180px;
+  width: 160px;
   height: auto;
 }
 
@@ -85,9 +85,6 @@ body {
 }
 
 
-
-
-
 /* Hero Section */
 .hero-content {
   background-image: url('./assets/landing-page2.png');
@@ -113,8 +110,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
-  background-color: #d6ab95;
+  background-color: #807C5E;
   color: #faf3eb;
+  box-shadow: 0px -2px 2px rgba(43, 43, 43, 0.2);
 }
 
 /* Left Column (Image) */
@@ -124,7 +122,7 @@ body {
   align-items: center;
   background-image: url("./assets/landing-page3.jpeg");
   background-size: cover;
-  height: 600px;
+  height: 500px;
 }
 
 /* Right Column (Text) */
@@ -139,7 +137,7 @@ body {
 }
 
 .section1 .right-column p {
-  font-size: 25px;
+  font-size: 21px;
   margin-bottom: 20px;
   font-weight: lighter;
   line-height: 1.5;
@@ -149,15 +147,16 @@ body {
   font-size: 18px;
   padding: 8px 30px;
   margin-top: 40px;
-  background-color: #FAF3EB;
+  background-color: #faf3eb;
   text-decoration: none;
   color: #694736;
   font-weight: lighter;
 }
 
 .section1 .right-column .subscribe-link:hover {
-  background-color: #d6ab95;
-  outline: 1px solid #694736;
+  background-color: #807C5E;
+  outline: 1px solid #faf3eb;
+  color: #faf3eb;
 }
 
 /* Mobile styling for Section 1 */
@@ -177,9 +176,10 @@ body {
 
 /* Section2  */
 .section2-container {
-  background-color: #807C5E;
+  background-color: #e4cbcb;
   padding: 20px 10px;
   text-align: center;
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .section2-container img {
@@ -187,7 +187,7 @@ body {
 }
 
 .section2-container h2{
-  color: #FAF3EB;
+  color: #694736;
   font-size: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -206,14 +206,14 @@ body {
 }
 
 .tile {
-  width: calc(33.33% - 40px);
+  width: calc(33.33% - 50px);
   margin: 20px;
   text-align: left;
   background-size: cover;
   background-position: center;
   position: relative;
   margin-bottom: 20px;
-  background-color: #807C5E; 
+  background-color: #e4cbcb; 
 }
 
 .tile img {
@@ -225,15 +225,79 @@ body {
 }
 
 .tile p {
-  color: #faf3eb;
+  color: #694736;
   font-size: 18px;
   line-height: 1.5;
   font-weight: lighter;
 }
 
-.section3 img {
+
+/* Section 3 */
+.section3 {
+  background-color: #e4cbcb;
+  padding: 80px 10px;
+  text-align: center;
+}
+
+.section3 .slick-slider {
+  width: 80%;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.carousel-image {
+  padding: 20px;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.carousel-image:hover {
+  transform: scale(1.05); 
+}
+
+.carousel-image img {
+  max-width: 100%; 
+  height: auto;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5); 
+  padding: 15px; 
+  border-radius: 50%; 
+  font-size: 24px; 
+  color: #694736; 
+  z-index: 1; 
+  position: absolute;
+}
+
+.left-arrow {
+  left: 0;
+}
+
+.right-arrow {
+  right: 0;
+}
+
+
+/* section 4 */
+.section4 {
   width: 100%; 
   height: auto; 
+  background-color: #e4cbcb;
+  color: #694736;
+  text-decoration: none;
+  padding: 20px;
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.section4 img {
+  width: 160px;
+  height: auto;
 }
 
 /* form pages */
