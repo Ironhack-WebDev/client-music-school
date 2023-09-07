@@ -14,6 +14,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 100px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); 
 }
 
 .navbar-logo {
@@ -287,11 +288,11 @@ body {
 .section4 {
   width: 100%; 
   height: auto; 
-  background-color: #e4cbcb;
+  background-color: #faf3eb;
   color: #694736;
   text-decoration: none;
   padding: 20px;
-  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2); 
   text-align: center;
 }
 
@@ -302,13 +303,66 @@ body {
 
 /* form pages */
 .formPage {
-  background-color: #faf3eb;
-  color: #694736;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.formPage form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 10px;
 }
+
+.formPage label {
+  font-weight: bold;
+}
+
+.formPage input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.formPage button[type="submit"] {
+  background-color: #807c5e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.formPage button[type="submit"]:hover {
+  background-color: #a09d81;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* user profile */
@@ -318,112 +372,112 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr; 
   align-items: flex-start; 
-  background: #807C5E;
+  background: #faf3eb;
   padding: 2rem;
   gap: 1rem; 
 }
 
-.header-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
+/* Left side user info */
+.profile-left {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.6; 
+
+}
+
+.profileContainer h3 {
+  font-size: 26px;
+  color: #694736;
+  text-align: center;
+  font-family: 'Signika', sans-serif;
+  max-width: 700px;
+  font-weight: lighter;
 }
 
 .profileContainer p {
-  color: #FAF3EB;
+  color: #694736;
   text-align: center;
   font-family: 'Signika', sans-serif;
-  font-size: 20px;
   font-weight: lighter;
   max-width: 700px;
   margin: 0 auto;
 }
 
-/* Left side user info */
 .userInformation {
-  padding: 20px;
-  border-right: 1px solid #ddd;
-  text-align: center;
-  background: #807C5E;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.5; 
+  margin-bottom: 40px;  
+  font-size: 18px;
 }
-
 
 .userInformation .profile-image {
   width: 160px;
   height: auto;
   object-fit: cover;
   border-radius: 50%; 
-  margin-bottom: 2rem;
+  margin: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
-/* Right side */
-.profilerightSide {
-  padding: 20px;
-  border: 1px solid #ddd;
-  background: #807C5E; 
+.yourGroupsTitle, .yourLessonsTitle {
+  background-color: #a09d81;
+  margin-top: 30px;
+  font-size: 16px;
+  padding: 10px 40px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-.profileMessageTabs {
+.profileGroups,
+.profileLessons {
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  min-height: 400px;
-  margin: 3.5rem auto 1.5rem;
-  padding: 2rem 1rem;
-  color: #FAF3EB;
-  border-radius: 0.3rem;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+/* Right side */
+.profileMessageTabs {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 80px;
+  overflow: hidden;
+  border: 1px solid #ccc; 
+  border-radius: 10px;
 }
 
 .profileMessageTabs button {
-  width: 50%;
-  padding: 1rem;
-  list-style: none;
-  text-align: center;
+  flex: 1;
+  padding: 16px 18px; 
+  border: none;
+  background-color: transparent;
   cursor: pointer;
-  font-family: 'Signika', sans-serif;
-  font-size: 16px;
-  font-weight: lighter;
-  border: 1px solid #FAF3EB;
-  margin: 0.5rem;
-  border-radius: 0.3rem;
+  outline: none;
+  font-size: 15px; 
 }
 
-.profileMessageTabs button.react-tabs__tab--selected {
-  background: #a3a087;
-  color: #FAF3EB;
+.profileMessageTabs button:not(:last-child) {
+  border-right: 1px solid #ccc; 
 }
 
-.profileMessageTabs button.react-tabs__tab--disabled {
-  color: #FAF3EB;
-  cursor: default;
+.profileMessageTabs button.active {
+  background-color: #a09d81;
+  color: #fff;
 }
 
-.profileMessageTabs button.react-tabs__tab:hover {
-  background: #FAF3EB;
-  color: #807C5E;
-}
 
-.messageContainer {
-  flex-basis: 100%;
-  margin-top: 20px;
-}
 
-ul {
-  list-style: none;
-  padding: 0;
-}
 
-ul li {
-  margin-bottom: 10px;
-}
+
+
+
+
+
+
+
+
 
 /* Mobile styling */
 @media (max-width: 768px) {

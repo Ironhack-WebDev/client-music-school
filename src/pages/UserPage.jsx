@@ -77,51 +77,68 @@ const UserPage = () => {
 
   return (
     <div className="profileContainer">
-      <div className="userInformation">
-        <img src={userInfo.imageURL} alt="Profile" className="profile-image" />
-        <p>{userInfo.name}</p>
-        <p>{userInfo.email}</p>
-        <p>{userInfo.phone}</p>
-        <p>{userInfo.address}</p>
+      <div className="profile-left">
+        <div className="userInformation">
+          <img src={userInfo.imageURL} alt="Profile" className="profile-image" />
+          <h3>{userInfo.name}</h3>
+          <p>{userInfo.email}</p>
+          <p>{userInfo.phone}</p>
+          <p>{userInfo.address}</p>
+        </div>
         <Link to={`/user/edit/${user._id}`}>
           <button>Edit Profile</button>
-        </Link>
+        </Link>      
+        <div className="profileGroups">
+          <div className="yourGroupsTitle">
+            <p>YOUR GROUPS</p>
+          </div>
+          <ul>
+          {userGroups.map((group) => (
+            <GroupTitle key={group._id} {...group} />
+          ))}
+          </ul>
+        </div>
+        <div className="profileLessons">
+          <div className="yourLessonsTitle">
+            <p>YOUR LESSONS</p>
+          </div> 
+          <ul>         
+          {userLessons.map((lesson) => (
+            <UserLessonCard key={lesson._id} {...lesson} />
+          ))}
+          </ul>
+        </div>
       </div>
-
-      
-
-      <div className="profilerightSide">
-        <h2>Your Groups</h2>
-        <ul>
-        {userGroups.map((group) => (
-        <GroupTitle key={group._id} {...group} />
-     
-     
-      ))}
-
-
-        </ul>
-        <h2>Your Lessons</h2>
-        <ul>
-        {userLessons.map((lesson) => (
-        <UserLessonCard key={lesson._id} {...lesson} />
-      ))}
-        </ul>
-      </div>
-
-      <div className="profileMessageTabs">
-        <button onClick={() => toggleTab('inbox')}>Inbox</button>
-        <button onClick={() => toggleTab('sent')}>Sent</button>
-        <button onClick={() => toggleTab('newMessage')}>New Message</button>
-      </div>
-      <div className="messageContainer">
-        {activeTab === 'inbox' ? (
-          <Inbox />
-        ) : activeTab === 'sent' ? (
-          <SentMessages />
-        ) : (
-          <AdminMessage />
-        )}
+      <div className='profilerightSide'>
+        <div className="profileMessageTabs">
+          <button
+            className={activeTab === 'inbox' ? 'active' : ''}
+            onClick={() => toggleTab('inbox')}
+          >
+            INBOX
+          </button>
+          <button
+            className={activeTab === 'sent' ? 'active' : ''}
+            onClick={() => toggleTab('sent')}
+          >
+            SENT
+          </button>
+          <button
+            className={activeTab === 'newMessage' ? 'active' : ''}
+            onClick={() => toggleTab('newMessage')}
+          >
+            NEW MESSAGE
+          </button>
+        </div>
+        <div className="messageContainer">
+          {activeTab === 'inbox' ? (
+            <Inbox />
+          ) : activeTab === 'sent' ? (
+            <SentMessages />
+          ) : (
+            <AdminMessage />
+          )}
+        </div>
       </div>
     </div>
   );
