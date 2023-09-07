@@ -13,6 +13,7 @@ import logo from '../assets/logo.png';
 // };
 
 function NavBar() {
+  // eslint-disable-next-line
   const { isLoggedIn, logOutUser, user } = useContext(AuthContext);
   // const { isLoggedIn, logOutUser } = useContext(AuthContext);
   // const user = testUser;
