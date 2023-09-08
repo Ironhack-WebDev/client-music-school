@@ -30,15 +30,22 @@ const SentMessages = () => {
 
   return (
     <div className="sent-messages">
-      <h2>Sent Messages</h2>
       <ul>
         {sentMessages.map(message => (
-          <li key={message._id}>
-            <div>
-              <strong>Title:</strong> {message.title}
+          <li key={message._id} className="message-item">
+            <div className="message-label">
+              <strong>Title:</strong>
             </div>
-            <div>
-              <strong>Message:</strong> {previewMessage(message.message, 100)}
+            <div className="message-content">
+              {message.title}
+            </div>
+            <div className='message-container'>
+              <div className="message-label">
+                <strong>Message:</strong>
+              </div>
+              <div className="message-content">
+                {previewMessage(message.message, 100)}
+              </div>
             </div>
           </li>
         ))}

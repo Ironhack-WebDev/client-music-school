@@ -337,36 +337,11 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  height: 150px; /* Adjust the height as needed for the message input */
+  height: 150px;
   font-family: "Signika", sans-serif;
   font-size: 17px;
   font-weight: lighter;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* user profile */
@@ -471,11 +446,28 @@ body {
   color: #fff;
 }
 
+.message-item {
+  border: 1px solid #ccc; 
+  padding: 10px; 
+  margin: 15px 5px; 
+  border-radius: 5px; 
+  color: #694736; 
+  font-weight: lighter;
+  background-color: #fff;
+}
 
+.message-label {
+  font-weight: bold;
 
+}
 
+.message-container {
+  margin-top: 10px;
+}
 
-
+.message-item:hover {
+  outline: 2px solid #a09d81; 
+}
 
 
 
