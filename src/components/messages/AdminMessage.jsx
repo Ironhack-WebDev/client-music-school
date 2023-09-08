@@ -62,11 +62,11 @@ function AdminMessage() {
         </div>
         <div>
           <label>Message</label>
-          <input
-            type="text"
+          <textarea
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            className="message-input"
           />
           <button type="submit">Submit</button>
         </div>
