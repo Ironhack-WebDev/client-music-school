@@ -18,7 +18,7 @@ function IsAdmin({ children }) {
           console.error('Error fetching user data:', error);
         });
     }
-  }, [isLoggedIn, setAdminUser, user]);
+  }, [isLoggedIn, user]);
 
 
   // If the authentication is still loading ⏳
