@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import messagesService from "../../services/messages.service";
 import InboxCard from "../../components/messages/InboxCard";
-import OutboxCard from "../../components/messages/OutboxCard";
 import Reply from "../../components/messages/Reply";
 
-function MessageDetailsPage(props) {
+function InboxDetailsPage(props) {
   const [message, setMessage] = useState(null);
   const { messageId } = useParams();
 
@@ -37,9 +36,12 @@ function MessageDetailsPage(props) {
 
   return (
     <div>
-      {message  ? (
+      {message ? (
         <div>
           <InboxCard
+
+          
+          timeStamp = {message.timeStamp}
             title={message.title}
             message={message.message}
             sender={
@@ -65,4 +67,4 @@ function MessageDetailsPage(props) {
   );
 }
 
-export default MessageDetailsPage;
+export default InboxDetailsPage;
