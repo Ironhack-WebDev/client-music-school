@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../../context/auth.context';
+import { Link } from "react-router-dom";
 
 const SentMessages = () => {
   const { user } = useContext(AuthContext); 
@@ -30,8 +31,10 @@ const SentMessages = () => {
 
   return (
     <div className="sent-messages">
+   
       <ul>
         {sentMessages.map(message => (
+          <Link to={`/messages/${message._id}`} className="message-link">
           <li key={message._id} className="message-item">
             <div className="message-time">
             {(() => {
@@ -55,8 +58,10 @@ const SentMessages = () => {
               {previewMessage(message.message, 100)}
             </div>
           </li>
+          </Link>
         ))}
       </ul>
+      
     </div>
   );
 };

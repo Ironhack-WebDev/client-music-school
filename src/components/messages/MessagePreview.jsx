@@ -24,15 +24,17 @@ function MessagePreview({ title, message, _id, sender, timeStamp }) {
 
   return (
     <div className="inbox">
+    <Link to={`/messages/${_id}`} className="message-link">
     <div className="message-item">
       <div className="message-time">
         {formatDateTime(timeStamp)}
       </div>
-      <Link to={`/messages/${_id}`} className="message-link">
+      
         <div className="message-title"> {title}</div>
-      </Link>
+      
       <div className="message-content"> {previewMessage(message, 100)}</div>
       </div>
+      </Link>
     </div>
   );
 }

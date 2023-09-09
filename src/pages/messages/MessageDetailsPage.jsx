@@ -20,6 +20,8 @@ function GroupDetailsPage(props) {
       .catch((error) => console.log(error));
   };
 
+  console.log (message)
+
   useEffect(() => {
     getMessage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -49,6 +51,8 @@ function GroupDetailsPage(props) {
                 ? message.sender.email
                 : message.senderEmail || "No Email"
             }
+          
+            
           />
           <Reply from={message.sender} />
         </div>

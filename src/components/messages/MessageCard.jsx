@@ -1,10 +1,11 @@
 
 
-function MessageCard({ title, message, sender, email }) {
+function MessageCard({ title, message, sender, email, timeStamp }) {
     return (
-      <div>
-        <h3>{title}</h3>
-        <p>{message}</p>
+      <div className="message-item">
+      <p>{timeStamp}</p>
+        <div className="message-title">{title}</div>
+        <div className='message-content'>{message}</div>
         <p>{sender}</p>
         <p>{email}</p>
       </div>
