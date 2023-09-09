@@ -7,7 +7,6 @@ import AddTeacher from "../components/Instruments/AddTeacher";
 import groupsService from "../services/groups.service";
 import instrumentsService from "../services/instruments.service";
 import useUser from "../components/useUser";
-import Inbox from "./messages/inbox";
 
 function AdminProfilePage() {
   const [groups, setGroups] = useState([]);
@@ -55,7 +54,6 @@ function AdminProfilePage() {
         <TeacherThumbnail key={instrument._id} {...instrument} />
       ))}
 
-<Inbox />
     </div>
   );
 }
