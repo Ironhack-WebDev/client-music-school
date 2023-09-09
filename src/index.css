@@ -6,6 +6,7 @@ body {
   overflow-x: hidden; 
 }
 
+
 /* Nav Bar */
 .navbar {
   background-color: #e4cbcb;
@@ -46,16 +47,22 @@ body {
   border-bottom-color: #694736;
 }
 
-.navbar-signup, form button, button {
-  padding: 8px 30px;
-  background-color: #faf3eb;
+.navbar-links button {
+  margin-right: 40px;
   text-decoration: none;
   color: #694736;
+  position: relative;
+  padding: 15px 0px;
+  border: none;
+  background: #e4cbcb;
+  border-bottom: 1px solid transparent;
+  font-family: "Signika", sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
 }
 
-.navbar-signup:hover {
-  background-color: #e4cbcb;
-  outline: 1px solid #694736;
+.navbar-links button:hover {
+  border-bottom-color: #694736;
 }
 
 @media (max-width: 768px) {
@@ -78,8 +85,7 @@ body {
   }
 
   .navbar-signup,
-  form button,
-  button {
+  form button{
     padding: 8px 20px;
     font-size: 12px; 
   }
@@ -152,6 +158,7 @@ body {
   text-decoration: none;
   color: #694736;
   font-weight: lighter;
+  border-radius: 5px;
 }
 
 .section1 .right-column .subscribe-link:hover {
@@ -312,10 +319,17 @@ body {
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: "Signika", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
+}
+
+.formPage h3{
+  font-size: 27px;
+  margin-bottom: 10px;
+  font-weight: lighter;
+  border-bottom: 1px solid #ccc;
 }
 
 .formPage input {
@@ -328,6 +342,7 @@ body {
   font-family: "Signika", sans-serif;
   font-size: 17px;
   font-weight: lighter;
+  color: #694736;
 }
 
 .formPage textarea.message-input {
@@ -343,6 +358,22 @@ body {
   font-weight: lighter;
 }
 
+.formPage button {
+  padding: 13px 55px;
+  margin:10PX;
+  background-color: #fff;
+  text-decoration: none;
+  font-size:15px;
+  color: #694736;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formPage button:hover {
+  background-color: #faf3eb;
+  outline: 1px solid #faf3eb;
+  color: #694736;
+}
 
 /* user profile */
 .profileContainer {
@@ -359,12 +390,10 @@ body {
 /* Left side user info */
 .profile-left {
   padding: 20px;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 1.6; 
-
 }
 
 .profileContainer h3 {
@@ -377,17 +406,17 @@ body {
 }
 
 .profileContainer p {
-  color: #694736;
-  text-align: center;
   font-family: 'Signika', sans-serif;
-  font-weight: lighter;
   max-width: 700px;
   margin: 0 auto;
+  color: #694736;
 }
 
 .userInformation {
-  margin-bottom: 40px;  
+  margin-bottom: 10px;  
   font-size: 18px;
+  font-weight: lighter;
+  text-align: center;
 }
 
 .userInformation .profile-image {
@@ -395,29 +424,89 @@ body {
   height: auto;
   object-fit: cover;
   border-radius: 50%; 
-  margin: 2rem;
+  margin: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
-.yourGroupsTitle, .yourLessonsTitle {
-  background-color: #a09d81;
-  margin-top: 30px;
-  font-size: 16px;
-  padding: 10px 40px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+.profile-left button {
+  padding: 10px 40px; 
+  background-color: #fff;
+  text-decoration: none;
+  font-size:16px;
+  color: #694736;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Signika', sans-serif;
+  font-weight:lighter;
+  margin-bottom: 20px;
+}
+
+.profile-left :hover {
+  background-color: #faf3eb;
+  outline: 1px solid #faf3eb;
+  color: #694736;
 }
 
 .profileGroups,
 .profileLessons {
-  width: 100%;
+  text-decoration: none;
+  color: #694736;
+  width: 70%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  border-top: 1px solid #ccc;
+  font-size: 18px;
+  font-weight: lighter;  
+  padding: 10px;
+  text-align: left;
 }
 
+.profileLessons {
+  border-bottom: 1px solid #ccc;
+}
+
+.yourGroupsTitle, .yourLessonsTitle {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
 /* Right side */
+.profilerightSide button {
+  color: #694736;
+}
+
+.message-preview-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 15px 5px;
+  border-radius: 5px;
+  color: #694736;
+  font-weight: lighter;
+  background-color: #fff;
+}
+
+.message-link {
+  text-decoration: none;
+  color: #694736;
+}
+
+.message-title {
+  font-weight: bold;
+  margin-top: 18px;
+  font-size: 18px;
+}
+
+.message-content {
+  margin-top: 5px;
+}
+
+.message-preview-container:hover {
+  outline: 2px solid #a09d81;
+}
+
+
+
 .profileMessageTabs {
   display: flex;
   justify-content: space-between;
@@ -448,8 +537,8 @@ body {
 
 .message-item {
   border: 1px solid #ccc; 
-  padding: 10px; 
-  margin: 15px 5px; 
+  padding: 10px 14px;
+  margin: 15px 10px; 
   border-radius: 5px; 
   color: #694736; 
   font-weight: lighter;
@@ -466,7 +555,7 @@ body {
 }
 
 .message-item:hover {
-  outline: 2px solid #a09d81; 
+  outline: 1px solid #a09d81; 
 }
 
 

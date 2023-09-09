@@ -85,9 +85,9 @@ const UserPage = () => {
           <p>{userInfo.phone}</p>
           <p>{userInfo.address}</p>
         </div>
-        <Link to={`/user/edit/${user._id}`}>
-          <button>Edit Profile</button>
-        </Link>      
+        <Link to={`/user/edit/${user._id}`} style={{ textDecoration: 'none' }}>
+          <button className="profile-button">Edit Profile</button>
+        </Link>   
         <div className="profileGroups">
           <div className="yourGroupsTitle">
             <p>YOUR GROUPS</p>

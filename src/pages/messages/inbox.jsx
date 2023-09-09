@@ -24,7 +24,6 @@ function Inbox() {
 
   return (
     <div>
-      <h2>Inbox</h2>
       {messages.map((message) => (
         <MessagePreview key={message._id} {...message} />
       ))}

@@ -40,7 +40,7 @@ function NavBar() {
             </button>
           </>
         ) : (
-          <Link to="/signup" className="navbar-signup">
+          <Link to="/signup" className="navbar-link">
             SUBSCRIBE
           </Link>
         )}
