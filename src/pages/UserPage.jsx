@@ -23,7 +23,6 @@ const UserPage = () => {
     if (isLoggedIn && user && user._id) {
       axios.get(`http://localhost:5005/api/users/${user._id}`)
         .then(response => {
-          console.log(response)
           setUserInfo(response.data);
 
         })

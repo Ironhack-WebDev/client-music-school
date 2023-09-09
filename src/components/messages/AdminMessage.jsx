@@ -6,7 +6,7 @@ import usersService from "../../services/users.service";
 function AdminMessage() {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
-  const [adminUsers, setAdminUsers] = useState("");
+  const [adminUsers, setAdminUsers] = useState([]);
 
   const user = useUser();
 
@@ -19,8 +19,6 @@ function AdminMessage() {
       sender: user._id,
       recipient: adminUsers,
     };
-
-    console.log(requestBody);
 
     messagesService
       .createMessage(requestBody)
