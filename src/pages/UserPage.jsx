@@ -8,7 +8,7 @@ import SentMessages from '../components/messages/SentMessages';
 import usersService from "../services/users.service";
 import GroupTitle from "../components/Groups/GroupTitle";
 import UserLessonCard from "../components/lessons/UserLessonCard";
-
+import avatar from "../assets/default-avatar.jpeg";
 
 const UserPage = () => {
   const { user, isLoggedIn } = useContext(AuthContext);
@@ -78,7 +78,7 @@ const UserPage = () => {
     <div className="profileContainer">
       <div className="profile-left">
         <div className="userInformation">
-          <img src={userInfo.imageURL} alt="Profile" className="profile-image" />
+          <img src={userInfo.imageURL || avatar } alt="Profile" className="profile-image" />
           <h3>{userInfo.name}</h3>
           <p>{userInfo.email}</p>
           <p>{userInfo.phone}</p>
@@ -91,7 +91,7 @@ const UserPage = () => {
           <div className="yourGroupsTitle">
             <p>YOUR GROUPS</p>
           </div>
-          <ul>
+          <ul className="user-group-list">
           {userGroups.map((group) => (
             <GroupTitle key={group._id} {...group} />
           ))}
