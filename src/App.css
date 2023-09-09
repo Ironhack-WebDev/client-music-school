@@ -6,7 +6,7 @@
 }
 
 /* Timetable */
-.App {
+.timetable-page {
   width: 100%;
   height: 100vh;
   align-items: center;
@@ -21,31 +21,26 @@
   margin-bottom: 1rem;
 }
 
-.App p {
+.timetableHeader p {
   color: #FAF3EB;
   text-align: center;
   font-family: 'Signika', sans-serif;
   font-size: 20px;
   font-weight: lighter;
-  max-width: 700px;
+  max-width: 40%;
   margin: 0 auto;
+  background: #807C5E;
 }
 
-.Tabs {
+.timetable-days {
   width: 100%;
   max-width: 100%; 
   height: auto;
-  min-height: 400px;
   background: #807C5E;
-  margin: 3.5rem auto 1.5rem;
-  padding: 2rem 1rem;
-  color: #FAF3EB;
+  margin: 2.5rem auto 1.5rem;
+  padding: 2rem 8rem;
+  color: #694736;
   border-radius: 0.3rem;
-  overflow-x: hidden; 
-}
-
-.react-tabs {
-  -webkit-tap-highlight-color: transparent;
 }
 
 .react-tabs__tab-list {
@@ -67,12 +62,15 @@
   text-align: center;
   cursor: pointer;
   font-family: 'Signika', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: lighter;
+  background-color: #FAF3EB;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .react-tabs__tab--selected {
-  background: #a3a087;
+  background: #807C5E;
+  color: #FAF3EB;
 }
 
 .react-tabs__tab--disabled {
@@ -81,28 +79,73 @@
 }
 
 .react-tabs__tab:hover {
-  background: #FAF3EB;
-  color: #807C5E;
+  background: #a3a087;
+  color: #FAF3EB;
 }
 
-.react-tabs__tab:first-child {
-  border-bottom-left-radius: 0.3rem;
-  border-top-left-radius: 0.3rem;
+
+.timetable-container {
+  background-color: #807C5E;
+  border-radius: 5px; 
+  color: #694736;
 }
 
-.react-tabs__tab:last-child {
-  border-bottom-right-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
+
+.timetable-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #FAF3EB;
+  padding: 16px;
+  margin: 30px;
+  border-radius: 5px; 
+  background-color: #FAF3EB;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
-.react-tabs__tab-panel {
-  display: none;
-}
-
-.react-tabs__tab-panel--selected {
-  display: block;
-  font-size: 2rem;
+.group-time,
+.group-info {
+  flex: 1;
   text-align: center;
+}
+
+.group-time {
+  font-size: 24px;
+}
+
+.group-title {
+  font-size: 24px;
+  padding-bottom: 5px;
+}
+
+.group-location-leader{
+  font-weight: lighter;
+}
+
+.group-view-button-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.group-view-button {
+  background-color: #694736;
+  color: #FAF3EB;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 15px 40px;
+  margin: 0 10px;
+}
+
+.group-view-button:hover {
+  background-color: #e4cbcb;
+  color: #694736;
 }
 
 /* Mobile styling */
