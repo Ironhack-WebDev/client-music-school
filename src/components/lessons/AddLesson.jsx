@@ -17,8 +17,6 @@ function AddLesson({ instrumentId, allUsers }) {
       instrumentId,
     };
 
-    console.log(requestBody);
-
     lessonsService
       .createLesson(requestBody)
       .then((response) => {
