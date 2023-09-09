@@ -28,14 +28,9 @@ function Inbox() {
 
   return (
     <div>
-      <h2>Inbox</h2>
-      {messages.length === 0 ? (
-        <p>No messages</p>
-      ) : (
-        messages.map((message) => (
-          <MessagePreview key={message._id} {...message} />
-        ))
-      )}
+      {messages.map((message) => (
+        <MessagePreview key={message._id} {...message} />
+      ))}
     </div>
   );
 }

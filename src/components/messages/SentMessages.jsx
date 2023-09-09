@@ -30,15 +30,29 @@ const SentMessages = () => {
 
   return (
     <div className="sent-messages">
-      <h2>Sent Messages</h2>
       <ul>
         {sentMessages.map(message => (
-          <li key={message._id}>
-            <div>
-              <strong>Title:</strong> {message.title}
+          <li key={message._id} className="message-item">
+            <div className="message-time">
+            {(() => {
+                const timestamp = message.timeStamp;
+                const date = new Date(timestamp);
+                const options = {
+                  year: '2-digit', 
+                  month: '2-digit', 
+                  day: '2-digit', 
+                  hour: '2-digit', 
+                  minute: '2-digit', 
+                  hour12: true
+                };
+                return new Intl.DateTimeFormat('en-GB', options).format(date);
+              })()}
             </div>
-            <div>
-              <strong>Message:</strong> {previewMessage(message.message, 100)}
+            <div className="message-title">
+              {message.title}
+            </div>
+            <div className='message-content'>
+              {previewMessage(message.message, 100)}
             </div>
           </li>
         ))}
