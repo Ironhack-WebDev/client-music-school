@@ -34,7 +34,7 @@ const SentMessages = () => {
    
       <ul>
         {sentMessages.map(message => (
-          <Link to={`/messages/${message._id}`} className="message-link">
+          <Link to={`/messages/outbox/${message._id}`} className="message-link">
           <li key={message._id} className="message-item">
             <div className="message-time">
             {(() => {
