@@ -468,8 +468,28 @@ body {
 .yourGroupsTitle, .yourLessonsTitle {
   font-size: 16px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
+.user-group-list {
+  font-size: 18px;
+  font-weight: lighter;  
+  text-decoration: none;
+  list-style-type: none; 
+}
+
+.user-group-title {
+  padding: 10px; 
+  background-color: #fff;
+  text-decoration: none;
+  font-size:16px;
+  color: #694736;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Signika', sans-serif;
+  font-weight:lighter;
+  text-align: center;
+}
 
 /* Right side */
 .profilerightSide button {

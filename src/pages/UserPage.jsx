@@ -91,7 +91,7 @@ const UserPage = () => {
           <div className="yourGroupsTitle">
             <p>YOUR GROUPS</p>
           </div>
-          <ul>
+          <ul className="user-group-list">
           {userGroups.map((group) => (
             <GroupTitle key={group._id} {...group} />
           ))}
