@@ -24,7 +24,7 @@ function MessagePreview({ title, message, _id, sender, timeStamp }) {
 
   return (
     <div className="inbox">
-    <Link to={`/messages/${_id}`} className="message-link">
+    <Link to={`/messages/inbox/${_id}`} className="message-link">
     <div className="message-item">
       <div className="message-time">
         {formatDateTime(timeStamp)}

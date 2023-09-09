@@ -27,7 +27,8 @@ import GroupDetailsPage from "./pages/groups/GroupDetailsPage";
 import EditGroupPage from "./pages/groups/EditGroupPage";
 import GroupInfoPage from "./pages/groups/GroupInfoPage";
 //message pages
-import MessageDetailsPage from "./pages/messages/MessageDetailsPage";
+import InboxDetailsPage from "./pages/messages/InboxDetailsPage";
+import OutboxDetailsPage from "./pages/messages/OutboxDetailsPage";
 import StandardMessage from "./components/messages/AdminMessage";
 //instrument pages
 import InstrumentListPage from "./pages/instruments/InstrumentListPage"
@@ -67,7 +68,8 @@ function App() {
         <Route path="/lessons/edit/:lessonId" element={<IsAdmin><EditLessonPage /></IsAdmin>} />
 
         <Route path="/messages" element={<StandardMessage />} />
-        <Route path="/messages/:messageId" element={<MessageDetailsPage />} />
+        <Route path="/messages/inbox/:messageId" element={<InboxDetailsPage />} />
+        <Route path="/messages/outbox/:messageId" element={<OutboxDetailsPage />} />
 
         <Route path="/contact" element={<ContactPage />} />
         
