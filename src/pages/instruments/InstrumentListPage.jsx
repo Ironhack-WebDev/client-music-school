@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import InstrumentCard from "../../components/Instruments/InstrumentCard";
+import InstrumentThumbnail from "../../components/Instruments/InstrumentThumbnail";
 import Searchbar from "../../components/Searchbar";
 import instrumentsService from "../../services/instruments.service";
 
@@ -27,7 +27,7 @@ function InstrumentListPage() {
        <Searchbar inputText={inputText} setInputText={setInputText} />
 
         {filteredInstruments.map((instrument) => (
-        <InstrumentCard key={instrument._id} {...instrument} />
+        <InstrumentThumbnail key={instrument._id} {...instrument} />
       ))}
       </div>
     );

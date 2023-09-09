@@ -10,6 +10,9 @@ function AddGroup(props) {
   const [leader, setLeader] = useState("");
   const [day, setDay] = useState("");
   const [imageURL, setImageURL] = useState("");
+  const [skillLevel, setSkillLevel] = useState("");
+  const [instruments, setInstruments] = useState([]);
+  const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +25,9 @@ function AddGroup(props) {
       leader,
       day,
       imageURL,
+      skillLevel, 
+      instruments, 
+      description
     };
 
     groupsService
@@ -34,6 +40,9 @@ function AddGroup(props) {
         setLeader("");
         setDay("");
         setImageURL("");
+        setSkillLevel ("");
+        setInstruments ([])
+        setDescription ("")
         PaymentResponse.refreshGroups();
       })
       .catch((error) => console.log(error));
@@ -54,14 +63,20 @@ function AddGroup(props) {
       />
       </div>
       <div>
-      <label>Day</label>
-      <input
-        type="text"
-        name="day"
-        value={day}
-        onChange={(e) => setDay(e.target.value)}
-      />
-       </div>
+  <label>Day</label>
+  <select
+    name="day"
+    value={day}
+    onChange={(e) => setDay(e.target.value)}
+  >
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+  </select>
+</div>
+
       <div>
       <label>Start Time</label>
       <input
@@ -98,6 +113,34 @@ function AddGroup(props) {
         onChange={(e) => setLeader(e.target.value)}
       />
        </div>
+       <div>
+      <label>Skill Level</label>
+      <input
+        type="text"
+        name="skillLevel"
+        value={skillLevel}
+        onChange={(e) => setSkillLevel(e.target.value)}
+      />
+       </div>
+       <div>
+      <label>Instruments</label>
+      <input
+        type="text"
+        name="instruments"
+        value={instruments}
+        onChange={(e) => setInstruments(e.target.value)}
+      />
+       </div>
+       <div>
+      <label>Description</label>
+      <input
+        type="text"
+        name="description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+       </div>
+
       <div>
       <label>Group Image URL</label>
       <input

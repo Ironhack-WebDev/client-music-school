@@ -45,6 +45,12 @@ class GroupsService {
     return this.api.put(`/api/groups/${id}`, requestBody);
   };
 
+    // PUT /api/groups/:id/join
+    joinAGroup = (id, requestBody) => {
+      return this.api.put(`/api/groups/${id}/join`, requestBody);
+    };
+  
+
   // DELETE /api/groups/:id
   deleteGroup = (id) => {
     return this.api.delete(`/api/groups/${id}`);

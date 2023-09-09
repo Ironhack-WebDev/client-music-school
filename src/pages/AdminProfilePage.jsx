@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import GroupThumbnail from "../components/Groups/GroupThumbnail";
+import GroupTitle from "../components/Groups/GroupTitle";
 import TeacherThumbnail from "../components/Instruments/TeacherThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
 import AddTeacher from "../components/Instruments/AddTeacher";
@@ -7,7 +7,6 @@ import AddTeacher from "../components/Instruments/AddTeacher";
 import groupsService from "../services/groups.service";
 import instrumentsService from "../services/instruments.service";
 import useUser from "../components/useUser";
-import Inbox from "./messages/inbox";
 
 function AdminProfilePage() {
   const [groups, setGroups] = useState([]);
@@ -47,7 +46,7 @@ function AdminProfilePage() {
 
       <h3> Groups </h3>
       {groups.map((group) => (
-        <GroupThumbnail key={group._id} {...group} />
+        <GroupTitle key={group._id} {...group} />
       ))}
 
       <h3> Teachers </h3>
@@ -55,7 +54,6 @@ function AdminProfilePage() {
         <TeacherThumbnail key={instrument._id} {...instrument} />
       ))}
 
-<Inbox />
     </div>
   );
 }

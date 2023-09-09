@@ -2,9 +2,6 @@ import { Link } from "react-router-dom";
 
 function InstrumentCard({
   instrumentName,
-  teacher,
-  description,
-  location,
   imageURL,
   _id 
 }) {
@@ -15,9 +12,6 @@ function InstrumentCard({
       </Link>
       <div>
         <img src={imageURL} alt="Instrument" style={{ width: "200px" }} />
-        <p>Teacher: {teacher}</p>
-        <p>Description: {description}</p>
-        <p>Location: {location}</p>
       </div>
     </div>
   );

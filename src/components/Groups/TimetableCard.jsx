@@ -10,7 +10,7 @@ const groupCardStyles = {
   marginBottom: "10px",
 };
 
-const GroupCard = ({ title, startTime, endTime, location, leader, imageURL, _id, description, skillLevel, instruments }) => {
+const TimetableCard = ({ title, startTime, endTime, location, leader, imageURL, _id }) => {
   return (
     <div>
     <Link to={`/groups/info/${_id}`}>
@@ -28,14 +28,9 @@ const GroupCard = ({ title, startTime, endTime, location, leader, imageURL, _id,
         <p>Location: {location}</p>
         <p>Group Leader: {leader}</p>
       </div>
-      <div>
-        <p>Description: {description}</p>
-        <p>Skill Level: {skillLevel}</p>
-        <p>Instruments: {instruments}</p>
-      </div>
     </div>
     </div>
   );
 };
 
-export default GroupCard;
+export default TimetableCard;

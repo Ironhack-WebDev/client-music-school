@@ -37,11 +37,6 @@ class MessagesService {
   deleteMessage = (id) => {
     return this.api.delete(`/api/messages/${id}`);
   };
-
-   // GET /api/users/messages
-   getUserMessages = (userId) => {
-    return this.api.get(`/api/users/messages?userId=${userId}`);
-  };
 }
 
 

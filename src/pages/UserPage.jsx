@@ -1,33 +1,65 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/auth.context';
 import { Link } from 'react-router-dom';
-
-const testUser = {
-  userId: 'your-static-user-id',
-  name: 'Test User',
-  email: 'test@example.com',
-  imageURL: 'path/to/image',
-  phone: '123-456-7890',
-  address: '123 Test Street, Test City',
-};
+import Inbox from './messages/inbox';
+import AdminMessage from '../components/messages/AdminMessage';
+import SentMessages from '../components/messages/SentMessages';
+import usersService from "../services/users.service";
+import GroupTitle from "../components/Groups/GroupTitle";
+import UserLessonCard from "../components/lessons/UserLessonCard";
+import avatar from "../assets/default-avatar.jpeg";
 
 const UserPage = () => {
-  // const { user, setUser, isLoggedIn } = useContext(AuthContext);
-  const { setUser, isLoggedIn } = useContext(AuthContext);
-  const user = testUser;
+  const { user, isLoggedIn } = useContext(AuthContext);
+  const [userInfo, setUserInfo] = useState({});
+  const [userGroups, setUserGroups] = useState([]);
+  const [userLessons, setUserLessons] = useState([]);
+  const [activeTab, setActiveTab] = useState('inbox');
+
 
   useEffect(() => {
-    if (isLoggedIn) {
-      axios.get(`/users/${user.userId}`)
+    
+    if (isLoggedIn && user && user._id) {
+      axios.get(`http://localhost:5005/api/users/${user._id}`)
         .then(response => {
-          setUser(response.data);
+          setUserInfo(response.data);
+
         })
         .catch(error => {
           console.error('Error fetching user data:', error);
         });
     }
-  }, [isLoggedIn, setUser, user.userId]);
+  }, [isLoggedIn, setUserInfo, user]);
+
+  const getUserGroups = () => {
+    usersService
+      .getUserGroups(user._id)
+      .then((response) => setUserGroups(response.data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    if (user && user._id)
+    getUserGroups();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+  const getUserLessons = () => {
+    usersService
+      .getUserLessons(user._id)
+      .then((response) => setUserLessons(response.data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    if (user && user._id)
+    getUserLessons();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+
+
 
   if (!isLoggedIn) {
     return (
@@ -38,19 +70,75 @@ const UserPage = () => {
     );
   }
 
+  const toggleTab = (tab) => {
+    setActiveTab(tab);
+  };
 
   return (
     <div className="profileContainer">
-      <div className="userInformation">
-        <img src={user.imageURL} alt="Profile" className="profile-image" />
-       <p>{user.name}</p>
-       <p>{user.email}</p>
-       <p>{user.phone}</p>
-       <p>{user.address}</p>
-       <Link to={`/user/edit/${user.userId}`}>
-        <button>Edit Profile</button>
-      </Link>
-     </div>
+      <div className="profile-left">
+        <div className="userInformation">
+          <img src={userInfo.imageURL || avatar } alt="Profile" className="profile-image" />
+          <h3>{userInfo.name}</h3>
+          <p>{userInfo.email}</p>
+          <p>{userInfo.phone}</p>
+          <p>{userInfo.address}</p>
+        </div>
+        <Link to={`/user/edit/${user._id}`} style={{ textDecoration: 'none' }}>
+          <button className="profile-button">Edit Profile</button>
+        </Link>   
+        <div className="profileGroups">
+          <div className="yourGroupsTitle">
+            <p>YOUR GROUPS</p>
+          </div>
+          <ul className="user-group-list">
+          {userGroups.map((group) => (
+            <GroupTitle key={group._id} {...group} />
+          ))}
+          </ul>
+        </div>
+        <div className="profileLessons">
+          <div className="yourLessonsTitle">
+            <p>YOUR LESSONS</p>
+          </div> 
+          <ul>         
+          {userLessons.map((lesson) => (
+            <UserLessonCard key={lesson._id} {...lesson} />
+          ))}
+          </ul>
+        </div>
+      </div>
+      <div className='profilerightSide'>
+        <div className="profileMessageTabs">
+          <button
+            className={activeTab === 'inbox' ? 'active' : ''}
+            onClick={() => toggleTab('inbox')}
+          >
+            INBOX
+          </button>
+          <button
+            className={activeTab === 'sent' ? 'active' : ''}
+            onClick={() => toggleTab('sent')}
+          >
+            SENT
+          </button>
+          <button
+            className={activeTab === 'newMessage' ? 'active' : ''}
+            onClick={() => toggleTab('newMessage')}
+          >
+            NEW MESSAGE
+          </button>
+        </div>
+        <div className="messageContainer">
+          {activeTab === 'inbox' ? (
+            <Inbox />
+          ) : activeTab === 'sent' ? (
+            <SentMessages />
+          ) : (
+            <AdminMessage />
+          )}
+        </div>
+      </div>
     </div>
   );
 };

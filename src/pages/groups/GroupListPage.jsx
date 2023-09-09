@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import GroupCard from "../../components/Groups/GroupCard";
+import GroupThumbnail from "../../components/Groups/GroupThumbnail";
 import Searchbar from "../../components/Searchbar";
 import groupsService from "../../services/groups.service";
 
@@ -25,10 +25,10 @@ function GroupListPage() {
   return (
     <div>
       <Searchbar inputText={inputText} setInputText={setInputText} />
-
+ 
       
       {filteredGroups.map((group) => (
-        <GroupCard key={group._id} {...group} />
+        <GroupThumbnail key={group._id} {...group} />
       ))}
     </div>
   );

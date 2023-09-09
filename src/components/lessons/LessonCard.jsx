@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 function LessonCard({ user, time, length, _id }) {
   const [userDetails, setUserDetails] = useState(null);
-  const [setLoading] = useState(true);
-  console.log(user)
 
   const getUser = () => {
     usersService
@@ -23,11 +21,6 @@ function LessonCard({ user, time, length, _id }) {
   }, [user]);
 
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false); 
-    }, 2000);
-  }); 
 
   return (
     <div>
