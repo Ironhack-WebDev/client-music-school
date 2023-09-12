@@ -3,10 +3,11 @@ import axios from "axios";
 class AuthService {
   constructor() {
     this.api = axios.create({
-      baseURL: "https://javajams-server.onrender.com",
+      baseURL: "http://localhost:5005",
     });
 
     this.api.interceptors.request.use((config) => {
+
       const storedToken = localStorage.getItem("authToken");
 
       if (storedToken) {
@@ -29,6 +30,7 @@ class AuthService {
     return this.api.get("/auth/verify");
   };
 }
+
 
 const authService = new AuthService();
 
