@@ -24,7 +24,7 @@ function InstrumentListPage() {
 
     return (
       <div >
-       <Searchbar inputText={inputText} setInputText={setInputText} />
+       <Searchbar inputText={inputText} setInputText={setInputText} className="searchbar"/>
 
         {filteredInstruments.map((instrument) => (
         <InstrumentThumbnail key={instrument._id} {...instrument} />

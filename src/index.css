@@ -617,3 +617,37 @@ body {
     width: 100%;
   }
 }
+
+/* classes page */
+.classes-list-container {
+  text-align: center;
+  background-color: #807C5E; 
+}
+
+.classes-header {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.searchbar {
+  width: 60%;
+}
+
+.classes-list-section-spacing {
+  margin-top: 20px;
+}
+
+.classes-list-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.classes-list-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}

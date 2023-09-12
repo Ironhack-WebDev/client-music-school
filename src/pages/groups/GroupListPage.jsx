@@ -24,7 +24,7 @@ function GroupListPage() {
 
   return (
     <div>
-      <Searchbar inputText={inputText} setInputText={setInputText} />
+      <Searchbar inputText={inputText} setInputText={setInputText} className="searchbar"/>
  
       
       {filteredGroups.map((group) => (
