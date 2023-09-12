@@ -3,7 +3,7 @@ import axios from "axios";
 class InstrumentsService {
   constructor() {
     this.api = axios.create({
-      baseURL: process.env.SERVER_URL || "http://localhost:5005", 
+baseURL: process.env.SERVER_URL || "http://localhost:5005",
     });
 
 
