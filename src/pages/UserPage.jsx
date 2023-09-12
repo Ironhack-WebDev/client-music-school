@@ -21,7 +21,7 @@ const UserPage = () => {
   useEffect(() => {
     
     if (isLoggedIn && user && user._id) {
-      axios.get(`http://localhost:5005/api/users/${user._id}`)
+      axios.get(`https://javajams-server.onrender.com/api/users/${user._id}`) 
         .then(response => {
           setUserInfo(response.data);
 

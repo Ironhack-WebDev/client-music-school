@@ -11,8 +11,8 @@ const SentMessages = () => {
     if (user && user._id) {
       const fetchSentMessages = async () => {
         try {
-          const response = await axios.get(`http://localhost:5005/api/users/messages/sent?userId=${user._id}`);
-          setSentMessages(response.data);
+          const response = await axios.get(`https://javajams-server.onrender.com/api/users/messages/sent?userId=${user._id}`);
+          setSentMessages(response.data); 
         } catch (error) {
           console.error('Error fetching sent messages:', error);
         }

@@ -15,7 +15,7 @@ class UsersService {
 
       return config;
     });
-  }
+  } 
 
    // GET /api/users/
    getAllUsers = () => {
