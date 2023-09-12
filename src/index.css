@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   /*-moz-osx-font-smoothing: grayscale;*/
   overflow-x: hidden; 
+  background-color: #807C5E; 
 }
 
 
@@ -312,13 +313,12 @@ body {
 .formPage {
   background-color: #faf3eb;
   color: #694736;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
+  padding: 80px;
   font-family: "Signika", sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -622,6 +622,8 @@ body {
 .classes-list-container {
   text-align: center;
   background-color: #807C5E; 
+  height: 100%;
+  padding-bottom: 100px;
 }
 
 .classes-header {
@@ -630,24 +632,42 @@ body {
   height: auto;
 }
 
+.searchbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #807C5E;
+}
+
 .searchbar {
   width: 60%;
+  margin-bottom: 30px;
 }
 
-.classes-list-section-spacing {
-  margin-top: 20px;
+.tileContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
-.classes-list-section {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+.tile {
+  width: 20%;
+  box-sizing: border-box;
+  background-color: #FAF3EB;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  border-radius: 10px;
+  margin:25px;
 }
 
-.classes-list-section h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+.tile h5 {
+  font-size: 22px;
+  padding: 15px;
+  font-weight: lighter;
+}
+
+.tile-image {
+  width: 100%;
 }

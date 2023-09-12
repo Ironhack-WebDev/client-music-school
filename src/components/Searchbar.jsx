@@ -7,19 +7,22 @@ function Searchbar({ inputText, setInputText }) {
     };
 
     return (
-        <div style={{ width: '100%', rowGap: '20px', marginTop: '20px' }}>
-            <input
-                type="text"
-                onChange={inputHandler}
-                value={inputText}
-                style={{
-                    width: '100%',
-                    padding: '10px',
-                    border: '1px solid #ccc',
-                    borderRadius: '5px',
-                }}
-                placeholder="Search"
-            />
+        <div className="searchbar-container">
+            <div className="searchbar">
+                <input
+                    type="text"
+                    onChange={inputHandler}
+                    value={inputText}
+                    style={{
+                        width: '100%',
+                        padding: '10px',
+                        border: '1px solid #ccc',
+                        borderRadius: '5px',
+                        backgroundColor: '#FAF3EB',
+                    }}
+                    placeholder="Search"
+                />
+            </div>
         </div>
     );
 }

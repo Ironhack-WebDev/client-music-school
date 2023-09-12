@@ -23,12 +23,13 @@ function InstrumentListPage() {
   });
 
     return (
-      <div >
-       <Searchbar inputText={inputText} setInputText={setInputText} className="searchbar"/>
-
-        {filteredInstruments.map((instrument) => (
-        <InstrumentThumbnail key={instrument._id} {...instrument} />
-      ))}
+      <div>
+       <Searchbar inputText={inputText} setInputText={setInputText} />
+       <div className="tileContainer">
+          {filteredInstruments.map((instrument) => (
+            <InstrumentThumbnail key={instrument._id} {...instrument} />
+          ))}
+        </div>
       </div>
     );
   }
