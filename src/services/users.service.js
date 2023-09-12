@@ -3,7 +3,7 @@ import axios from "axios";
 class UsersService {
   constructor() {
     this.api = axios.create({
-      baseURL: process.env.SERVER_URL || "http://localhost:5005", 
+      baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005",
     });
 
     this.api.interceptors.request.use((config) => {
@@ -15,10 +15,10 @@ class UsersService {
 
       return config;
     });
-  } 
+  }
 
-   // GET /api/users/
-   getAllUsers = () => {
+  // GET /api/users/
+  getAllUsers = () => {
     return this.api.get(`/api/users`);
   };
 
@@ -32,20 +32,20 @@ class UsersService {
     return this.api.put(`/api/users/${userId}`, requestBody);
   };
 
- // GET /api/groups/members?user=${user} 
+  // GET /api/groups/members?user=${user}
   getUserGroups = (user) => {
     return this.api.get(`/api/groups/members?user=${user}`);
   };
 
-  // GET /api/lessons?user=${user} 
+  // GET /api/lessons?user=${user}
   getUserLessons = (user) => {
     return this.api.get(`/api/lessons/student?user=${user}`);
   };
 
   // POST /api/groups/:groupId
   addUserToGroup = (groupId) => {
-    return this.api.post(`/api/groups/${groupId}`)
-  }
+    return this.api.post(`/api/groups/${groupId}`);
+  };
 
   // GET /api/users/:userId/messages
   getUserMessages = (userId) => {
@@ -55,7 +55,7 @@ class UsersService {
   // GET /api/admin
 
   getAdminUser = (userId) => {
-    return this.api.get(`/api/admin?userId=${userId}`)
+    return this.api.get(`/api/admin?userId=${userId}`);
   };
 }
 
