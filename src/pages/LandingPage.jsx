@@ -46,18 +46,18 @@ function LandingPage() {
         
         <div className="section2-container">
           <img src={header1} alt="header 1" />
-          <div className="tiles-container">
-            <div className="tile">
+          <div className="homepage-tiles-container">
+            <div className="homepage-tile">
               <img src={tile1} alt="Container 1" />
               <h2>PIANO</h2>
               <p>Dive into the world of keys and chords as you unleash your inner maestro.</p>
             </div>
-            <div className="tile">
+            <div className="homepage-tile">
               <img src={tile2} alt="Container 2" />
               <h2>FLUTE</h2>
               <p>From soft whispers to spirited trills, let your breath become an enchanted melody.</p>
             </div>
-            <div className="tile">
+            <div className="homepage-tile">
               <img src={tile3} alt="Container 3" />
               <h2>GUITAR</h2>
               <p>Whether you're serenading under the stars or jamming like a legend, let your strings tell your story.</p>

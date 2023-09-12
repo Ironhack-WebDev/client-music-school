@@ -205,7 +205,7 @@ body {
   font-weight: lighter;
 }
 
-.tiles-container {
+.homepage-tiles-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -214,7 +214,7 @@ body {
   margin: 0 auto;
 }
 
-.tile {
+.homepage-tile {
   width: calc(33.33% - 50px);
   margin: 20px;
   text-align: left;
@@ -225,7 +225,7 @@ body {
   background-color: #e4cbcb; 
 }
 
-.tile img {
+.homepage-tile img {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -233,7 +233,7 @@ body {
   margin: 0 auto;
 }
 
-.tile p {
+.homepage-tile p {
   color: #694736;
   font-size: 18px;
   line-height: 1.5;
@@ -646,20 +646,23 @@ body {
 
 .tileContainer {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 80%;
   margin: 0 auto;
 }
 
 .tile {
-  width: 20%;
-  box-sizing: border-box;
+  width: calc(22.33% - 50px);
   background-color: #FAF3EB;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
   border-radius: 10px;
   margin:25px;
+  position: relative;
+    background-size: cover;
+  background-position: center;
 }
 
 .tile h5 {
@@ -670,4 +673,20 @@ body {
 
 .tile-image {
   width: 100%;
+  max-width: 100%;
+  height: 0;
+  padding-bottom: 100%; 
+  overflow: hidden; 
+  position: relative;
 }
+
+.tile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
