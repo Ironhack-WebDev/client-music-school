@@ -13,9 +13,24 @@ function AddGroup(props) {
   const [skillLevel, setSkillLevel] = useState("");
   const [instruments, setInstruments] = useState([]);
   const [description, setDescription] = useState("");
+  const [titleError, setTitleError] = useState("");
+const [startTimeError, setStartTimeError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setTitleError("");
+    setStartTimeError("");
+
+    if (title.trim() === "") {
+      setTitleError("Title is required.");
+      return;
+    }
+  
+    if (startTime.trim() === "") {
+      setStartTimeError("Start Time is required.");
+      return;
+    }
 
     const requestBody = {
       title,
@@ -61,6 +76,7 @@ function AddGroup(props) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
+      <p className="error">{titleError}</p>
       </div>
       <div>
   <label>Day</label>
@@ -69,6 +85,7 @@ function AddGroup(props) {
     value={day}
     onChange={(e) => setDay(e.target.value)}
   >
+  <option value="">Please Select a Day</option>
     <option value="Monday">Monday</option>
     <option value="Tuesday">Tuesday</option>
     <option value="Wednesday">Wednesday</option>
@@ -85,6 +102,7 @@ function AddGroup(props) {
         value={startTime}
         onChange={(e) => setStartTime(e.target.value)}
       />
+      <p className="error">{startTimeError}</p>
        </div>
       <div>
       <label>End Time</label>
