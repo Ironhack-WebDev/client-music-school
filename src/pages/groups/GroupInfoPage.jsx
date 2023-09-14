@@ -79,6 +79,7 @@ function GroupInfoPage(props) {
   };
 
   return (
+
     <div className="information-container">
     <div className="info-card">
       {group && (
@@ -115,6 +116,7 @@ function GroupInfoPage(props) {
       <Link to={`/contact`} style={{ textDecoration: 'none', color: 'inherit',}}>
         <button>Send a message</button>
       </Link>
+///
     </div>
     </div>
     </div>

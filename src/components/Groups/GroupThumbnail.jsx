@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 
 function GroupThumbnail({title, imageURL, _id}) {
     return (
-      <div >
-      <Link to={`/groups/info/${_id}`}>
-        <h3>{title}</h3>
+      <div className="tile">
+        <Link to={`/groups/info/${_id}`} style={{ textDecoration: 'none', color: '#694736' }}>
+          <div className="tile-image">
+            <img src={imageURL} alt="Instrument"/>
+          </div>
+          <div className="tile-info">   
+            <h5>{title}</h5>
+          </div>
         </Link>
-        <div>
-        <img src={imageURL} alt="Instrument" style={{ width: "200px" }} />
-      </div>
       </div>
     );
   }
