@@ -6,7 +6,7 @@ import Inbox from './messages/inbox';
 import AdminMessage from '../components/messages/AdminMessage';
 import SentMessages from '../components/messages/SentMessages';
 import usersService from "../services/users.service";
-import GroupTitle from "../components/Groups/GroupTitle";
+import GroupSummary from "../components/Groups/GroupSummary";
 import UserLessonCard from "../components/lessons/UserLessonCard";
 import avatar from "../assets/default-avatar.jpeg";
 
@@ -16,20 +16,20 @@ const UserPage = () => {
   const [userGroups, setUserGroups] = useState([]);
   const [userLessons, setUserLessons] = useState([]);
   const [activeTab, setActiveTab] = useState('inbox');
-
+ 
+  const server = process.env.REACT_APP_SERVER_URL;
 
   useEffect(() => {
-    
     if (isLoggedIn && user && user._id) {
-      axios.get(`http://localhost:5005/api/users/${user._id}`)
+      axios.get(`${server}/api/users/${user._id}`) 
         .then(response => {
           setUserInfo(response.data);
-
         })
         .catch(error => {
           console.error('Error fetching user data:', error);
         });
     }
+    // eslint-disable-next-line
   }, [isLoggedIn, setUserInfo, user]);
 
   const getUserGroups = () => {
@@ -93,7 +93,7 @@ const UserPage = () => {
           </div>
           <ul className="user-group-list">
           {userGroups.map((group) => (
-            <GroupTitle key={group._id} {...group} />
+            <GroupSummary key={group._id} {...group} />
           ))}
           </ul>
         </div>

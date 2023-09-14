@@ -3,8 +3,9 @@ import { useState } from "react";
 import useUser from "../../components/useUser";
 
 function Reply(props) {
-  const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
+  const [title, setTitle] = useState(`re: ${props.title}`);
+
   const user = useUser();
 
   const handleSubmit = (e) => {

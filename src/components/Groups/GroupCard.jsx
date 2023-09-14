@@ -1,3 +1,4 @@
+
 const GroupCard = ({ title, startTime, endTime, location, day, leader, imageURL, _id, description, skillLevel, instruments }) => {
   return (
     <div className="information">

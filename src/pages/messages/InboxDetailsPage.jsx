@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+//import {  useNavigate } from "react-router-dom";
 import messagesService from "../../services/messages.service";
-import MessageCard from "../../components/messages/MessageCard";
+import InboxCard from "../../components/messages/InboxCard";
 import Reply from "../../components/messages/Reply";
 
-function GroupDetailsPage(props) {
+function InboxDetailsPage(props) {
   const [message, setMessage] = useState(null);
   const { messageId } = useParams();
 
-  const navigate = useNavigate();
+ // const navigate = useNavigate();
 
   const getMessage = () => {
     messagesService
@@ -20,23 +21,26 @@ function GroupDetailsPage(props) {
       .catch((error) => console.log(error));
   };
 
+  console.log(message);
+
   useEffect(() => {
     getMessage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const deleteMessage = () => {
+/*  const deleteMessage = () => {
     messagesService
       .deleteMessage(messageId)
       .then(() => navigate("/admin"))
       .catch((err) => console.log(err));
-  };
+  }; */
 
   return (
     <div>
       {message ? (
         <div>
-          <MessageCard
+          <InboxCard
+            timeStamp={message.timeStamp}
             title={message.title}
             message={message.message}
             sender={
@@ -50,14 +54,14 @@ function GroupDetailsPage(props) {
                 : message.senderEmail || "No Email"
             }
           />
-          <Reply from={message.sender} />
+          <Reply from={message.sender} title={message.title} />
         </div>
       ) : (
         <p>Loading...</p>
       )}
-      <button onClick={deleteMessage}>Delete Message</button>
+      {/* <button onClick={deleteMessage}>Delete Message</button> */}
     </div>
   );
 }
 
-export default GroupDetailsPage;
+export default InboxDetailsPage;
