@@ -21,7 +21,7 @@ import ContactPage from "./pages/general/ContactPage";
 import ClassesList from "./pages/Classes";
 
 //group pages
-import GroupTimetablePage from "./pages/groups/GroupTimetablePage";
+import GroupTimetablePage from "./pages/groups/GroupTimetablePage"
 import GroupDetailsPage from "./pages/groups/GroupDetailsPage";
 import EditGroupPage from "./pages/groups/EditGroupPage";
 import GroupInfoPage from "./pages/groups/GroupInfoPage";
@@ -30,10 +30,13 @@ import GroupInfoPage from "./pages/groups/GroupInfoPage";
 import InstrumentDetailsPage from "./pages/instruments/InstrumentDetailsPage"
 import TeacherDetailsPage from "./pages/instruments/TeacherDetailsPage"
 import EditInstrumentPage from "./pages/instruments/EditInstrumentPage";
-
 //lesson pages
 import LessonDetailsPage from "./pages/lessons/LessonDetailsPage"
 import EditLessonPage from "./pages/lessons/EditLessonPage";
+
+//message pages
+import InboxDetailsPage from "./pages/messages/InboxDetailsPage";
+import OutboxDetailsPage from "./pages/messages/OutboxDetailsPage";
 
 function App() {
 
@@ -49,16 +52,20 @@ function App() {
         <Route path="/classes" element={<ClassesList />} />
 
         <Route path="/timetable" element={<GroupTimetablePage />} />
+        <Route path="/groups/:groupId" element={<GroupDetailsPage />} />
         <Route path="/groups/info/:groupId" element={<GroupInfoPage />} />
-        <Route path="/groups/:groupId" element={<IsAdmin><GroupDetailsPage /></IsAdmin>} />
         <Route path="/groups/edit/:groupId" element={<IsAdmin><EditGroupPage /></IsAdmin>} />
 
         <Route path="/instruments/:instrumentId" element={<InstrumentDetailsPage />} />
         <Route path="/instruments/edit/:instrumentId" element={<IsAdmin><EditInstrumentPage /></IsAdmin>} />
         <Route path="/teacher/:instrumentId" element={<IsAdmin><TeacherDetailsPage /></IsAdmin>} />
-        
+
+
         <Route path="/lessons/:lessonId" element={<IsAdmin><LessonDetailsPage /></IsAdmin>} />
         <Route path="/lessons/edit/:lessonId" element={<IsAdmin><EditLessonPage /></IsAdmin>} />
+
+        <Route path="/messages/inbox/:messageId" element={<InboxDetailsPage />} />
+        <Route path="/messages/outbox/:messageId" element={<OutboxDetailsPage />} />
 
         <Route path="/contact" element={<ContactPage />} />
         

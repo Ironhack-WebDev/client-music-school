@@ -54,7 +54,7 @@ function InboxDetailsPage(props) {
                 : message.senderEmail || "No Email"
             }
           />
-          <Reply from={message.sender} />
+          <Reply from={message.sender} title={message.title} />
         </div>
       ) : (
         <p>Loading...</p>

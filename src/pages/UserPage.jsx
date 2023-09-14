@@ -6,7 +6,7 @@ import Inbox from './messages/inbox';
 import AdminMessage from '../components/messages/AdminMessage';
 import SentMessages from '../components/messages/SentMessages';
 import usersService from "../services/users.service";
-import GroupTitle from "../components/Groups/GroupTitle";
+import GroupSummary from "../components/Groups/GroupSummary";
 import UserLessonCard from "../components/lessons/UserLessonCard";
 import avatar from "../assets/default-avatar.jpeg";
 
@@ -93,7 +93,7 @@ const UserPage = () => {
           </div>
           <ul className="user-group-list">
           {userGroups.map((group) => (
-            <GroupTitle key={group._id} {...group} />
+            <GroupSummary key={group._id} {...group} />
           ))}
           </ul>
         </div>
