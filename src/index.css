@@ -420,11 +420,12 @@ body {
 }
 
 .userInformation .profile-image {
-  width: 160px;
+  max-width: 160px;
+  max-height: 160px;
+  width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 50%; 
-  margin: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
@@ -461,6 +462,10 @@ body {
   text-align: left;
 }
 
+.lesson-card {
+  border-bottom: 1px solid #ccc;
+}
+
 .profileLessons {
   border-bottom: 1px solid #ccc;
 }
@@ -478,7 +483,7 @@ body {
   list-style-type: none; 
 }
 
-.user-group-title {
+.user-group-title, .lesson-card, .teacher-title {
   padding: 10px; 
   background-color: #fff;
   text-decoration: none;

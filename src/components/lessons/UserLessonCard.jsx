@@ -33,14 +33,8 @@ function UserLessonCard({ instrument, time, length, _id }) {
 
   return (
     <div>
-      <div>
-        <div>
-          <p>Instrument: {lessonInstrument.instrumentName}</p>
-          <p>Teacher: {lessonInstrument.teacher}</p>
-          <p>Time: {time}</p>
-          <p>Length: {length} minutes</p>
-        </div>
-      </div>
+      <p>Instrument: {lessonInstrument.instrumentName}</p>
+      <p>Time: {time}</p>
     </div>
   );
 }

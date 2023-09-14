@@ -27,9 +27,9 @@ function LessonCard({ user, time, length, _id }) {
     {userDetails === null ? ( 
       <p>Loading lesson details...</p>
     ) : (
-      <div>
+      <div className="lesson-card">
       <Link to={`/lessons/${_id}`}>
-      <h3>{userDetails.name}</h3> 
+      <p >{userDetails.name}</p> 
       </Link>
        <div>
           <p>Time: {time}</p>

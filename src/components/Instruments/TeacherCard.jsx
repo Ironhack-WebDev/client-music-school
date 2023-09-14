@@ -6,14 +6,22 @@ function InstrumentCard({
     imageURL,
   }) {
     return (
-      <div>
-        <h3>{teacher}</h3>
+      
+            <div className="information-body">
+            <div className="information-bubble">
+      <div className="header-left-title">
+        <p>{teacher}</p>
+        </div>
         <div>
+     
+
+  
           <p>Instrument: {instrumentName}</p>
-          <p>Description: {description}</p>
           <p>Location: {location}</p>
         </div>
       </div>
+      </div>
+    
     );
   }
   
