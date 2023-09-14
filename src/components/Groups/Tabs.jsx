@@ -27,12 +27,12 @@ const TabContainer = ({ day, setDay }) => {
 
 
   return (
-    <div className="App">
+    <div className="timetable-page">
       <div className="timetableHeader">
           <img src={header} alt="Timetable Header" className="header-image" />
           <p>Welcome to our music school's weekly timetable! Explore the schedule below to find your favorite music groups and classes for each day of the week.</p>
       </div>
-      <Tabs className="Tabs">
+      <Tabs className="timetable-days">
         <TabList>
           <Tab>MONDAY</Tab>
           <Tab>TUESDAY</Tab>
@@ -40,21 +40,23 @@ const TabContainer = ({ day, setDay }) => {
           <Tab>THURSDAY</Tab>
           <Tab>FRIDAY</Tab>
         </TabList>
-        <TabPanel>
-          <Monday />
-        </TabPanel>
-        <TabPanel>
-          <Tuesday />
-        </TabPanel>
-        <TabPanel>
-          <Wednesday />
-        </TabPanel>
-        <TabPanel>
-          <Thursday />
-        </TabPanel>
-        <TabPanel>
-          <Friday />
-        </TabPanel>
+        <div className="timetable-container">
+          <TabPanel>
+            <Monday />
+          </TabPanel>
+          <TabPanel>
+            <Tuesday />
+          </TabPanel>
+          <TabPanel>
+            <Wednesday />
+          </TabPanel>
+          <TabPanel>
+            <Thursday />
+          </TabPanel>
+          <TabPanel>
+            <Friday />
+          </TabPanel>
+        </div>
       </Tabs>
       </div>
   );

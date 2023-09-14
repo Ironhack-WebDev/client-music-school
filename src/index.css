@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   /*-moz-osx-font-smoothing: grayscale;*/
   overflow-x: hidden; 
+  background-color: #807C5E; 
 }
 
 
@@ -204,7 +205,7 @@ body {
   font-weight: lighter;
 }
 
-.tiles-container {
+.homepage-tiles-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -213,7 +214,7 @@ body {
   margin: 0 auto;
 }
 
-.tile {
+.homepage-tile {
   width: calc(33.33% - 50px);
   margin: 20px;
   text-align: left;
@@ -224,7 +225,7 @@ body {
   background-color: #e4cbcb; 
 }
 
-.tile img {
+.homepage-tile img {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -232,7 +233,7 @@ body {
   margin: 0 auto;
 }
 
-.tile p {
+.homepage-tile p {
   color: #694736;
   font-size: 18px;
   line-height: 1.5;
@@ -312,13 +313,12 @@ body {
 .formPage {
   background-color: #faf3eb;
   color: #694736;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
+  padding: 80px;
   font-family: "Signika", sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -616,4 +616,178 @@ body {
   .profileMessageTabs button {
     width: 100%;
   }
+}
+
+/* classes page */
+.classes-list-container {
+  text-align: center;
+  background-color: #807C5E; 
+  height: 100%;
+  padding-bottom: 100px;
+}
+
+.classes-header {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.searchbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #807C5E;
+}
+
+.searchbar {
+  width: 60%;
+  margin-bottom: 30px;
+}
+
+.tileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.tile {
+  width: calc(22.33% - 50px);
+  background-color: #FAF3EB;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  border-radius: 10px;
+  margin:25px;
+  position: relative;
+    background-size: cover;
+  background-position: center;
+}
+
+.tile h5 {
+  font-size: 22px;
+  padding: 15px;
+  font-weight: lighter;
+}
+
+.tile-image {
+  width: 100%;
+  max-width: 100%;
+  height: 0;
+  padding-bottom: 100%; 
+  overflow: hidden; 
+  position: relative;
+}
+
+.tile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+/* groups info */
+.information-container{
+  background-color: #faf3eb;  
+  margin-top: 50px;
+}
+
+.information-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-height: 400px;
+}
+
+.information-header-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  text-align: center;
+}
+
+.header-left-title p {
+  font-size: 50px;
+  color: #694736;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.header-left-text p {
+  font-size: 22px;
+  font-weight: lighter;
+  color: #694736;
+  line-height: 1.5;
+}
+
+
+.information-header-right {
+  overflow: hidden;
+  position: relative; 
+  max-height: 100%; 
+}
+
+.information-header-right img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  position: absolute; 
+}
+
+.information-body {
+  background-color: #807C5E;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  padding: 60px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: lighter;
+  color: #694736;
+  line-height: 2;
+}
+
+.information-bubble{
+  width: 50%;
+  background-color: #faf3eb;
+  border-radius: 5px; 
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+
+.info-page-buttons {
+  background-color: #807C5E;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.join-or-message-buttons {
+  width: 20%;
+  background-color: #faf3eb;
+  color: #694736;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 15px 40px;
+  text-align: center;
+}
+
+.join-or-message-buttons:hover {
+  background-color: #694736;
+  color: #faf3eb;
+}
+
+.info-page-buttons .join-or-message-buttons {
+  display: inline-block;
+  margin-right: 10px; 
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }

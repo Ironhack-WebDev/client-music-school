@@ -24,14 +24,13 @@ function GroupListPage() {
 
   return (
     <div>
-      <Searchbar inputText={inputText} setInputText={setInputText} />
- 
-      
-      {filteredGroups.map((group) => (
-        <GroupThumbnail key={group._id} {...group} />
-      ))}
+      <Searchbar inputText={inputText} setInputText={setInputText} className="searchbar"/>
+      <div className="tileContainer">
+        {filteredGroups.map((group) => (
+          <GroupThumbnail key={group._id} {...group} />
+        ))}
+      </div>
     </div>
   );
 }
-
 export default GroupListPage;
