@@ -1,4 +1,71 @@
-#### Routes
+#### JavaJam
+JavaJam is a music school
+
+
+## INSTALL
+
+Dependencies:
+
+- axios
+- react
+- react-dom
+- react-router-dom
+- react-scripts
+- react-slick
+- react-tabs
+- slick-carousel
+- web-vitals
+
+```sh
+$ npm install
+```
+
+## Dev
+
+```sh
+$ npm run dev
+```
+
+## Pages
+
+| Page    | URL      | Description  |
+| ------  | -------  | -----------  |
+| HOME    | `/`        | landing page |
+| SIGNUP  | `/signup`  | signup page  |
+| LOGIN   | `/login`   | login page   |
+| CONTACT | `/contact` | contact page |
+| ERROR   | `/error`   | error page   |
+
+
+
+#### Public
+| Page              | URL                        | Description                                     |
+| ------            | -------                    | -----------                                     |
+| CLASSES           | `/classes`                   | list of instrument lessons and groups available |
+|TIMETABLE          | `/timetable`                 | timetable of the groups                         |
+|GROUP INFO         | `/groups/info/:groupId`      | Information about the group and option to join  |
+|INSTRUMENT DETAILS | `/instruments/:instrumentId` | Details about the instruments you can learn     |
+
+
+#### User
+| Page         | URL                | Description                    |
+| ------       | -------            | -----------                    |
+| USER PROFILE | `/user`              | user details, inbox and outbox |
+| EDIT USER    | `/user/edit/:userId` | update user details            |
+
+
+#### Admin
+| Page            | URL                             | Description                                                               |
+| ------          | -------                         | -----------                                                               |
+| ADMIN           | `/admin`                          | Admin page, add new groups and teachers                                   |
+| GROUP DETAILS   | `/groups/:groupId`               | full group details                                                        |
+| EDIT GROUP      | `/groups/edit/:groupId`           | edit or delete a group                                                    |
+| TEACHER DETAILS | `/teacher/:instrumentId`          | details of the teachers, instruments they teach and the lessons they have |
+| EDIT TEACHER    | `/instruments/edit/:instrumentId` | Edit teacher details                                                      |
+| LESSON DETAILS  | `/lessons/:lessonId`              | Individual lesson details                                                 |
+| EDIT LESSON     | `/lessons/edit/:lessonId`         | Edit lessons                                                              |
+
+## Routes
 
 ##### instrument routes
 
@@ -46,7 +113,7 @@
 | PUT       | `/api/users/:userId`          | (empty)         | update user details           |
 | GET       | `/api/users/:userId/lessons`  | (empty)         | returns list of users lessons |
 | GET       | `/api/users/:userId/groups`   | (empty)         | returns list of users groups  |
-| POST       | `/api/users/:userId/groups`   | (empty)         | add user to a group         |
+| POST      | `/api/users/:userId/groups`   | (empty)         | add user to a group           |
 | GET       | `/api/users/:userId/messages` | (empty)         | returns users messages        |
 
 ##### Auth routes
@@ -59,44 +126,9 @@
 
 <hr>
 
-## Pages
 
-- Landing Page (public)
-- Signup Page (anon only)
-- Log in Page (anon only)
-- Instruments
-  - Instrument List Page (public)
-  - Instrument Details Page (public)
-  - Edit Instrument Page (admin only)
-- Groups
-  - Group Timetable Page (public)
-  - Group Details Page (public)
-  - Edit Group Page (admin only)
-- Lessons
-  - Edit Lessons Page (admin only)
-- Messages
-  - Trial Lesson (public)
-  - Standard Message (public)
-- User Profile Page (user only)
-- Admin Profile Page (admin only)
-- Error Page (public)
 
-## Components
 
-- NavBar
-- Instruments
-  - Instrument Card
-  - Add Instrument
-  - Instrument Thumbnail Card
-- Groups
-  - Group Card
-  - Add Group
-  - Group Thumbnail Card
-- Lessons
-  - Lesson Card
-  - Add Lesson
-- IsAnon
-- IsPrivate
 
 ## Services
 
@@ -119,19 +151,35 @@
   - createGroup(requestBody)
   - getAllGroups()
   - getGroup(id)
+  - getGroupsByDay(day)
   - updateGroup(id, requestBody)
+  - joinAGroup (id, requestBody)
   - deleteGroup(id)
 
 - Lesson Service
 
   - createLesson(requestBody)
+  - getAllLessons(instrument)
   - getLesson(id)
   - updateLesson(id, requestBody)
   - deleteLesson(id)
 
 - Message Service
+
+  - getAllMessages
   - createMessage(requestBody)
   - getMessage (userId)
+
+- Users Service
+
+  - getAllUsers()
+  - getUser(userId)
+  - updateUser(userId, requestBody)
+  - getUserGroups(userId)
+  - getUserLessons(userId)
+  - addUserToGroup(groupId)
+  - getUserMessages(userId)
+  - getAdminUser(userId)
 
 #### Models
 
@@ -144,9 +192,18 @@ teacher: String,
 description: String,
 location: String,
 imageURL: String,
-lessons:
-    user: Schema.Types.ObjectId, ref: "user",
-    time: Time,
+}
+
+
+```
+##### lesson Model
+
+```js
+{
+user: [{ type: Schema.Types.ObjectId, ref: 'user' }]
+time: String,
+length: Number,
+instrument: [{ type: Schema.Types.ObjectId, ref: 'instrument' }]
 }
 
 
@@ -162,6 +219,10 @@ lessons:
   location: String,
   leader: String,
   imageURL: String,
+  day: String,
+  skillLevel: String,
+  instruments: String,
+  description: String,
   members: [{ type: Schema.Types.ObjectId, ref: 'user' }]
 }
 ```

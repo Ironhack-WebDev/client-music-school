@@ -51,19 +51,18 @@ function TeacherDetailsPage(props) {
         />
       )}
 
+      <Link to={`/instruments/edit/${instrumentId}`}>
+        <button>Edit Teacher Details</button>
+      </Link>
+
       <h3> Add Lesson </h3>
       <AddLesson instrumentId={instrumentId} allUsers={allUsers} />
 
 
       <LessonList instrument={instrumentId} />
 
-      <Link to={`/instruments/edit/${instrumentId}`}>
-        <button>Edit Teacher Details</button>
-      </Link>
 
-      <Link to={`/admin`}>
-        <button>Return to admin profile</button>
-      </Link>
+
     </div>
   );
 }

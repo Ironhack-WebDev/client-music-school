@@ -35,7 +35,6 @@ function AdminProfilePage() {
     getAllInstruments();
   }, []);
 
-
   return (
     <div>
       {user ? <h1>Welcome, {user.name}!</h1> : <p>Please log in.</p>}
@@ -53,7 +52,6 @@ function AdminProfilePage() {
       {instruments.map((instrument) => (
         <TeacherThumbnail key={instrument._id} {...instrument} />
       ))}
-
     </div>
   );
 }

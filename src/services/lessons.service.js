@@ -3,7 +3,7 @@ import axios from "axios";
 class LessonsService {
   constructor() {
     this.api = axios.create({
-      baseURL: "http://localhost:5005",
+baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005",
     });
 
     this.api.interceptors.request.use((config) => {
