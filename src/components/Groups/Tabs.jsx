@@ -10,7 +10,8 @@ import header from "../../assets/timetable-header.jpeg";
 import groupsService from "../../services/groups.service";
 
 const TabContainer = ({ day, setDay }) => {
-  const [setGroups] = useState([]);
+  // eslint-disable-next-line
+  const [groups, setGroups] = useState([]);
 
   const getAllGroups = () => {
     groupsService
