@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 const GroupCard = ({ title, startTime, endTime, location, day, leader, imageURL, _id, description, skillLevel, instruments }) => {
   return (

@@ -1,14 +1,5 @@
 import { Link } from "react-router-dom";
 
-const groupCardStyles = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "10px",
-  border: "1px solid #ccc",
-  marginBottom: "10px",
-};
 
 const TimetableCard = ({ title, startTime, endTime, location, leader, imageURL, _id }) => {
   return (

@@ -116,7 +116,7 @@ function GroupInfoPage(props) {
       <Link to={`/contact`} style={{ textDecoration: 'none', color: 'inherit',}}>
         <button>Send a message</button>
       </Link>
-///
+
     </div>
     </div>
     </div>
