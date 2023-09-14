@@ -35,6 +35,10 @@ import EditInstrumentPage from "./pages/instruments/EditInstrumentPage";
 import LessonDetailsPage from "./pages/lessons/LessonDetailsPage";
 import EditLessonPage from "./pages/lessons/EditLessonPage";
 
+//message pages
+import InboxDetailsPage from "./pages/messages/InboxDetailsPage";
+import OutboxDetailsPage from "./pages/messages/OutboxDetailsPage";
+
 function App() {
   return (
     <div>
