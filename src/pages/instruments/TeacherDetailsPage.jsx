@@ -40,6 +40,8 @@ function TeacherDetailsPage(props) {
   }, []);
 
   return (
+    <div className="information-container">
+    <div className="info-card">
     <div>
       {instrument && (
         <TeacherCard
@@ -50,19 +52,25 @@ function TeacherDetailsPage(props) {
           imageURL={instrument.imageURL}
         />
       )}
+      </div>
+
+<div className="info-page-buttons">
+    <div className='join-or-message-buttons'>
 
       <Link to={`/instruments/edit/${instrumentId}`}>
-        <button>Edit Teacher Details</button>
+        Edit Teacher Details
       </Link>
+</div>
+      
+</div>
+
+      <LessonList instrument={instrumentId} />
 
       <h3> Add Lesson </h3>
       <AddLesson instrumentId={instrumentId} allUsers={allUsers} />
 
 
-      <LessonList instrument={instrumentId} />
-
-
-
+    </div>
     </div>
   );
 }
