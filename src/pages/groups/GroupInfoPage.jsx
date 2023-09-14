@@ -80,38 +80,8 @@ function GroupInfoPage(props) {
 
   return (
 
-    ////
     <div className="information-container">
-      <div className="info-card">
-        {group && (
-          <GroupCard
-            title={group.title}
-            leader={group.leader}
-            description={group.description}
-            skillLevel={group.skillLevel}
-            instruments={group.instruments}
-            day={group.day}
-            startTime={group.startTime}
-            endTime={group.endTime}
-            location={group.location}
-            imageURL={group.imageURL}
-          />
-        )}
-      </div>
-      <div className="info-page-buttons">
-        <div className='join-or-message-buttons'>
-          <Link to={'/user'} onClick={joinGroup} style={{ textDecoration: 'none', color: 'inherit',}}>
-            Join Group
-          </Link>
-        </div>
-        <div className="join-or-message-buttons">
-          <Link to={`/messages`} style={{ textDecoration: 'none', color: 'inherit',}}>
-            Send a message
-          </Link>
-        </div>
-      </div>
-////
-    <div>
+    <div className="info-card">
       {group && (
         <GroupCard
           title={group.title}
@@ -126,24 +96,29 @@ function GroupInfoPage(props) {
           imageURL={group.imageURL}
         />
       )}
+    </div>
 
-      <div>
+    <div className="info-page-buttons">
+        <div className='join-or-message-buttons'>
+
       {user && (
         <div>
           {isUserMemberOfGroup() ? (
-            <button onClick={leaveGroup}>Leave Group</button>
+            <button onClick={leaveGroup} style={{ textDecoration: 'none', color: 'inherit',}}>Leave Group</button>
           ) : (
-            <button onClick={joinGroup}>Join Group</button>
+            <button onClick={joinGroup} style={{ textDecoration: 'none', color: 'inherit',}}>Join Group</button>
           )}
         </div>
       )}
 
       </div>
-
-      <Link to={`/contact`}>
+      <div className="join-or-message-buttons">
+      <Link to={`/contact`} style={{ textDecoration: 'none', color: 'inherit',}}>
         <button>Send a message</button>
       </Link>
 ///
+    </div>
+    </div>
     </div>
   );
 }
