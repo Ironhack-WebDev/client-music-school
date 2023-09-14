@@ -40,9 +40,10 @@ function TeacherDetailsPage(props) {
   }, []);
 
   return (
-    <div className="information-container">
-    <div className="info-card">
     <div>
+    <div className="profileContainer">
+      <div className="profile-left">
+        <div className="userInformation">
       {instrument && (
         <TeacherCard
           instrumentName={instrument.instrumentName}
@@ -54,24 +55,23 @@ function TeacherDetailsPage(props) {
       )}
       </div>
 
-<div className="info-page-buttons">
-    <div className='join-or-message-buttons'>
+      <Link to={`/instruments/edit/${instrumentId}`} style={{ textDecoration: 'none' }}>
+          <button className="profile-button">Edit Teacher Details</button>
+        </Link>   
 
-      <Link to={`/instruments/edit/${instrumentId}`}>
-        Edit Teacher Details
-      </Link>
 </div>
       
-</div>
+
 
       <LessonList instrument={instrumentId} />
 
       <h3> Add Lesson </h3>
       <AddLesson instrumentId={instrumentId} allUsers={allUsers} />
+</div>
+</div>
 
+    
 
-    </div>
-    </div>
   );
 }
 
