@@ -11,7 +11,7 @@ function Reply(props) {
     e.preventDefault();
 
     const requestBody = {
-      title,
+      title: props.title
       message,
       sender: user._id,
       recipient: props.from,
