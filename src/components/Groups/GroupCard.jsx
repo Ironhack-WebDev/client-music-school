@@ -1,37 +1,31 @@
 import { Link } from "react-router-dom";
 
-const groupCardStyles = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "10px",
-  border: "1px solid #ccc",
-  marginBottom: "10px",
-};
-
-const GroupCard = ({ title, startTime, endTime, location, leader, imageURL, _id, description, skillLevel, instruments }) => {
+const GroupCard = ({ title, startTime, endTime, location, day, leader, imageURL, _id, description, skillLevel, instruments }) => {
   return (
-    <div>
-    <Link to={`/groups/info/${_id}`}>
-    <h3>{title}</h3>
-    </Link>
-    <div style={groupCardStyles}>
-      <div>
-        <img src={imageURL} alt="Group" style={{ width: "200px" }}/>
+    <div className="information">
+      <div className="information-header">
+        <div className="information-header-left">
+          <div className="header-left-title">
+            <p>{title}</p>
+          </div>
+          <div className="header-left-text">
+            <p>Learn the art of piano and become the next big pianist sensation. Blahj de blah blah blah. more text more text more text. And a lot more text here and a lot more text there. Text everywhere.</p>
+          </div>
         </div>
-      <div>
-        <p>Start Time: {startTime}</p>
-        <p>End Time: {endTime}</p>
+        <div className="information-header-right">
+          <img src={imageURL} alt="Group"/>
+        </div>
       </div>
-      <div>
-        <p>Location: {location}</p>
-        <p>Group Leader: {leader}</p>
-      </div>
-      <div>
-        <p>Description: {description}</p>
-        <p>Skill Level: {skillLevel}</p>
-        <p>Instruments: {instruments}</p>
+    
+    <div className="information-body">
+      <div className="information-bubble">
+        <p><b>Day: </b>{day}</p>
+        <p><b>Time: </b>{startTime} - {endTime}</p>
+        <p><b>Location: </b>{location}</p>
+        <p><b>Group Leader: </b>{leader}</p>
+        <p><b>Description: </b>{description}</p>
+        <p><b>Skill Level: </b>{skillLevel}</p>
+        <p><b>Instruments: </b>{instruments}</p>
       </div>
     </div>
     </div>

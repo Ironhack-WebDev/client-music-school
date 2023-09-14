@@ -41,29 +41,36 @@ function GroupInfoPage(props) {
   };
 
   return (
-    <div>
-      {group && (
-        <GroupCard
-          title={group.title}
-          leader={group.leader}
-          description={group.description}
-          skillLevel={group.skillLevel}
-          instruments={group.instruments}
-          day={group.day}
-          startTime={group.startTime}
-          endTime={group.endTime}
-          location={group.location}
-          imageURL={group.imageURL}
-        />
-      )}
-
-      <div>
-        <button onClick={joinGroup}>Join Group</button>
+    
+    <div className="information-container">
+      <div className="info-card">
+        {group && (
+          <GroupCard
+            title={group.title}
+            leader={group.leader}
+            description={group.description}
+            skillLevel={group.skillLevel}
+            instruments={group.instruments}
+            day={group.day}
+            startTime={group.startTime}
+            endTime={group.endTime}
+            location={group.location}
+            imageURL={group.imageURL}
+          />
+        )}
       </div>
-
-      <Link to={`/messages`}>
-        <button>Send a message</button>
-      </Link>
+      <div className="info-page-buttons">
+        <div className='join-or-message-buttons'>
+          <Link to={'/user'} onClick={joinGroup} style={{ textDecoration: 'none', color: 'inherit',}}>
+            Join Group
+          </Link>
+        </div>
+        <div className="join-or-message-buttons">
+          <Link to={`/messages`} style={{ textDecoration: 'none', color: 'inherit',}}>
+            Send a message
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
