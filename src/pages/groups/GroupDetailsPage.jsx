@@ -25,7 +25,8 @@ useEffect(()=> {
 }, [] );
 
     return (
-      <div >
+      <div className="information-container">
+    <div className="info-card">
               {group && (
         <GroupCard
           title={group.title}
@@ -41,14 +42,23 @@ useEffect(()=> {
         />
       )}
 
+      <div className="info-page-buttons">
+        <div className='join-or-message-buttons'>
+
       <Link to={`/groups/edit/${groupId}`}>
-        <button>Edit Group</button>
+        Edit Group
       </Link>
+      </div>
 
+
+        <div className='join-or-message-buttons'>
       <Link to={`/admin`}>
-        <button>Return to admin profile</button>
+        Return to admin
       </Link>
+      </div>
+      </div>
 
+      </div>
       </div>
     );
   }

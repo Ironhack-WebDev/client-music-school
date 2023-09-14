@@ -478,7 +478,7 @@ body {
   list-style-type: none; 
 }
 
-.user-group-title {
+.user-group-title, .lesson-card, .teacher-title {
   padding: 10px; 
   background-color: #fff;
   text-decoration: none;
