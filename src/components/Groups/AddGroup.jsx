@@ -65,11 +65,12 @@ const [startTimeError, setStartTimeError] = useState("");
 
 
   return (
-    <div className="formPage">
-    <h3>Add Group</h3>
+    <div className="add-form">
+      <div className="add-form-body">
+        <div className="add-form-bubble">
     <form onSubmit={handleSubmit}>
     <div>
-      <label>Title</label>
+      <label><strong>Title:  </strong></label>
       <input
         type="text"
         name="title"
@@ -79,7 +80,7 @@ const [startTimeError, setStartTimeError] = useState("");
       <p className="error">{titleError}</p>
       </div>
       <div>
-  <label>Day</label>
+  <label><strong>Day:  </strong></label>
   <select
     name="day"
     value={day}
@@ -95,7 +96,7 @@ const [startTimeError, setStartTimeError] = useState("");
 </div>
 
       <div>
-      <label>Start Time</label>
+      <label><strong>Start Time:  </strong></label>
       <input
         type="text"
         name="startTime"
@@ -105,7 +106,7 @@ const [startTimeError, setStartTimeError] = useState("");
       <p className="error">{startTimeError}</p>
        </div>
       <div>
-      <label>End Time</label>
+      <label><strong>End Time:  </strong></label>
       <input
         type="text"
         name="endTime"
@@ -114,7 +115,7 @@ const [startTimeError, setStartTimeError] = useState("");
       />
        </div>
       <div>
-      <label>Location</label>
+      <label><strong>Location:  </strong></label>
       <input
         type="text"
         name="location"
@@ -123,7 +124,7 @@ const [startTimeError, setStartTimeError] = useState("");
       />
        </div>
       <div>
-      <label>Leader</label>
+      <label><strong>Group Leader:  </strong></label>
       <input
         type="text"
         name="leader"
@@ -132,7 +133,7 @@ const [startTimeError, setStartTimeError] = useState("");
       />
        </div>
        <div>
-      <label>Skill Level</label>
+      <label><strong>Skill Level:  </strong></label>
       <input
         type="text"
         name="skillLevel"
@@ -141,7 +142,7 @@ const [startTimeError, setStartTimeError] = useState("");
       />
        </div>
        <div>
-      <label>Instruments</label>
+      <label><strong>Instruments:  </strong></label>
       <input
         type="text"
         name="instruments"
@@ -150,7 +151,7 @@ const [startTimeError, setStartTimeError] = useState("");
       />
        </div>
        <div>
-      <label>Description</label>
+      <label><strong>Description:  </strong></label>
       <input
         type="text"
         name="description"
@@ -160,7 +161,7 @@ const [startTimeError, setStartTimeError] = useState("");
        </div>
 
       <div>
-      <label>Group Image URL</label>
+      <label><strong>Group Image URL:  </strong></label>
       <input
         type="text"
         name="imageURL"
@@ -170,6 +171,8 @@ const [startTimeError, setStartTimeError] = useState("");
       </div>
       <button type="submit">Submit</button>
     </form>
+  </div>
+  </div>
   </div>
     );
 }

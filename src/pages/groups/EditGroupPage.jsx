@@ -65,111 +65,127 @@ function EditGroupPage(props) {
   };
 
   return (
-    <div className="formPage">
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title</label>
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
+    <div className="edit-form">
+      <div className="information-header">
+        <div className="information-header-left">
+          <form onSubmit={handleSubmit}>
+            <div>
+              <input
+                type="text"
+                name="title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                
+              />
+            </div>
+            <div className="header-left-text">
+              <label><p>Description</p></label>
+              <textarea
+                type="text"
+                name="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
+          </form>
         </div>
+        <div className="information-header-right">
         <div>
-          <label>Day</label>
-          <select
-            name="day"
-            value={day}
-            onChange={(e) => setDay(e.target.value)}
-          >
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-          </select>
-        </div>
+            <label><p>Image</p></label>
+            <input
+              type="text"
+              name="imageURL"
+              value={imageURL}
+              onChange={(e) => setImageURL(e.target.value)}
+            />
+          </div>
+          <img src={imageURL} alt="Group" />
+          </div>
+          
+        
+      </div>
 
-        <div>
-          <label>Start Time</label>
-          <input
-            type="text"
-            name="startTime"
-            value={startTime}
-            onChange={(e) => setStartTime(e.target.value)}
-          />
+      <div className="information-body">
+        <div className="information-bubble">
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label><strong>Day:  </strong></label>
+              <select
+                name="day"
+                value={day}
+                onChange={(e) => setDay(e.target.value)}
+              >
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+              </select>
+            </div>
+
+            <div>
+              <label><strong>Start Time:  </strong></label>
+              <input
+                type="text"
+                name="startTime"
+                value={startTime}
+                onChange={(e) => setStartTime(e.target.value)}
+              />
+            </div>
+            <div>
+              <label><strong>End Time:  </strong></label>
+              <input
+                type="text"
+                name="endTime"
+                value={endTime}
+                onChange={(e) => setEndTime(e.target.value)}
+              />
+            </div>
+            <div>
+              <label><strong>Location:  </strong></label>
+              <input
+                type="text"
+                name="location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+            </div>
+            <div>
+              <label><strong>Group Leader:  </strong></label>
+              <input
+                type="text"
+                name="leader"
+                value={leader}
+                onChange={(e) => setLeader(e.target.value)}
+              />
+            </div>
+
+            <div>
+              <label><strong>Skill Level:  </strong></label>
+              <input
+                type="text"
+                name="skillLevel"
+                value={skillLevel}
+                onChange={(e) => setSkillLevel(e.target.value)}
+              />
+            </div>
+            <div>
+              <label><strong>Instruments:  </strong></label>
+              <input
+                type="text"
+                name="instruments"
+                value={instruments}
+                onChange={(e) => setInstruments(e.target.value)}
+              />
+            </div>
+
+            <div>
+              <button type="submit">Submit</button>
+              <button onClick={deleteGroup}>Delete Group</button>
+            </div>
+          </form>
         </div>
-        <div>
-          <label>End Time</label>
-          <input
-            type="text"
-            name="endTime"
-            value={endTime}
-            onChange={(e) => setEndTime(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Location</label>
-          <input
-            type="text"
-            name="location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Leader</label>
-          <input
-            type="text"
-            name="leader"
-            value={leader}
-            onChange={(e) => setLeader(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Image</label>
-          <input
-            type="text"
-            name="imageURL"
-            value={imageURL}
-            onChange={(e) => setImageURL(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Skill Level</label>
-          <input
-            type="text"
-            name="skillLevel"
-            value={skillLevel}
-            onChange={(e) => setSkillLevel(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Instruments</label>
-          <input
-            type="text"
-            name="instruments"
-            value={instruments}
-            onChange={(e) => setInstruments(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Description</label>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-        <div>
-          <button onClick={deleteGroup}>Delete Group</button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }
