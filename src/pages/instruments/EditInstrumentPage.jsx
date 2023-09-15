@@ -52,10 +52,12 @@ function EditInstrumentPage(props) {
   };
 
   return (
-    <div className="formPage">
+    <div className="edit-form">
+    <div className="edit-form-body">
+        <div className="edit-form-bubble">
       <form onSubmit={handleSubmit}>
       <div>
-        <label>Title</label>
+        <label><strong>Title:  </strong></label>
         <input
           type="text"
           name="instrumentName"
@@ -64,7 +66,7 @@ function EditInstrumentPage(props) {
         />
          </div>
       <div>
-        <label>Teacher</label>
+        <label><strong>Teacher:  </strong></label>
         <input
           type="text"
           name="teacher"
@@ -73,7 +75,7 @@ function EditInstrumentPage(props) {
         />
          </div>
       <div>
-        <label>Description</label>
+        <label><strong>Description:  </strong></label>
         <input
           type="text"
           name="description"
@@ -82,7 +84,7 @@ function EditInstrumentPage(props) {
         />
          </div>
       <div>
-        <label>Location</label>
+        <label><strong>Location:  </strong></label>
         <input
           type="text"
           name="location"
@@ -91,7 +93,7 @@ function EditInstrumentPage(props) {
         />
          </div>
       <div>
-        <label>Image</label>
+        <label><strong>Image:  </strong></label>
         <input
           type="text"
           name="imageURL"
@@ -106,6 +108,8 @@ function EditInstrumentPage(props) {
         <button onClick={deleteInstrument}>Delete Instrument</button>
         </div>
       </form>
+    </div>
+    </div>
     </div>
   );
 }

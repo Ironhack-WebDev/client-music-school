@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 function TeacherThumbnail({teacher, _id}) {
     return (
-      <div >
+      <div className="tile">
         <Link to={`/teacher/${_id}`}  style={{ textDecoration: 'none', color: '#694736' }}>
         <p className="teacher-title">{teacher}</p>
         </Link>

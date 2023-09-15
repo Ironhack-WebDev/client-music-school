@@ -66,13 +66,15 @@ function EditLessonPage() {
   };
 
   return (
-    <div className="formPage">
+    <div className="edit-form">
+    <div className="edit-form-body">
+        <div className="edit-form-bubble">
     {loading ? (
         <p>Loading...</p>
       ) : (
     <form onSubmit={handleSubmit}>
     <div>
-      <label>Student</label>
+      <label><strong>Student:  </strong></label>
           <select
             name="user"
             value={user} 
@@ -87,7 +89,7 @@ function EditLessonPage() {
           </select>
           </div>
       <div>
-      <label>Time</label>
+      <label><strong>Time:  </strong></label>
       <input
         type="text"
         name="time"
@@ -96,7 +98,7 @@ function EditLessonPage() {
       />
       </div>
       <div>
-      <label>Length</label>
+      <label><strong>Length: </strong></label>
       <input
         type="text"
         name="length"
@@ -112,6 +114,8 @@ function EditLessonPage() {
         </div>
       </form>
       )}
+    </div>
+    </div>
     </div>
   );
 }

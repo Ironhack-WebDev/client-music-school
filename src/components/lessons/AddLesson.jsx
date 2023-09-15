@@ -34,13 +34,15 @@ function AddLesson({ instrumentId, allUsers }) {
   }, []);
 
   return (
-    <div className="formPage">
+    <div className="add-form">
+      <div className="add-form-body">
+        <div className="add-form-bubble">
       {loading ? (
         <p>Loading...</p>
       ) : (
         <form onSubmit={handleSubmit}>
       <div>
-          <label>Student</label>
+          <label><strong>Student:  </strong></label>
           <select
             name="user"
             value={user}
@@ -55,7 +57,7 @@ function AddLesson({ instrumentId, allUsers }) {
           </select>
           </div>
       <div>
-          <label>Time</label>
+          <label><strong>Time:  </strong></label>
           <input
             type="text"
             name="time"
@@ -64,7 +66,7 @@ function AddLesson({ instrumentId, allUsers }) {
           />
           </div>
       <div>
-          <label>Length</label>
+          <label><strong>Length:  </strong></label>
           <input
             type="text"
             name="length"
@@ -73,10 +75,13 @@ function AddLesson({ instrumentId, allUsers }) {
           />
           </div>
       <div>
+      
           <button type="submit">Submit</button>
           </div>
         </form>
       )}
+    </div>
+    </div>
     </div>
   );
 }
