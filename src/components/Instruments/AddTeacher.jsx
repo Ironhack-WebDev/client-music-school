@@ -39,7 +39,7 @@ function AddInstrument(props) {
     <h3>Add Teacher</h3>
     <form onSubmit={handleSubmit}>
     <div>
-    <label>Teacher</label>
+    <label><strong>Teacher:</strong></label>
       <input
         type="text"
         name="teacher"
