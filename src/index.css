@@ -309,7 +309,7 @@ body {
 .formPage {
   background-color: #faf3eb;
   color: #694736;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -370,6 +370,42 @@ body {
   outline: 1px solid #faf3eb;
   color: #694736;
 }
+
+.formPage img {
+  max-width: 250px; 
+  max-height: 250px; 
+  width: auto;
+  height: auto;
+  border-radius: 15px; 
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.edit-page-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px; 
+  width: 100%;
+  max-width: 800px; 
+  margin: 20px 0;
+  overflow: hidden; 
+  border: 1px solid #ccc;
+  padding: 30px;
+}
+
+.formPage select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Signika", sans-serif;
+  font-size: 17px;
+  font-weight: lighter;
+  color: #694736;
+}
+
 
 /* user profile */
 .profileContainer {
@@ -771,6 +807,7 @@ body {
   font-size: 18px;
   padding: 15px 40px;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .join-or-message-buttons:hover {

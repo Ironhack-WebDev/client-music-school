@@ -39,7 +39,7 @@ function InstrumentDetailsPage(props) {
       </div>
       <div className="info-page-buttons">
         <div className="join-or-message-buttons">
-          <Link to={`/messages`} style={{ textDecoration: 'none', color: 'inherit',}}>
+          <Link to={`/contact`} style={{ textDecoration: 'none', color: 'inherit',}}>
             Send a message
           </Link>
         </div>

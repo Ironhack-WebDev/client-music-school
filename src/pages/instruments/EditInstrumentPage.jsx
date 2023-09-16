@@ -52,11 +52,10 @@ function EditInstrumentPage(props) {
   };
 
   return (
-    <div className="edit-form">
-    <div className="edit-form-body">
-        <div className="edit-form-bubble">
+    <div className="formPage">
+      <div className="edit-page-container">
+      <div ClassName="page-leftside">
       <form onSubmit={handleSubmit}>
-      <div>
         <label><strong>Title:  </strong></label>
         <input
           type="text"
@@ -64,17 +63,13 @@ function EditInstrumentPage(props) {
           value={instrumentName}
           onChange={(e) => setInstrumentName(e.target.value)}
         />
-         </div>
-      <div>
         <label><strong>Teacher:  </strong></label>
         <input
           type="text"
           name="teacher"
           value={teacher}
           onChange={(e) => setTeacher(e.target.value)}
-        />
-         </div>
-      <div>
+         />
         <label><strong>Description:  </strong></label>
         <input
           type="text"
@@ -82,8 +77,11 @@ function EditInstrumentPage(props) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-         </div>
-      <div>
+        </form>
+        </div>
+
+      <div ClassName="page-rightside">
+        <form onSubmit={handleSubmit}>
         <label><strong>Location:  </strong></label>
         <input
           type="text"
@@ -91,8 +89,6 @@ function EditInstrumentPage(props) {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
-         </div>
-      <div>
         <label><strong>Image:  </strong></label>
         <input
           type="text"
@@ -100,16 +96,13 @@ function EditInstrumentPage(props) {
           value={imageURL}
           onChange={(e) => setImageURL(e.target.value)}
         />
-         </div>
-      <div>
-        <button type="submit">Submit</button>
-        </div>
-      <div>
-        <button onClick={deleteInstrument}>Delete Instrument</button>
-        </div>
       </form>
-    </div>
-    </div>
+      </div>
+      </div>
+      <div className="edit-page-buttons">
+        <button type="submit">Submit</button>
+        <button onClick={deleteInstrument}>Delete Instrument</button>
+      </div>
     </div>
   );
 }
