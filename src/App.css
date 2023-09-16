@@ -334,7 +334,9 @@
 .AdminTabs {
   display: flex;
   justify-content: space-between;
-  margin: 80px 80px;
+  margin-bottom: 80px;
+  margin-left: 80px;
+  margin-right:80px;
   overflow: hidden;
   border: 1px solid #ccc;
   border-radius: 10px;
