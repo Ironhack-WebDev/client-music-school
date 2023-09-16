@@ -12,6 +12,7 @@ function AdminProfilePage() {
   const [groups, setGroups] = useState([]);
   const [instruments, setInstruments] = useState([]);
   const user = useUser();
+  const [activeTab, setActiveTab] = useState('groups');
 
   const getAllGroups = () => {
     groupsService
@@ -35,24 +36,62 @@ function AdminProfilePage() {
     getAllInstruments();
   }, []);
 
+  const toggleTab = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <div>
-      {user ? <h1>Welcome, {user.name}!</h1> : <p>Please log in.</p>}
-
-      <AddGroup refreshGroups={getAllGroups} />
-
-      <AddTeacher />
-
-      <h3> Groups </h3>
+  
+    <div className='profilerightSide'>
+      <div className="AdminTabs">
+        <button
+          className={activeTab === 'groups' ? 'active' : ''}
+          onClick={() => toggleTab('groups')}
+        >
+          GROUPS
+        </button>
+        <button
+          className={activeTab === 'teachers' ? 'active' : ''}
+          onClick={() => toggleTab('teachers')}
+        >
+          TEACHERS
+        </button>
+        <button
+          className={activeTab === 'addGroup' ? 'active' : ''}
+          onClick={() => toggleTab('addGroup')}
+        >
+          ADD GROUP
+        </button>
+        <button
+          className={activeTab === 'addTeacher' ? 'active' : ''}
+          onClick={() => toggleTab('addTeacher')}
+        >
+          ADD TEACHER
+        </button>
+      </div>
+      <div >
+      {activeTab === 'groups' ? (
+    <div className="list-body">
       {groups.map((group) => (
         <GroupTitle key={group._id} {...group} />
       ))}
-
-      <h3> Teachers </h3>
-      {instruments.map((instrument) => (
-        <TeacherThumbnail key={instrument._id} {...instrument} />
-      ))}
     </div>
+  ) : activeTab === 'teachers' ? (
+    <div className="list-body">
+    {instruments.map((instrument) => (
+      <TeacherThumbnail key={instrument._id} {...instrument} />
+    ))}
+    </div>
+  ) : activeTab === 'addGroup' ? (
+    <AddGroup refreshGroups={getAllGroups} />
+  ) : activeTab === 'addTeacher' ? (
+    <AddTeacher />
+  ) : null}
+      </div>
+    </div>
+  </div>
+  
   );
 }
 

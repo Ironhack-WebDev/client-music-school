@@ -33,11 +33,13 @@ function AddInstrument(props) {
   };
 
   return (
-    <div className="formPage">
+    <div className="add-form">
+      <div className="add-form-body">
+        <div className="add-form-bubble">
     <h3>Add Teacher</h3>
     <form onSubmit={handleSubmit}>
     <div>
-    <label>Teacher</label>
+    <label><strong>Teacher:</strong></label>
       <input
         type="text"
         name="teacher"
@@ -46,7 +48,7 @@ function AddInstrument(props) {
       />
        </div>
       <div>
-      <label>Instrument</label>
+      <label><strong>Instrument:  </strong></label>
       <input
         type="text"
         name="instrumentName"
@@ -55,7 +57,7 @@ function AddInstrument(props) {
       />
       </div>
       <div>
-    <label>Notes</label>
+    <label><strong>Description:  </strong></label>
       <input
         type="text"
         name="description"
@@ -64,7 +66,7 @@ function AddInstrument(props) {
       />
       </div>
       <div>
-      <label>Location</label>
+      <label><strong>Location:  </strong></label>
       <input
         type="text"
         name="location"
@@ -73,7 +75,7 @@ function AddInstrument(props) {
       />
       </div>
       <div>
-      <label>Instrument Image URL</label>
+      <label><strong>Instrument Image URL:  </strong></label>
       <input
         type="text"
         name="imageURL"
@@ -85,6 +87,8 @@ function AddInstrument(props) {
       <button type="submit">Submit</button>
       </div>
     </form>
+  </div>
+  </div>
   </div>
   );
 }

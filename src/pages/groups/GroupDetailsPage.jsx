@@ -45,14 +45,14 @@ useEffect(()=> {
       <div className="info-page-buttons">
         <div className='join-or-message-buttons'>
 
-      <Link to={`/groups/edit/${groupId}`}>
+      <Link to={`/groups/edit/${groupId}`} style={{ textDecoration: 'none', color: 'var(--join-or-message-buttons-color)',}}>
         Edit Group
       </Link>
       </div>
 
 
         <div className='join-or-message-buttons'>
-      <Link to={`/admin`}>
+      <Link to={`/admin`} style={{ textDecoration: 'none', color: 'var(--join-or-message-buttons-color)', }}>
         Return to admin
       </Link>
       </div>

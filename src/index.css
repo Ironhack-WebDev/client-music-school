@@ -3,10 +3,9 @@ body {
   font-family: "Signika", sans-serif;
   -webkit-font-smoothing: antialiased;
   /*-moz-osx-font-smoothing: grayscale;*/
-  overflow-x: hidden; 
-  background-color: #807C5E; 
+  overflow-x: hidden;
+  background-color: #807c5e;
 }
-
 
 /* Nav Bar */
 .navbar {
@@ -16,7 +15,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 100px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2); 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .navbar-logo {
@@ -68,38 +67,37 @@ body {
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 10px 10px; 
+    padding: 10px 10px;
   }
 
   .navbar-logo {
-    margin-left: 10px; 
+    margin-left: 10px;
   }
 
   .navbar-link {
-    margin-right: 10px; 
-    padding: 8px 0; 
-    font-size: 12px; 
+    margin-right: 10px;
+    padding: 8px 0;
+    font-size: 12px;
   }
 
   .logo-image {
-    width: 90px; 
+    width: 90px;
   }
 
   .navbar-signup,
-  form button{
+  form button {
     padding: 8px 20px;
-    font-size: 12px; 
+    font-size: 12px;
   }
 }
 
-
 /* Hero Section */
 .hero-content {
-  background-image: url('./assets/landing-page2.png');
+  background-image: url("./assets/landing-page2.png");
   background-size: cover;
   background-position: center;
   height: 600px;
-  color: #FAF3EB;
+  color: #faf3eb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +107,7 @@ body {
 /* Mobile styling for Hero Content */
 @media (max-width: 768px) {
   .hero-content {
-    height: 200px; 
+    height: 200px;
   }
 }
 
@@ -118,7 +116,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
-  background-color: #807C5E;
+  background-color: #807c5e;
   color: #faf3eb;
   box-shadow: 0px -2px 2px rgba(43, 43, 43, 0.2);
 }
@@ -139,7 +137,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 400px;   
+  max-width: 400px;
   margin: 0 auto;
   text-align: left;
 }
@@ -163,7 +161,7 @@ body {
 }
 
 .section1 .right-column .subscribe-link:hover {
-  background-color: #807C5E;
+  background-color: #807c5e;
   outline: 1px solid #faf3eb;
   color: #faf3eb;
 }
@@ -171,11 +169,11 @@ body {
 /* Mobile styling for Section 1 */
 @media (max-width: 768px) {
   .section1 {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 
   .section1 .left-column {
-    height: 200px; 
+    height: 200px;
   }
 
   .section1 .right-column {
@@ -192,16 +190,16 @@ body {
 }
 
 .section2-container img {
-  height: 100px; 
+  height: 100px;
 }
 
-.section2-container h2{
+.section2-container h2 {
   color: #694736;
   font-size: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight: lighter;
-  text-align: left; 
+  text-align: left;
   font-weight: lighter;
 }
 
@@ -222,7 +220,7 @@ body {
   background-position: center;
   position: relative;
   margin-bottom: 20px;
-  background-color: #e4cbcb; 
+  background-color: #e4cbcb;
 }
 
 .homepage-tile img {
@@ -240,7 +238,6 @@ body {
   font-weight: lighter;
 }
 
-
 /* Section 3 */
 .section3 {
   background-color: #e4cbcb;
@@ -257,15 +254,15 @@ body {
 
 .carousel-image {
   padding: 20px;
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out;
 }
 
 .carousel-image:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 .carousel-image img {
-  max-width: 100%; 
+  max-width: 100%;
   height: auto;
 }
 
@@ -274,12 +271,12 @@ body {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.5); 
-  padding: 15px; 
-  border-radius: 50%; 
-  font-size: 24px; 
-  color: #694736; 
-  z-index: 1; 
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #694736;
+  z-index: 1;
   position: absolute;
 }
 
@@ -291,16 +288,15 @@ body {
   right: 0;
 }
 
-
 /* section 4 */
 .section4 {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
   background-color: #faf3eb;
   color: #694736;
   text-decoration: none;
   padding: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.2); 
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
@@ -313,7 +309,7 @@ body {
 .formPage {
   background-color: #faf3eb;
   color: #694736;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -325,7 +321,7 @@ body {
   text-align: center;
 }
 
-.formPage h3{
+.formPage h3 {
   font-size: 27px;
   margin-bottom: 10px;
   font-weight: lighter;
@@ -360,10 +356,10 @@ body {
 
 .formPage button {
   padding: 13px 55px;
-  margin:10PX;
+  margin: 10px;
   background-color: #fff;
   text-decoration: none;
-  font-size:15px;
+  font-size: 15px;
   color: #694736;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -375,16 +371,52 @@ body {
   color: #694736;
 }
 
+.formPage img {
+  max-width: 250px; 
+  max-height: 250px; 
+  width: auto;
+  height: auto;
+  border-radius: 15px; 
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.edit-page-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px; 
+  width: 100%;
+  max-width: 800px; 
+  margin: 20px 0;
+  overflow: hidden; 
+  border: 1px solid #ccc;
+  padding: 30px;
+}
+
+.formPage select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Signika", sans-serif;
+  font-size: 17px;
+  font-weight: lighter;
+  color: #694736;
+}
+
+
 /* user profile */
 .profileContainer {
   width: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 3fr; 
-  align-items: flex-start; 
+  grid-template-columns: 1fr 3fr;
+  align-items: flex-start;
   background: #faf3eb;
   padding: 2rem;
-  gap: 1rem; 
+  gap: 1rem;
 }
 
 /* Left side user info */
@@ -393,27 +425,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 1.6; 
+  line-height: 1.6;
 }
 
 .profileContainer h3 {
   font-size: 26px;
   color: #694736;
   text-align: center;
-  font-family: 'Signika', sans-serif;
+  font-family: "Signika", sans-serif;
   max-width: 700px;
   font-weight: lighter;
 }
 
 .profileContainer p {
-  font-family: 'Signika', sans-serif;
+  font-family: "Signika", sans-serif;
   max-width: 700px;
   margin: 0 auto;
   color: #694736;
 }
 
 .userInformation {
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
   font-size: 18px;
   font-weight: lighter;
   text-align: center;
@@ -425,20 +457,20 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 50%; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile-left button {
-  padding: 10px 40px; 
+  padding: 10px 40px;
   background-color: #fff;
   text-decoration: none;
-  font-size:16px;
+  font-size: 16px;
   color: #694736;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-family: 'Signika', sans-serif;
-  font-weight:lighter;
+  font-family: "Signika", sans-serif;
+  font-weight: lighter;
   margin-bottom: 20px;
 }
 
@@ -457,7 +489,7 @@ body {
   flex-direction: column;
   border-top: 1px solid #ccc;
   font-size: 18px;
-  font-weight: lighter;  
+  font-weight: lighter;
   padding: 10px;
   text-align: left;
 }
@@ -470,7 +502,8 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-.yourGroupsTitle, .yourLessonsTitle {
+.yourGroupsTitle,
+.yourLessonsTitle {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -478,21 +511,23 @@ body {
 
 .user-group-list {
   font-size: 18px;
-  font-weight: lighter;  
+  font-weight: lighter;
   text-decoration: none;
-  list-style-type: none; 
+  list-style-type: none;
 }
 
-.user-group-title, .lesson-card, .teacher-title {
-  padding: 10px; 
+.user-group-title,
+.lesson-card,
+.teacher-title {
+  padding: 10px;
   background-color: #fff;
   text-decoration: none;
-  font-size:16px;
+  font-size: 16px;
   color: #694736;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-family: 'Signika', sans-serif;
-  font-weight:lighter;
+  font-family: "Signika", sans-serif;
+  font-weight: lighter;
   text-align: center;
 }
 
@@ -530,29 +565,27 @@ body {
   outline: 2px solid #a09d81;
 }
 
-
-
 .profileMessageTabs {
   display: flex;
   justify-content: space-between;
   margin: 80px 80px;
   overflow: hidden;
-  border: 1px solid #ccc; 
+  border: 1px solid #ccc;
   border-radius: 10px;
 }
 
 .profileMessageTabs button {
   flex: 1;
-  padding: 16px 18px; 
+  padding: 16px 18px;
   border: none;
   background-color: transparent;
   cursor: pointer;
   outline: none;
-  font-size: 15px; 
+  font-size: 15px;
 }
 
 .profileMessageTabs button:not(:last-child) {
-  border-right: 1px solid #ccc; 
+  border-right: 1px solid #ccc;
 }
 
 .profileMessageTabs button.active {
@@ -561,18 +594,17 @@ body {
 }
 
 .message-item {
-  border: 1px solid #ccc; 
+  border: 1px solid #ccc;
   padding: 10px 14px;
-  margin: 15px 10px; 
-  border-radius: 5px; 
-  color: #694736; 
+  margin: 15px 10px;
+  border-radius: 5px;
+  color: #694736;
   font-weight: lighter;
   background-color: #fff;
 }
 
 .message-label {
   font-weight: bold;
-
 }
 
 .message-container {
@@ -580,28 +612,23 @@ body {
 }
 
 .message-item:hover {
-  outline: 1px solid #a09d81; 
+  outline: 1px solid #a09d81;
 }
-
-
-
-
-
-
 
 /* Mobile styling */
 @media (max-width: 768px) {
   .profileContainer {
     grid-template-columns: 1fr;
   }
-  
-  .userInformation{
+
+  .userInformation {
     border-right: none;
     border-bottom: 1px solid #ddd;
   }
 
-  .userInformation, .profilerightSide {
-    width: 100%; 
+  .userInformation,
+  .profilerightSide {
+    width: 100%;
   }
 
   .profileContainer p {
@@ -626,7 +653,7 @@ body {
 /* classes page */
 .classes-list-container {
   text-align: center;
-  background-color: #807C5E; 
+  background-color: #807c5e;
   height: 100%;
   padding-bottom: 100px;
 }
@@ -641,7 +668,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #807C5E;
+  background-color: #807c5e;
 }
 
 .searchbar {
@@ -660,13 +687,13 @@ body {
 
 .tile {
   width: calc(22.33% - 50px);
-  background-color: #FAF3EB;
+  background-color: #faf3eb;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  margin:25px;
+  margin: 25px;
   position: relative;
-    background-size: cover;
+  background-size: cover;
   background-position: center;
 }
 
@@ -680,24 +707,23 @@ body {
   width: 100%;
   max-width: 100%;
   height: 0;
-  padding-bottom: 100%; 
-  overflow: hidden; 
+  padding-bottom: 100%;
+  overflow: hidden;
   position: relative;
 }
 
 .tile-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-
 /* groups info */
-.information-container{
-  background-color: #faf3eb;  
+.information-container {
+  background-color: #faf3eb;
   margin-top: 50px;
 }
 
@@ -729,26 +755,25 @@ body {
   line-height: 1.5;
 }
 
-
 .information-header-right {
   overflow: hidden;
-  position: relative; 
-  max-height: 100%; 
+  position: relative;
+  max-height: 100%;
 }
 
 .information-header-right img {
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  position: absolute; 
+  position: absolute;
 }
 
 .information-body {
-  background-color: #807C5E;
+  background-color: #807c5e;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   padding: 60px;
   text-align: center;
   font-size: 22px;
@@ -757,20 +782,19 @@ body {
   line-height: 2;
 }
 
-.information-bubble{
+.information-bubble {
   width: 50%;
   background-color: #faf3eb;
-  border-radius: 5px; 
+  border-radius: 5px;
   padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-
 .info-page-buttons {
-  background-color: #807C5E;
+  background-color: #807c5e;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 .join-or-message-buttons {
@@ -783,6 +807,7 @@ body {
   font-size: 18px;
   padding: 15px 40px;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .join-or-message-buttons:hover {
@@ -792,7 +817,8 @@ body {
 
 .info-page-buttons .join-or-message-buttons {
   display: inline-block;
-  margin-right: 10px; 
+  margin-right: 10px;
   margin-bottom: 50px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+

@@ -66,110 +66,99 @@ function EditGroupPage(props) {
 
   return (
     <div className="formPage">
+    <img src={imageURL} alt="Group" />
+    <div className="edit-page-container">
+    <div ClassName="page-leftside">
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title</label>
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Day</label>
-          <select
-            name="day"
-            value={day}
-            onChange={(e) => setDay(e.target.value)}
-          >
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-          </select>
-        </div>
+              <label><strong>Image:</strong></label>
+              <input
+                type="text"
+                name="imageURL"
+                value={imageURL}
+                onChange={(e) => setImageURL(e.target.value)}
+              />
+              <label><strong>Title:</strong></label>
+              <input
+                type="text"
+                name="title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <label><strong>Description:</strong></label>
+              <input
+                type="text"
+                name="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              <label><strong>Day:  </strong></label>
+              <br />
+              <select
+                name="day"
+                value={day}
+                onChange={(e) => setDay(e.target.value)}
+              >
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+              </select>
+              <br />
+             <label><strong>Start Time:  </strong></label>
+              <input
+                type="text"
+                name="startTime"
+                value={startTime}
+                onChange={(e) => setStartTime(e.target.value)}
+              />
+            </form>
+            </div>
 
-        <div>
-          <label>Start Time</label>
-          <input
-            type="text"
-            name="startTime"
-            value={startTime}
-            onChange={(e) => setStartTime(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>End Time</label>
-          <input
-            type="text"
-            name="endTime"
-            value={endTime}
-            onChange={(e) => setEndTime(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Location</label>
-          <input
-            type="text"
-            name="location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Leader</label>
-          <input
-            type="text"
-            name="leader"
-            value={leader}
-            onChange={(e) => setLeader(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Image</label>
-          <input
-            type="text"
-            name="imageURL"
-            value={imageURL}
-            onChange={(e) => setImageURL(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Skill Level</label>
-          <input
-            type="text"
-            name="skillLevel"
-            value={skillLevel}
-            onChange={(e) => setSkillLevel(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Instruments</label>
-          <input
-            type="text"
-            name="instruments"
-            value={instruments}
-            onChange={(e) => setInstruments(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Description</label>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-        <div>
-          <button onClick={deleteGroup}>Delete Group</button>
-        </div>
-      </form>
+            <div ClassName="page-rightside">
+            <form onSubmit={handleSubmit}>
+            <label><strong>End Time:  </strong></label>
+              <input
+                type="text"
+                name="endTime"
+                value={endTime}
+                onChange={(e) => setEndTime(e.target.value)}
+              />
+              <label><strong>Location:  </strong></label>
+              <input
+                type="text"
+                name="location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+              <label><strong>Group Leader:  </strong></label>
+              <input
+                type="text"
+                name="leader"
+                value={leader}
+                onChange={(e) => setLeader(e.target.value)}
+              />
+              <label><strong>Skill Level:  </strong></label>
+              <input
+                type="text"
+                name="skillLevel"
+                value={skillLevel}
+                onChange={(e) => setSkillLevel(e.target.value)}
+              />
+              <label><strong>Instruments:  </strong></label>
+              <input
+                type="text"
+                name="instruments"
+                value={instruments}
+                onChange={(e) => setInstruments(e.target.value)}
+              />
+            </form>
+            </div>
+            </div>
+            <div className="edit-page-buttons">
+              <button type="submit">Submit</button>
+              <button onClick={deleteGroup}>Delete Group</button>
+            </div>
     </div>
   );
 }
