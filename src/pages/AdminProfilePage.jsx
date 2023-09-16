@@ -6,12 +6,10 @@ import AddTeacher from "../components/Instruments/AddTeacher";
 
 import groupsService from "../services/groups.service";
 import instrumentsService from "../services/instruments.service";
-import useUser from "../components/useUser";
 
 function AdminProfilePage() {
   const [groups, setGroups] = useState([]);
   const [instruments, setInstruments] = useState([]);
-  const user = useUser();
   const [activeTab, setActiveTab] = useState('groups');
 
   const getAllGroups = () => {
