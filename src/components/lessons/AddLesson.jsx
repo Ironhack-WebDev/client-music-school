@@ -35,8 +35,8 @@ function AddLesson({ instrumentId, allUsers }) {
 
   return (
     <div className="add-form">
-      <div className="add-form-body">
-        <div className="add-form-bubble">
+      <div className="add-form-body" style={{ backgroundColor: '#faf3eb'}}>
+        <div className="add-form-bubble" style={{ padding: '40px', border: '1px solid #ccc' }}>
       {loading ? (
         <p>Loading...</p>
       ) : (

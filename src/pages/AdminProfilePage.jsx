@@ -3,6 +3,7 @@ import GroupTitle from "../components/Groups/GroupTitle";
 import TeacherThumbnail from "../components/Instruments/TeacherThumbnail";
 import AddGroup from "../components/Groups/AddGroup";
 import AddTeacher from "../components/Instruments/AddTeacher";
+import header from "../assets/header2.jpeg";
 
 import groupsService from "../services/groups.service";
 import instrumentsService from "../services/instruments.service";
@@ -40,7 +41,9 @@ function AdminProfilePage() {
 
   return (
     <div>
-  
+      <div className="timetableHeader">
+        <img src={header} alt="Admin Header" className="header-image" />
+      </div>
     <div className='profilerightSide'>
       <div className="AdminTabs">
         <button
