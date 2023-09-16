@@ -156,7 +156,7 @@ function EditGroupPage(props) {
             </div>
             </div>
             <div className="edit-page-buttons">
-              <button type="submit">Submit</button>
+              <button type="submit" onClick={handleSubmit}>Submit</button>
               <button onClick={deleteGroup}>Delete Group</button>
             </div>
     </div>

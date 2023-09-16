@@ -100,7 +100,7 @@ function EditInstrumentPage(props) {
       </div>
       </div>
       <div className="edit-page-buttons">
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleSubmit}>Submit</button>
         <button onClick={deleteInstrument}>Delete Instrument</button>
       </div>
     </div>
