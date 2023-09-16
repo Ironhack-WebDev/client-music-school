@@ -104,9 +104,9 @@ function GroupInfoPage(props) {
       {user && (
         <div>
           {isUserMemberOfGroup() ? (
-            <button onClick={leaveGroup} style={{ textDecoration: 'none', color: 'inherit',}}>Leave Group</button>
+            <button onClick={leaveGroup} style={{ textDecoration: 'none', color: 'inherit',background: 'none',border: 'none', fontSize: '18px',fontFamily: 'Signika, sans-serif',}}>Leave Group</button>
           ) : (
-            <button onClick={joinGroup} style={{ textDecoration: 'none', color: 'inherit',}}>Join Group</button>
+            <button onClick={joinGroup} style={{ textDecoration: 'none', color: 'inherit',background: 'none',border: 'none', fontSize: '18px',fontFamily: 'Signika, sans-serif',}}>Join Group</button>
           )}
         </div>
       )}
